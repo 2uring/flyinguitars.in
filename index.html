@@ -671,6 +671,202 @@
             flex-shrink: 0;
         }
 
+        /* ============ TREKS SECTION ============ */
+        .treks { background: var(--surface); }
+
+        .treks-intro {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+            line-height: 2;
+            color: var(--text-secondary);
+            max-width: 720px;
+            margin-bottom: 4rem;
+        }
+
+        .treks-intro strong {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .trek-featured {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .trek-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 3px;
+            aspect-ratio: 16/10;
+            cursor: none;
+        }
+
+        .trek-card-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.8s var(--ease-out-expo);
+        }
+
+        .trek-card:hover .trek-card-bg { transform: scale(1.06); }
+
+        .trek-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top,
+                rgba(11,11,11,0.92) 0%,
+                rgba(11,11,11,0.5) 35%,
+                rgba(11,11,11,0.15) 100%
+            );
+            transition: background 0.5s;
+        }
+
+        .trek-card:hover::after {
+            background: linear-gradient(to top,
+                rgba(11,11,11,0.85) 0%,
+                rgba(11,11,11,0.3) 40%,
+                rgba(11,11,11,0.05) 100%
+            );
+        }
+
+        .trek-card-content {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            z-index: 2;
+            padding: 2.5rem;
+        }
+
+        .trek-card-badge {
+            display: inline-block;
+            font-family: var(--font-display);
+            font-size: 0.5rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--accent);
+            padding: 0.3rem 0.7rem;
+            border: 1px solid var(--border-accent);
+            border-radius: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .trek-card-title {
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: clamp(1.4rem, 2.5vw, 2rem);
+            letter-spacing: 0.04em;
+            margin-bottom: 0.6rem;
+        }
+
+        .trek-card-meta {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .trek-card-desc {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-top: 0.8rem;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: all 0.5s var(--ease-out-expo) 0.05s;
+        }
+
+        .trek-card:hover .trek-card-desc {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .treks-villages {
+            border-top: 1px solid var(--border);
+            padding-top: 4rem;
+        }
+
+        .treks-villages-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .treks-villages-title {
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            letter-spacing: 0.03em;
+            line-height: 1.3;
+            flex-shrink: 0;
+        }
+
+        .treks-villages-text {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: clamp(1rem, 1.4vw, 1.15rem);
+            line-height: 1.9;
+            color: var(--text-secondary);
+            max-width: 520px;
+        }
+
+        .treks-villages-text strong {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .village-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .village-tag {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            color: var(--text-secondary);
+            padding: 0.6rem 1.3rem;
+            border: 1px solid var(--border);
+            border-radius: 2px;
+            transition: all 0.35s var(--ease-out-expo);
+            cursor: none;
+        }
+
+        .village-tag:hover {
+            color: var(--accent);
+            border-color: var(--border-accent);
+            background: var(--accent-glow);
+        }
+
+        .treks-quote {
+            font-family: var(--font-body);
+            font-style: italic;
+            font-weight: 300;
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            line-height: 1.9;
+            color: var(--text-secondary);
+            border-left: 2px solid var(--accent-dim);
+            padding-left: 2rem;
+            margin-top: 3.5rem;
+            max-width: 600px;
+        }
+
+        @media (max-width: 768px) {
+            .trek-featured { grid-template-columns: 1fr; }
+            .trek-card { aspect-ratio: 16/9; }
+            .trek-card-desc { opacity: 1; transform: translateY(0); }
+            .treks-villages-header { flex-direction: column; gap: 1.5rem; }
+        }
+
         /* ============ MARQUEE ============ */
         .marquee-section {
             padding: 3.5rem 0;
@@ -941,6 +1137,7 @@
             <li><a href="#about" data-hover>About</a></li>
             <li><a href="#music" data-hover>Music</a></li>
             <li><a href="#photography" data-hover>Photography</a></li>
+            <li><a href="#treks" data-hover>Treks</a></li>
             <li><a href="#contact" data-hover>Contact</a></li>
         </ul>
     </nav>
@@ -980,6 +1177,10 @@
             </div>
             <div class="cred-item reveal reveal-delay-4">
                 <div class="cred-icon"></div>
+                <span class="cred-text">Himalayan Trekker</span>
+            </div>
+            <div class="cred-item reveal reveal-delay-5">
+                <div class="cred-icon"></div>
                 <span class="cred-text">Chelsea FC</span>
             </div>
         </div>
@@ -1010,7 +1211,8 @@
                     <p class="about-bio">
                         Under the alias <strong>flyinguitars</strong>, I live a parallel life — crafting tones through
                         <strong>Neural DSP's Archetype Asato</strong> and <strong>Archetype Rabea</strong>, chasing
-                        golden hour with a camera, and unwinding on the football pitch. A
+                        golden hour with a camera, trekking through the <strong>Himalayas</strong> every chance I get,
+                        and unwinding on the football pitch. A
                         <strong>Chelsea supporter since childhood</strong> — through every era, no questions asked.
                     </p>
 
@@ -1025,7 +1227,7 @@
                         </div>
                         <div class="about-detail-item">
                             <div class="about-detail-label">Passions</div>
-                            <div class="about-detail-value">Guitar &middot; Photography &middot; Football</div>
+                            <div class="about-detail-value">Guitar &middot; Photography &middot; Treks &middot; Football</div>
                         </div>
                         <div class="about-detail-item">
                             <div class="about-detail-label">Signal Chain</div>
@@ -1145,6 +1347,81 @@
         </div>
     </section>
 
+    <!-- Treks & Himalayas -->
+    <section class="treks" id="treks">
+        <div class="section-inner">
+            <div class="section-label reveal">The Himalayas</div>
+            <h2 class="section-title reveal reveal-delay-1">Called by the<br>mountains.</h2>
+            <p class="treks-intro reveal reveal-delay-2">
+                There's a version of me that only exists above the treeline — lighter, quieter,
+                more honest. The <strong>Himalayas</strong> aren't just a destination; they're a reset.
+                From multi-day alpine crossings through Kashmir to solo walks through forgotten
+                Himachali villages, the mountains have shaped how I see everything else. Every
+                trek is a conversation with silence, altitude, and yourself.
+            </p>
+
+            <div class="trek-featured">
+                <div class="trek-card reveal-left" data-hover>
+                    <div class="trek-card-bg" style="background-image: url('https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=900&q=85&auto=format&fit=crop')"></div>
+                    <div class="trek-card-content">
+                        <span class="trek-card-badge">Featured Trek</span>
+                        <h3 class="trek-card-title">Kashmir Great Lakes</h3>
+                        <div class="trek-card-meta">Sonamarg to Naranag &middot; ~72 km &middot; Done twice</div>
+                        <p class="trek-card-desc">
+                            Seven alpine lakes set in a corridor of wildflower meadows and snow-dusted passes.
+                            The kind of landscape that makes you go back — and I did. Twice. Each time the lakes
+                            looked different. Each time I came back different.
+                        </p>
+                    </div>
+                </div>
+                <div class="trek-card reveal-right" data-hover>
+                    <div class="trek-card-bg" style="background-image: url('https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=900&q=85&auto=format&fit=crop')"></div>
+                    <div class="trek-card-content">
+                        <span class="trek-card-badge">Featured Trek</span>
+                        <h3 class="trek-card-title">Pin Babha Pass</h3>
+                        <div class="trek-card-meta">Kafnu to Mud Village &middot; Spiti crossover</div>
+                        <p class="trek-card-desc">
+                            A raw, remote crossing from the lush Kinnaur valley into the stark moonscape of Spiti.
+                            Glacial moraines, river crossings, and high-altitude solitude — the kind of trek that
+                            strips everything down to what matters.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="treks-villages reveal">
+                <div class="treks-villages-header">
+                    <h3 class="treks-villages-title">The village trails<br>of Himachal</h3>
+                    <p class="treks-villages-text">
+                        Not every walk needs a summit. Some of the most profound days I've had in the
+                        mountains were on unmarked trails between <strong>Himachali villages</strong> —
+                        crossing wooden bridges over glacial rivers, drinking chai with shepherds,
+                        sleeping under skies untouched by light pollution. These are the hikes that
+                        made me fall in love with the Himalayas in the first place.
+                    </p>
+                </div>
+                <div class="village-grid">
+                    <span class="village-tag" data-hover>Kheerganga</span>
+                    <span class="village-tag" data-hover>Jibhi</span>
+                    <span class="village-tag" data-hover>Shoja</span>
+                    <span class="village-tag" data-hover>Ragupurgarh</span>
+                    <span class="village-tag" data-hover>Kalga</span>
+                    <span class="village-tag" data-hover>Pulga</span>
+                    <span class="village-tag" data-hover>Tulga</span>
+                    <span class="village-tag" data-hover>Gajnau Thatch</span>
+                    <span class="village-tag" data-hover>Malana</span>
+                    <span class="village-tag" data-hover>Barshangarh</span>
+                    <span class="village-tag" data-hover>Shangarh</span>
+                    <span class="village-tag" data-hover>Triund</span>
+                </div>
+            </div>
+
+            <blockquote class="treks-quote reveal">
+                The mountains don't care about your deadlines.<br>That's exactly why you need them.
+            </blockquote>
+        </div>
+    </section>
+
     <!-- Marquee -->
     <div class="marquee-section">
         <div class="marquee-track" data-hover>
@@ -1152,13 +1429,15 @@
             <span class="marquee-sep">/</span>
             <span class="marquee-item">Guitar</span>
             <span class="marquee-sep">/</span>
-            <span class="marquee-item">Neural DSP</span>
+            <span class="marquee-item">Himalayas</span>
             <span class="marquee-sep">/</span>
             <span class="marquee-item">Photography</span>
             <span class="marquee-sep">/</span>
             <span class="marquee-item">Chelsea FC</span>
             <span class="marquee-sep">/</span>
-            <span class="marquee-item">Skies</span>
+            <span class="marquee-item">Kashmir</span>
+            <span class="marquee-sep">/</span>
+            <span class="marquee-item">Neural DSP</span>
             <span class="marquee-sep">/</span>
             <span class="marquee-item">Football</span>
             <span class="marquee-sep">/</span>
@@ -1166,13 +1445,15 @@
             <span class="marquee-sep">/</span>
             <span class="marquee-item">Guitar</span>
             <span class="marquee-sep">/</span>
-            <span class="marquee-item">Neural DSP</span>
+            <span class="marquee-item">Himalayas</span>
             <span class="marquee-sep">/</span>
             <span class="marquee-item">Photography</span>
             <span class="marquee-sep">/</span>
             <span class="marquee-item">Chelsea FC</span>
             <span class="marquee-sep">/</span>
-            <span class="marquee-item">Skies</span>
+            <span class="marquee-item">Kashmir</span>
+            <span class="marquee-sep">/</span>
+            <span class="marquee-item">Neural DSP</span>
             <span class="marquee-sep">/</span>
             <span class="marquee-item">Football</span>
             <span class="marquee-sep">/</span>
