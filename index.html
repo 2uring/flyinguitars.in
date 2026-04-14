@@ -3,27 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>flyinguitars — by Faiz</title>
-    <meta name="description" content="flyinguitars — music, stories, and frames by Faiz.">
-    <meta name="theme-color" content="#0a0a0a">
-    <meta property="og:title" content="flyinguitars — by Faiz">
-    <meta property="og:description" content="music · stories · frames">
+    <title>flyinguitars — Faiz Haq</title>
+    <meta name="description" content="Faiz Haq — guitarist, photographer, and engineer. IIT Hyderabad. Neural DSP. Music and light.">
+    <meta name="theme-color" content="#0b0b0b">
+    <meta property="og:title" content="flyinguitars — Faiz Haq">
+    <meta property="og:description" content="Guitarist. Photographer. Engineer. IIT Hyderabad.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://flyinguitars.in">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --ivory: #f0ece2;
-            --gold: #c9a96e;
-            --gold-dim: rgba(201, 169, 110, 0.4);
-            --charcoal: #0a0a0a;
-            --smoke: #1a1a1a;
-            --mist: rgba(255,255,255,0.06);
-            --text-primary: #f0ece2;
-            --text-secondary: rgba(240, 236, 226, 0.55);
-            --text-tertiary: rgba(240, 236, 226, 0.3);
+            --bg: #0b0b0b;
+            --surface: #131313;
+            --surface-2: #1a1a1a;
+            --accent: #c49a6c;
+            --accent-light: #d4ad80;
+            --accent-dim: rgba(196, 154, 108, 0.3);
+            --accent-glow: rgba(196, 154, 108, 0.08);
+            --border: rgba(255,255,255,0.06);
+            --border-accent: rgba(196, 154, 108, 0.2);
+            --text-primary: #ece7df;
+            --text-secondary: rgba(236, 231, 223, 0.55);
+            --text-tertiary: rgba(236, 231, 223, 0.25);
             --font-display: 'Cinzel', serif;
             --font-body: 'Cormorant Garamond', serif;
             --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -32,70 +35,76 @@
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-        ::selection {
-            background: var(--gold);
-            color: var(--charcoal);
-        }
+        ::selection { background: var(--accent); color: var(--bg); }
 
         html {
             scroll-behavior: smooth;
             scrollbar-width: thin;
-            scrollbar-color: var(--gold-dim) transparent;
+            scrollbar-color: var(--accent-dim) transparent;
         }
 
-        html::-webkit-scrollbar { width: 6px; }
+        html::-webkit-scrollbar { width: 5px; }
         html::-webkit-scrollbar-track { background: transparent; }
-        html::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+        html::-webkit-scrollbar-thumb { background: var(--accent-dim); border-radius: 3px; }
 
         body {
-            background: var(--charcoal);
+            background: var(--bg);
             color: var(--text-primary);
             font-family: var(--font-body);
             overflow-x: hidden;
             cursor: none;
+            -webkit-font-smoothing: antialiased;
         }
 
         /* ============ CUSTOM CURSOR ============ */
         .cursor-dot {
             position: fixed;
             top: 0; left: 0;
-            width: 8px; height: 8px;
-            background: var(--gold);
+            width: 6px; height: 6px;
+            background: var(--accent);
             border-radius: 50%;
             pointer-events: none;
             z-index: 9999;
-            transition: transform 0.15s var(--ease-out-expo), opacity 0.3s;
-            mix-blend-mode: difference;
+            transition: transform 0.12s var(--ease-out-expo), opacity 0.3s;
         }
 
         .cursor-ring {
             position: fixed;
             top: 0; left: 0;
-            width: 40px; height: 40px;
-            border: 1px solid var(--gold-dim);
+            width: 36px; height: 36px;
+            border: 1px solid var(--accent-dim);
             border-radius: 50%;
             pointer-events: none;
             z-index: 9998;
-            transition: width 0.4s var(--ease-out-expo), height 0.4s var(--ease-out-expo),
-                        border-color 0.3s, opacity 0.3s;
+            transition: width 0.35s var(--ease-out-expo), height 0.35s var(--ease-out-expo),
+                        border-color 0.3s, background 0.3s;
         }
 
-        .cursor-dot.hovering { transform: scale(2.5); }
+        .cursor-dot.hovering { transform: scale(0); }
         .cursor-ring.hovering {
-            width: 60px; height: 60px;
-            border-color: var(--gold);
+            width: 56px; height: 56px;
+            border-color: var(--accent);
+            background: rgba(196, 154, 108, 0.06);
         }
 
         /* ============ FILM GRAIN ============ */
         .grain {
             position: fixed;
-            inset: 0;
+            inset: -50%;
             z-index: 9000;
             pointer-events: none;
-            opacity: 0.035;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
             background-repeat: repeat;
-            background-size: 200px;
+            background-size: 256px;
+            animation: grainShift 0.5s steps(1) infinite;
+        }
+
+        @keyframes grainShift {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(-5%, -5%); }
+            50% { transform: translate(5%, 0); }
+            75% { transform: translate(-3%, 5%); }
         }
 
         /* ============ NAVIGATION ============ */
@@ -103,37 +112,46 @@
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 100;
-            padding: 1.5rem 3rem;
+            padding: 1.6rem 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: all 0.6s var(--ease-out-expo);
-            mix-blend-mode: difference;
+            transition: all 0.5s var(--ease-out-expo);
         }
 
-        .nav.scrolled {
-            padding: 1rem 3rem;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            mix-blend-mode: normal;
-            background: rgba(10,10,10,0.8);
-            border-bottom: 1px solid var(--mist);
+        .nav::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(11,11,11,0.85);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--border);
+            opacity: 0;
+            transition: opacity 0.5s;
         }
+
+        .nav.scrolled::before { opacity: 1; }
+        .nav.scrolled { padding: 1rem 3rem; }
 
         .nav-logo {
+            position: relative;
+            z-index: 1;
             font-family: var(--font-display);
             font-weight: 600;
-            font-size: 0.85rem;
-            letter-spacing: 0.2em;
+            font-size: 0.8rem;
+            letter-spacing: 0.25em;
             text-transform: uppercase;
             color: var(--text-primary);
             text-decoration: none;
-            transition: opacity 0.3s;
+            transition: color 0.3s;
         }
 
-        .nav-logo:hover { opacity: 0.7; }
+        .nav-logo:hover { color: var(--accent); }
 
         .nav-links {
+            position: relative;
+            z-index: 1;
             display: flex;
             gap: 2.5rem;
             list-style: none;
@@ -156,17 +174,18 @@
             position: absolute;
             bottom: -4px; left: 0;
             width: 0; height: 1px;
-            background: var(--gold);
+            background: var(--accent);
             transition: width 0.4s var(--ease-out-expo);
         }
 
         .nav-links a:hover { color: var(--text-primary); }
         .nav-links a:hover::after { width: 100%; }
 
-        /* ============ HERO SECTION ============ */
+        /* ============ HERO ============ */
         .hero {
             position: relative;
             height: 100vh;
+            min-height: 600px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -175,13 +194,11 @@
 
         .hero-bg {
             position: absolute;
-            inset: 0;
-            background-image: url('https://images.unsplash.com/photo-1718880474770-1952b4e5f37c?w=3840&q=90&auto=format&fit=crop');
+            inset: -5%;
+            background-image: url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=3840&q=90&auto=format&fit=crop');
             background-size: cover;
-            background-position: center 40%;
-            background-repeat: no-repeat;
+            background-position: center 30%;
             will-change: transform;
-            transition: transform 0.1s linear;
         }
 
         .hero-bg::after {
@@ -189,12 +206,12 @@
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%),
+                radial-gradient(ellipse at 50% 40%, transparent 0%, rgba(11,11,11,0.4) 70%),
                 linear-gradient(to bottom,
-                    rgba(10,10,10,0.2) 0%,
-                    transparent 30%,
-                    transparent 60%,
-                    rgba(10,10,10,0.85) 100%
+                    rgba(11,11,11,0.15) 0%,
+                    transparent 25%,
+                    transparent 55%,
+                    rgba(11,11,11,0.95) 100%
                 );
         }
 
@@ -208,96 +225,128 @@
         .hero-title {
             font-family: var(--font-display);
             font-weight: 600;
-            font-size: clamp(3rem, 10vw, 8rem);
-            letter-spacing: 0.06em;
-            line-height: 1;
+            font-size: clamp(3.2rem, 11vw, 9rem);
+            letter-spacing: 0.04em;
+            line-height: 0.95;
             color: #fff;
             opacity: 0;
-            transform: translateY(40px);
-            animation: heroFadeUp 1.8s var(--ease-out-expo) 0.5s forwards;
+            transform: translateY(50px);
+            animation: heroReveal 2s var(--ease-out-expo) 0.4s forwards;
         }
 
         .hero-byline {
             font-family: var(--font-body);
             font-weight: 300;
             font-style: italic;
-            font-size: clamp(1.2rem, 2.5vw, 1.7rem);
-            color: rgba(255,255,255,0.6);
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            color: rgba(255,255,255,0.5);
             margin-top: 1.2rem;
-            letter-spacing: 0.3em;
+            letter-spacing: 0.35em;
             opacity: 0;
-            transform: translateY(20px);
-            animation: heroFadeUp 1.5s var(--ease-out-expo) 1s forwards;
+            transform: translateY(25px);
+            animation: heroReveal 1.6s var(--ease-out-expo) 0.9s forwards;
         }
 
         .hero-divider {
-            width: 80px;
+            width: 60px;
             height: 1px;
-            background: linear-gradient(to right, transparent, var(--gold), transparent);
-            margin: 1.5rem auto;
+            background: var(--accent);
+            margin: 1.8rem auto;
             opacity: 0;
             transform: scaleX(0);
-            animation: heroScaleIn 1.2s var(--ease-out-expo) 1.4s forwards;
+            animation: heroScale 1s var(--ease-out-expo) 1.3s forwards;
         }
 
         .hero-tagline {
             font-family: var(--font-body);
             font-weight: 400;
-            font-size: clamp(0.8rem, 1.4vw, 1rem);
+            font-size: clamp(0.8rem, 1.3vw, 0.95rem);
             color: var(--text-tertiary);
-            letter-spacing: 0.4em;
+            letter-spacing: 0.5em;
             text-transform: uppercase;
             opacity: 0;
-            animation: heroFadeIn 2s ease 1.8s forwards;
+            animation: heroFade 2s ease 1.7s forwards;
         }
 
-        .scroll-indicator {
+        .scroll-cue {
             position: absolute;
-            bottom: 2.5rem;
+            bottom: 2rem;
             left: 50%;
             transform: translateX(-50%);
             z-index: 2;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
             opacity: 0;
-            animation: heroFadeIn 1.5s ease 2.5s forwards;
+            animation: heroFade 1.5s ease 2.5s forwards;
         }
 
-        .scroll-indicator span {
-            font-family: var(--font-body);
-            font-size: 0.7rem;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            color: var(--text-tertiary);
-        }
-
-        .scroll-line {
+        .scroll-cue-line {
             width: 1px;
-            height: 40px;
-            background: linear-gradient(to bottom, var(--gold-dim), transparent);
-            animation: scrollPulse 2s ease-in-out infinite;
-        }
-
-        /* ============ SECTIONS ============ */
-        section {
+            height: 48px;
+            margin: 0 auto;
             position: relative;
-            padding: 8rem 2rem;
+            overflow: hidden;
         }
 
-        .section-inner {
+        .scroll-cue-line::after {
+            content: '';
+            position: absolute;
+            top: -100%;
+            width: 1px;
+            height: 100%;
+            background: var(--accent);
+            animation: scrollDrop 1.8s ease-in-out infinite;
+        }
+
+        /* ============ CREDENTIALS BAR ============ */
+        .cred-bar {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 2.5rem 2rem;
+        }
+
+        .cred-bar-inner {
             max-width: 1200px;
             margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
         }
+
+        .cred-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .cred-icon {
+            width: 3px;
+            height: 18px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .cred-text {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+
+        /* ============ SHARED SECTION ============ */
+        section { position: relative; padding: 8rem 2rem; }
+
+        .section-inner { max-width: 1200px; margin: 0 auto; }
 
         .section-label {
             font-family: var(--font-body);
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 400;
-            letter-spacing: 0.4em;
+            letter-spacing: 0.45em;
             text-transform: uppercase;
-            color: var(--gold);
+            color: var(--accent);
             margin-bottom: 2rem;
             display: flex;
             align-items: center;
@@ -308,14 +357,14 @@
             content: '';
             width: 40px;
             height: 1px;
-            background: var(--gold-dim);
+            background: var(--accent-dim);
         }
 
         .section-title {
             font-family: var(--font-display);
             font-weight: 500;
             font-size: clamp(2rem, 5vw, 3.5rem);
-            letter-spacing: 0.04em;
+            letter-spacing: 0.03em;
             line-height: 1.2;
             margin-bottom: 2rem;
         }
@@ -326,180 +375,315 @@
             font-size: clamp(1.1rem, 1.8vw, 1.35rem);
             line-height: 1.9;
             color: var(--text-secondary);
-            max-width: 680px;
+            max-width: 660px;
         }
 
         /* ============ ABOUT ============ */
-        .about {
-            background: var(--charcoal);
-            border-top: 1px solid var(--mist);
-        }
+        .about { background: var(--bg); }
 
         .about-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            align-items: center;
+            grid-template-columns: 5fr 7fr;
+            gap: 5rem;
+            align-items: start;
         }
 
         .about-visual {
             position: relative;
             aspect-ratio: 3/4;
             overflow: hidden;
+            border-radius: 2px;
+        }
+
+        .about-visual::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid var(--border-accent);
+            z-index: 2;
+            border-radius: 2px;
+            pointer-events: none;
         }
 
         .about-visual-frame {
             position: absolute;
             inset: 0;
-            border: 1px solid var(--gold-dim);
-            transform: translate(12px, 12px);
-            transition: transform 0.6s var(--ease-out-expo);
+            border: 1px solid var(--accent-dim);
+            transform: translate(10px, 10px);
+            transition: transform 0.7s var(--ease-out-expo);
+            border-radius: 2px;
         }
 
         .about-visual:hover .about-visual-frame {
-            transform: translate(20px, 20px);
+            transform: translate(16px, 16px);
         }
 
         .about-visual-img {
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
             object-fit: cover;
-            filter: grayscale(30%) contrast(1.05);
-            transition: filter 0.6s, transform 0.6s var(--ease-out-expo);
+            filter: grayscale(20%) contrast(1.05) brightness(0.95);
+            transition: all 0.7s var(--ease-out-expo);
         }
 
         .about-visual:hover .about-visual-img {
-            filter: grayscale(0%) contrast(1.1);
-            transform: scale(1.03);
+            filter: grayscale(0%) contrast(1.1) brightness(1);
+            transform: scale(1.04);
+        }
+
+        .about-content { padding-top: 1rem; }
+
+        .about-bio {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+            line-height: 2;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .about-bio strong {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .about-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .about-detail-item {}
+
+        .about-detail-label {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .about-detail-value {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--text-primary);
+            line-height: 1.6;
         }
 
         .about-quote {
             font-family: var(--font-body);
             font-style: italic;
             font-weight: 300;
-            font-size: clamp(1.3rem, 2vw, 1.7rem);
-            line-height: 1.8;
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            line-height: 1.9;
             color: var(--text-secondary);
-            border-left: 1px solid var(--gold-dim);
+            border-left: 2px solid var(--accent-dim);
             padding-left: 2rem;
             margin-top: 3rem;
         }
 
-        /* ============ PASSIONS GRID ============ */
-        .passions {
-            background: var(--smoke);
-        }
+        /* ============ MUSIC SECTION ============ */
+        .music { background: var(--surface); }
 
-        .passions-grid {
+        .music-layout {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2px;
-            margin-top: 4rem;
+            grid-template-columns: 7fr 5fr;
+            gap: 5rem;
+            align-items: center;
         }
 
-        .passion-card {
+        .music-content {}
+
+        .music-text {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+            line-height: 2;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .music-text strong {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .gear-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-top: 2.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .gear-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+        }
+
+        .gear-tag {
+            font-family: var(--font-display);
+            font-size: 0.55rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            padding: 0.25rem 0.6rem;
+            border: 1px solid var(--border-accent);
+            border-radius: 2px;
+            white-space: nowrap;
+            margin-top: 2px;
+        }
+
+        .gear-info {}
+
+        .gear-name {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .gear-desc {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: var(--text-tertiary);
+            margin-top: 0.15rem;
+        }
+
+        .music-visual {
             position: relative;
             aspect-ratio: 3/4;
             overflow: hidden;
-            cursor: none;
+            border-radius: 2px;
         }
 
-        .passion-card-bg {
-            position: absolute;
-            inset: 0;
-            background-size: cover;
-            background-position: center;
-            transition: transform 0.8s var(--ease-out-expo);
+        .music-visual img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            filter: contrast(1.05) brightness(0.9);
+            transition: all 0.7s var(--ease-out-expo);
         }
 
-        .passion-card:hover .passion-card-bg {
-            transform: scale(1.08);
+        .music-visual:hover img {
+            transform: scale(1.04);
+            filter: contrast(1.1) brightness(0.95);
         }
 
-        .passion-card::after {
+        .music-visual::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.3) 40%, rgba(10,10,10,0.1) 100%);
-            transition: background 0.6s;
+            background: linear-gradient(to top, rgba(11,11,11,0.4) 0%, transparent 40%);
+            pointer-events: none;
         }
 
-        .passion-card:hover::after {
-            background: linear-gradient(to top, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.15) 50%, transparent 100%);
+        /* ============ PHOTO SECTION ============ */
+        .photography { background: var(--bg); }
+
+        .photo-layout {
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+            gap: 5rem;
+            align-items: center;
         }
 
-        .passion-card-content {
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            z-index: 2;
-            padding: 2.5rem;
-            transform: translateY(20px);
-            transition: transform 0.6s var(--ease-out-expo);
+        .photo-mosaic {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 6px;
+            aspect-ratio: 1;
         }
 
-        .passion-card:hover .passion-card-content {
-            transform: translateY(0);
+        .photo-mosaic-item {
+            overflow: hidden;
+            border-radius: 2px;
+            position: relative;
         }
 
-        .passion-card-number {
-            font-family: var(--font-display);
-            font-size: 0.7rem;
-            letter-spacing: 0.3em;
-            color: var(--gold);
-            margin-bottom: 0.8rem;
+        .photo-mosaic-item:first-child {
+            grid-row: span 2;
         }
 
-        .passion-card-title {
-            font-family: var(--font-display);
-            font-weight: 500;
-            font-size: clamp(1.3rem, 2.5vw, 2rem);
-            letter-spacing: 0.06em;
-            margin-bottom: 1rem;
+        .photo-mosaic-item img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            filter: grayscale(15%) contrast(1.05);
+            transition: all 0.6s var(--ease-out-expo);
         }
 
-        .passion-card-desc {
+        .photo-mosaic-item:hover img {
+            filter: grayscale(0%) contrast(1.1);
+            transform: scale(1.06);
+        }
+
+        .photo-content {}
+
+        .photo-text {
             font-family: var(--font-body);
             font-weight: 300;
-            font-size: 1rem;
-            line-height: 1.7;
+            font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+            line-height: 2;
             color: var(--text-secondary);
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.5s var(--ease-out-expo) 0.1s;
         }
 
-        .passion-card:hover .passion-card-desc {
-            opacity: 1;
-            transform: translateY(0);
+        .photo-text strong {
+            color: var(--text-primary);
+            font-weight: 500;
         }
 
-        .passion-card-line {
-            width: 30px;
-            height: 1px;
-            background: var(--gold);
-            margin-bottom: 1rem;
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.5s var(--ease-out-expo) 0.05s;
+        .photo-handles {
+            margin-top: 2.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
-        .passion-card:hover .passion-card-line {
-            transform: scaleX(1);
+        .photo-handle-link {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: color 0.3s, gap 0.3s var(--ease-out-expo);
+        }
+
+        .photo-handle-link:hover {
+            color: var(--accent);
+            gap: 1.2rem;
+        }
+
+        .photo-handle-link svg {
+            width: 16px; height: 16px;
+            fill: currentColor;
+            flex-shrink: 0;
         }
 
         /* ============ MARQUEE ============ */
         .marquee-section {
-            padding: 4rem 0;
+            padding: 3.5rem 0;
             overflow: hidden;
-            border-top: 1px solid var(--mist);
-            border-bottom: 1px solid var(--mist);
-            background: var(--charcoal);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            background: var(--surface);
         }
 
         .marquee-track {
             display: flex;
             width: max-content;
-            animation: marquee 25s linear infinite;
+            animation: marquee 30s linear infinite;
         }
 
         .marquee-track:hover { animation-play-state: paused; }
@@ -507,28 +691,28 @@
         .marquee-item {
             font-family: var(--font-display);
             font-weight: 400;
-            font-size: clamp(2rem, 5vw, 4rem);
-            letter-spacing: 0.08em;
+            font-size: clamp(1.8rem, 4.5vw, 3.5rem);
+            letter-spacing: 0.06em;
             color: var(--text-tertiary);
             white-space: nowrap;
-            padding: 0 3rem;
+            padding: 0 2rem;
             transition: color 0.3s;
         }
 
-        .marquee-item:hover { color: var(--gold); }
+        .marquee-item:hover { color: var(--accent); }
 
-        .marquee-dot {
-            color: var(--gold-dim);
+        .marquee-sep {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: var(--accent-dim);
+            display: flex;
+            align-items: center;
             padding: 0 1rem;
         }
 
-        /* ============ CONTACT / FOOTER ============ */
-        .contact {
-            background: var(--charcoal);
-            padding-bottom: 4rem;
-        }
+        /* ============ CONTACT ============ */
+        .contact { background: var(--bg); padding-bottom: 4rem; }
 
-        .contact-grid {
+        .contact-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
@@ -539,59 +723,82 @@
             font-family: var(--font-display);
             font-weight: 400;
             font-size: clamp(1.8rem, 4vw, 3rem);
-            letter-spacing: 0.04em;
-            line-height: 1.3;
+            letter-spacing: 0.03em;
+            line-height: 1.35;
+        }
+
+        .contact-cta-sub {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-top: 1.5rem;
+            line-height: 1.7;
         }
 
         .contact-links {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 0;
             justify-content: center;
         }
 
         .contact-link {
             font-family: var(--font-body);
             font-weight: 400;
-            font-size: 1.1rem;
-            letter-spacing: 0.15em;
+            font-size: 1.05rem;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
             color: var(--text-secondary);
             text-decoration: none;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             gap: 1rem;
-            transition: color 0.3s, gap 0.4s var(--ease-out-expo);
+            padding: 1.2rem 0;
+            border-bottom: 1px solid var(--border);
+            transition: color 0.3s, padding-left 0.4s var(--ease-out-expo);
         }
 
+        .contact-link:first-child { border-top: 1px solid var(--border); }
+
         .contact-link:hover {
-            color: var(--gold);
-            gap: 1.5rem;
+            color: var(--accent);
+            padding-left: 0.5rem;
         }
 
         .contact-link-arrow {
             display: inline-block;
-            width: 24px;
+            width: 20px;
             height: 1px;
             background: currentColor;
             position: relative;
             transition: width 0.4s var(--ease-out-expo);
+            flex-shrink: 0;
         }
 
-        .contact-link:hover .contact-link-arrow { width: 40px; }
+        .contact-link:hover .contact-link-arrow { width: 32px; }
 
         .contact-link-arrow::after {
             content: '';
             position: absolute;
             right: 0; top: -3px;
-            width: 8px; height: 8px;
+            width: 7px; height: 7px;
             border-top: 1px solid currentColor;
             border-right: 1px solid currentColor;
             transform: rotate(45deg);
         }
 
+        .contact-link-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            color: var(--text-tertiary);
+            margin-left: auto;
+            text-transform: uppercase;
+        }
+
+        /* ============ FOOTER ============ */
         .footer {
-            border-top: 1px solid var(--mist);
+            border-top: 1px solid var(--border);
             padding: 2rem 3rem;
             display: flex;
             justify-content: space-between;
@@ -605,6 +812,14 @@
             letter-spacing: 0.1em;
         }
 
+        .footer-center {
+            font-family: var(--font-display);
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+        }
+
         .footer-right {
             font-family: var(--font-body);
             font-size: 0.75rem;
@@ -613,39 +828,53 @@
             text-transform: uppercase;
         }
 
-        /* ============ REVEAL ANIMATIONS ============ */
+        /* ============ REVEALS ============ */
         .reveal {
             opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+            transform: translateY(35px);
+            transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
         }
 
-        .reveal.revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .reveal.revealed { opacity: 1; transform: translateY(0); }
 
         .reveal-delay-1 { transition-delay: 0.1s; }
         .reveal-delay-2 { transition-delay: 0.2s; }
         .reveal-delay-3 { transition-delay: 0.3s; }
         .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
 
-        /* ============ HERO KEYFRAMES ============ */
-        @keyframes heroFadeUp {
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+        }
+
+        .reveal-left.revealed { opacity: 1; transform: translateX(0); }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+        }
+
+        .reveal-right.revealed { opacity: 1; transform: translateX(0); }
+
+        /* ============ KEYFRAMES ============ */
+        @keyframes heroReveal {
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes heroFadeIn {
+        @keyframes heroFade {
             to { opacity: 1; }
         }
 
-        @keyframes heroScaleIn {
+        @keyframes heroScale {
             to { opacity: 1; transform: scaleX(1); }
         }
 
-        @keyframes scrollPulse {
-            0%, 100% { opacity: 0.3; transform: scaleY(1); }
-            50% { opacity: 0.8; transform: scaleY(1.3); }
+        @keyframes scrollDrop {
+            0% { top: -100%; }
+            100% { top: 200%; }
         }
 
         @keyframes marquee {
@@ -654,45 +883,28 @@
         }
 
         /* ============ RESPONSIVE ============ */
-        @media (max-width: 900px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
+        @media (max-width: 1024px) {
+            .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .about-visual { max-width: 380px; }
+            .music-layout { grid-template-columns: 1fr; gap: 3rem; }
+            .music-visual { max-width: 400px; order: -1; }
+            .photo-layout { grid-template-columns: 1fr; gap: 3rem; }
+            .photo-mosaic { max-width: 500px; }
+        }
 
-            .about-visual {
-                max-width: 400px;
-                margin: 0 auto;
-            }
-
-            .passions-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .passion-card {
-                aspect-ratio: 16/9;
-            }
-
-            .passion-card-desc {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-            .passion-card-line {
-                transform: scaleX(1);
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .nav-links { display: none; }
-
+        @media (max-width: 768px) {
             .nav { padding: 1.2rem 1.5rem; }
             .nav.scrolled { padding: 1rem 1.5rem; }
+            .nav-links { display: none; }
 
             section { padding: 5rem 1.5rem; }
+
+            .cred-bar { padding: 2rem 1.5rem; }
+            .cred-bar-inner { gap: 1.5rem; justify-content: flex-start; }
+
+            .about-detail-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+
+            .contact-layout { grid-template-columns: 1fr; gap: 2rem; }
 
             .cursor-dot, .cursor-ring { display: none; }
             body { cursor: auto; }
@@ -705,8 +917,11 @@
             }
         }
 
-        @media (max-width: 500px) {
-            .hero-title { font-size: clamp(2.2rem, 14vw, 3.5rem); }
+        @media (max-width: 480px) {
+            .hero-title { font-size: clamp(2.4rem, 14vw, 4rem); }
+            .photo-mosaic { grid-template-columns: 1fr; }
+            .photo-mosaic-item:first-child { grid-row: span 1; aspect-ratio: 4/3; }
+            .photo-mosaic-item { aspect-ratio: 4/3; }
         }
 
         @media (hover: none) {
@@ -720,12 +935,12 @@
     <div class="cursor-dot" id="cursorDot"></div>
     <div class="cursor-ring" id="cursorRing"></div>
 
-    <!-- Navigation -->
     <nav class="nav" id="nav">
         <a href="#" class="nav-logo" data-hover>flyinguitars</a>
         <ul class="nav-links">
             <li><a href="#about" data-hover>About</a></li>
-            <li><a href="#passions" data-hover>Work</a></li>
+            <li><a href="#music" data-hover>Music</a></li>
+            <li><a href="#photography" data-hover>Photography</a></li>
             <li><a href="#contact" data-hover>Contact</a></li>
         </ul>
     </nav>
@@ -735,78 +950,195 @@
         <div class="hero-bg" id="heroBg"></div>
         <div class="hero-content">
             <h1 class="hero-title">flyinguitars</h1>
-            <div class="hero-byline">by Faiz</div>
+            <div class="hero-byline">Faiz Haq</div>
             <div class="hero-divider"></div>
-            <div class="hero-tagline">music &middot; stories &middot; frames</div>
+            <div class="hero-tagline">music &middot; frames</div>
         </div>
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
+        <div class="scroll-cue">
+            <div class="scroll-cue-line"></div>
         </div>
     </section>
+
+    <!-- Credentials Bar -->
+    <div class="cred-bar">
+        <div class="cred-bar-inner">
+            <div class="cred-item reveal">
+                <div class="cred-icon"></div>
+                <span class="cred-text">IIT Hyderabad</span>
+            </div>
+            <div class="cred-item reveal reveal-delay-1">
+                <div class="cred-icon"></div>
+                <span class="cred-text">Masters</span>
+            </div>
+            <div class="cred-item reveal reveal-delay-2">
+                <div class="cred-icon"></div>
+                <span class="cred-text">Guitarist</span>
+            </div>
+            <div class="cred-item reveal reveal-delay-3">
+                <div class="cred-icon"></div>
+                <span class="cred-text">Photographer</span>
+            </div>
+            <div class="cred-item reveal reveal-delay-4">
+                <div class="cred-icon"></div>
+                <span class="cred-text">Neural DSP</span>
+            </div>
+        </div>
+    </div>
 
     <!-- About -->
     <section class="about" id="about">
         <div class="section-inner">
             <div class="about-grid">
-                <div class="about-visual reveal">
+                <div class="about-visual reveal-left">
                     <div class="about-visual-frame"></div>
                     <img
                         class="about-visual-img"
-                        src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=800&q=85&auto=format&fit=crop"
-                        alt="Creative expression through music"
+                        src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=800&q=85&auto=format&fit=crop"
+                        alt="Music and creativity"
                         loading="lazy"
                     >
                 </div>
-                <div>
-                    <div class="section-label reveal">About</div>
-                    <h2 class="section-title reveal reveal-delay-1">Where sound<br>meets vision</h2>
-                    <p class="section-text reveal reveal-delay-2">
-                        Every melody carries a story waiting to be told. Every frame holds a feeling
-                        words can't quite reach. I live at the intersection of these worlds — creating,
-                        capturing, and curating the moments that resonate.
+                <div class="about-content reveal-right">
+                    <div class="section-label">About</div>
+                    <h2 class="section-title">Engineer by training.<br>Artist by nature.</h2>
+                    <p class="about-bio">
+                        I'm <strong>Faiz Haq</strong> — currently pursuing my <strong>Masters at IIT Hyderabad</strong>,
+                        where the rigour of engineering meets the freedom of creative expression. Under the alias
+                        <strong>flyinguitars</strong>, I explore two parallel worlds: the raw, emotive language of
+                        the electric guitar, and the quiet poetry of light captured through a lens.
                     </p>
-                    <blockquote class="about-quote reveal reveal-delay-3">
-                        The best art doesn't explain itself.<br>It simply invites you in.
+                    <p class="about-bio">
+                        When I'm not in the lab or the lecture hall, you'll find me crafting tones through
+                        <strong>Neural DSP's Archetype Asato</strong> and <strong>Archetype Rabea</strong>, chasing
+                        golden hour across campus, or losing myself in the infinite feedback loop between music
+                        and visual art.
+                    </p>
+
+                    <div class="about-detail-grid">
+                        <div class="about-detail-item">
+                            <div class="about-detail-label">Education</div>
+                            <div class="about-detail-value">M.Tech, IIT Hyderabad</div>
+                        </div>
+                        <div class="about-detail-item">
+                            <div class="about-detail-label">Based In</div>
+                            <div class="about-detail-value">Hyderabad, India</div>
+                        </div>
+                        <div class="about-detail-item">
+                            <div class="about-detail-label">Disciplines</div>
+                            <div class="about-detail-value">Guitar &middot; Photography</div>
+                        </div>
+                        <div class="about-detail-item">
+                            <div class="about-detail-label">Signal Chain</div>
+                            <div class="about-detail-value">Neural DSP</div>
+                        </div>
+                    </div>
+
+                    <blockquote class="about-quote">
+                        The guitar doesn't lie. Neither does the light.
                     </blockquote>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Passions -->
-    <section class="passions" id="passions">
+    <!-- Music -->
+    <section class="music" id="music">
         <div class="section-inner">
-            <div class="section-label reveal">What I Do</div>
-            <h2 class="section-title reveal reveal-delay-1">Three dimensions<br>of expression</h2>
+            <div class="music-layout">
+                <div class="music-content reveal-left">
+                    <div class="section-label">Music</div>
+                    <h2 class="section-title">Tone is<br>everything.</h2>
+                    <p class="music-text">
+                        The electric guitar is my first language. From ambient swells and soaring leads to
+                        tight, percussive riffs — every note is shaped with intention. I believe tone isn't
+                        just about gear; it's about <strong>feel, dynamics, and the space between the notes</strong>.
+                    </p>
+                    <p class="music-text">
+                        My signal chain runs through <strong>Neural DSP</strong>, where two plugins form
+                        the backbone of my sound. Whether I'm recording at home, jamming, or producing
+                        content for <strong>YouTube</strong> — these are the tools that translate what I hear
+                        in my head into what the world hears through the speakers.
+                    </p>
+
+                    <div class="gear-list">
+                        <div class="gear-item">
+                            <span class="gear-tag">Plugin</span>
+                            <div class="gear-info">
+                                <div class="gear-name">Archetype: Tim Henson</div>
+                                <div class="gear-desc">Pristine cleans, crystalline leads, and modern high-gain — built for precision and expression.</div>
+                            </div>
+                        </div>
+                        <div class="gear-item">
+                            <span class="gear-tag">Plugin</span>
+                            <div class="gear-info">
+                                <div class="gear-name">Archetype: Rabea</div>
+                                <div class="gear-desc">Warm crunch, massive rhythm tones, and ambient post-rock textures in a single suite.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="music-visual reveal-right">
+                    <img
+                        src="https://images.unsplash.com/photo-1564186763535-ebb21ef5277f?w=800&q=85&auto=format&fit=crop"
+                        alt="Electric guitar"
+                        loading="lazy"
+                    >
+                </div>
+            </div>
         </div>
+    </section>
+
+    <!-- Photography -->
+    <section class="photography" id="photography">
         <div class="section-inner">
-            <div class="passions-grid reveal reveal-delay-2">
-                <div class="passion-card" data-hover>
-                    <div class="passion-card-bg" style="background-image: url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&q=85&auto=format&fit=crop')"></div>
-                    <div class="passion-card-content">
-                        <div class="passion-card-number">01</div>
-                        <div class="passion-card-line"></div>
-                        <h3 class="passion-card-title">Music</h3>
-                        <p class="passion-card-desc">Strings, rhythms, and raw emotion — composed and performed from a place of truth.</p>
+            <div class="photo-layout">
+                <div class="photo-mosaic reveal-left">
+                    <div class="photo-mosaic-item" data-hover>
+                        <img
+                            src="https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=600&q=85&auto=format&fit=crop"
+                            alt="Sky photography"
+                            loading="lazy"
+                        >
+                    </div>
+                    <div class="photo-mosaic-item" data-hover>
+                        <img
+                            src="https://images.unsplash.com/photo-1536514498073-50e69d39c6cf?w=600&q=85&auto=format&fit=crop"
+                            alt="Golden hour"
+                            loading="lazy"
+                        >
+                    </div>
+                    <div class="photo-mosaic-item" data-hover>
+                        <img
+                            src="https://images.unsplash.com/photo-1500534623283-312aade485b7?w=600&q=85&auto=format&fit=crop"
+                            alt="Landscape"
+                            loading="lazy"
+                        >
                     </div>
                 </div>
-                <div class="passion-card" data-hover>
-                    <div class="passion-card-bg" style="background-image: url('https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=85&auto=format&fit=crop')"></div>
-                    <div class="passion-card-content">
-                        <div class="passion-card-number">02</div>
-                        <div class="passion-card-line"></div>
-                        <h3 class="passion-card-title">Stories</h3>
-                        <p class="passion-card-desc">Words that linger. Narratives that reveal something you already knew but hadn't named.</p>
-                    </div>
-                </div>
-                <div class="passion-card" data-hover>
-                    <div class="passion-card-bg" style="background-image: url('https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=800&q=85&auto=format&fit=crop')"></div>
-                    <div class="passion-card-content">
-                        <div class="passion-card-number">03</div>
-                        <div class="passion-card-line"></div>
-                        <h3 class="passion-card-title">Frames</h3>
-                        <p class="passion-card-desc">Light, shadow, and the decisive moment — captured in stills that breathe.</p>
+                <div class="photo-content reveal-right">
+                    <div class="section-label">Photography</div>
+                    <h2 class="section-title">Chasing light,<br>one frame at a time.</h2>
+                    <p class="photo-text">
+                        Photography, for me, started with <strong>skies</strong> — those fleeting moments when
+                        the clouds arrange themselves into something you'll never see again. It grew into
+                        a practice of patience: waiting for the right light, the right shadow, the right
+                        silence in a frame.
+                    </p>
+                    <p class="photo-text" style="margin-top: 1.5rem;">
+                        From golden hour landscapes and moody street frames to candid portraits — my work
+                        lives across two handles. <strong>@faiskies_</strong> for the personal, contemplative
+                        eye. <strong>@flyinguitars</strong> for where music and visuals converge.
+                    </p>
+
+                    <div class="photo-handles">
+                        <a href="https://www.instagram.com/faiskies_" target="_blank" rel="noopener" class="photo-handle-link" data-hover>
+                            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                            @faiskies_
+                        </a>
+                        <a href="https://www.instagram.com/flyinguitars" target="_blank" rel="noopener" class="photo-handle-link" data-hover>
+                            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                            @flyinguitars
+                        </a>
                     </div>
                 </div>
             </div>
@@ -815,93 +1147,105 @@
 
     <!-- Marquee -->
     <div class="marquee-section">
-        <div class="marquee-track">
-            <span class="marquee-item" data-hover>Music</span>
-            <span class="marquee-dot">&middot;</span>
-            <span class="marquee-item" data-hover>Stories</span>
-            <span class="marquee-dot">&middot;</span>
-            <span class="marquee-item" data-hover>Frames</span>
-            <span class="marquee-dot">&middot;</span>
-            <span class="marquee-item" data-hover>Passion</span>
-            <span class="marquee-dot">&middot;</span>
-            <span class="marquee-item" data-hover>Create</span>
-            <span class="marquee-dot">&middot;</span>
-            <span class="marquee-item" data-hover>Inspire</span>
-            <span class="marquee-dot">&middot;</span>
-            <span class="marquee-item" data-hover>Music</span>
-            <span class="marquee-dot">&middot;</span>
-            <span class="marquee-item" data-hover>Stories</span>
-            <span class="marquee-dot">&middot;</span>
-            <span class="marquee-item" data-hover>Frames</span>
-            <span class="marquee-dot">&middot;</span>
-            <span class="marquee-item" data-hover>Passion</span>
-            <span class="marquee-dot">&middot;</span>
-            <span class="marquee-item" data-hover>Create</span>
-            <span class="marquee-dot">&middot;</span>
-            <span class="marquee-item" data-hover>Inspire</span>
-            <span class="marquee-dot">&middot;</span>
+        <div class="marquee-track" data-hover>
+            <span class="marquee-item">Guitar</span>
+            <span class="marquee-sep">/</span>
+            <span class="marquee-item">Neural DSP</span>
+            <span class="marquee-sep">/</span>
+            <span class="marquee-item">Photography</span>
+            <span class="marquee-sep">/</span>
+            <span class="marquee-item">IIT Hyderabad</span>
+            <span class="marquee-sep">/</span>
+            <span class="marquee-item">Skies</span>
+            <span class="marquee-sep">/</span>
+            <span class="marquee-item">Tone</span>
+            <span class="marquee-sep">/</span>
+            <span class="marquee-item">Guitar</span>
+            <span class="marquee-sep">/</span>
+            <span class="marquee-item">Neural DSP</span>
+            <span class="marquee-sep">/</span>
+            <span class="marquee-item">Photography</span>
+            <span class="marquee-sep">/</span>
+            <span class="marquee-item">IIT Hyderabad</span>
+            <span class="marquee-sep">/</span>
+            <span class="marquee-item">Skies</span>
+            <span class="marquee-sep">/</span>
+            <span class="marquee-item">Tone</span>
+            <span class="marquee-sep">/</span>
         </div>
     </div>
 
     <!-- Contact -->
     <section class="contact" id="contact">
         <div class="section-inner">
-            <div class="section-label reveal">Get in Touch</div>
-            <div class="contact-grid">
-                <div class="contact-cta reveal reveal-delay-1">
-                    Let's create<br>something together.
+            <div class="section-label reveal">Connect</div>
+            <div class="contact-layout">
+                <div class="reveal reveal-delay-1">
+                    <div class="contact-cta">
+                        Let's make<br>something real.
+                    </div>
+                    <p class="contact-cta-sub">
+                        Whether it's a collaboration, a conversation about tone,
+                        or just saying hello — I'd love to hear from you.
+                    </p>
                 </div>
                 <div class="contact-links reveal reveal-delay-2">
-                    <a href="mailto:hello@flyinguitars.in" class="contact-link" data-hover>
+                    <a href="mailto:fh.haq27@gmail.com" class="contact-link" data-hover>
                         <span class="contact-link-arrow"></span>
-                        Email
+                        fh.haq27@gmail.com
+                        <span class="contact-link-label">Email</span>
                     </a>
-                    <a href="https://instagram.com/flyinguitars" target="_blank" rel="noopener" class="contact-link" data-hover>
+                    <a href="https://www.youtube.com/@faiskies_" target="_blank" rel="noopener" class="contact-link" data-hover>
                         <span class="contact-link-arrow"></span>
-                        Instagram
+                        @faiskies_
+                        <span class="contact-link-label">YouTube</span>
                     </a>
-                    <a href="https://youtube.com/@flyinguitars" target="_blank" rel="noopener" class="contact-link" data-hover>
+                    <a href="https://www.instagram.com/faiskies_" target="_blank" rel="noopener" class="contact-link" data-hover>
                         <span class="contact-link-arrow"></span>
-                        YouTube
+                        @faiskies_
+                        <span class="contact-link-label">Instagram</span>
+                    </a>
+                    <a href="https://www.instagram.com/flyinguitars" target="_blank" rel="noopener" class="contact-link" data-hover>
+                        <span class="contact-link-arrow"></span>
+                        @flyinguitars
+                        <span class="contact-link-label">Instagram</span>
                     </a>
                     <a href="https://github.com/2uring" target="_blank" rel="noopener" class="contact-link" data-hover>
                         <span class="contact-link-arrow"></span>
-                        GitHub
+                        2uring
+                        <span class="contact-link-label">GitHub</span>
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-left">&copy; 2025 flyinguitars. All rights reserved.</div>
-        <div class="footer-right">Crafted with intention</div>
+        <div class="footer-left">&copy; 2025 Faiz Haq</div>
+        <div class="footer-center">flyinguitars</div>
+        <div class="footer-right">IIT Hyderabad</div>
     </footer>
 
     <script>
         (function() {
-            /* ---- Custom Cursor ---- */
             const dot = document.getElementById('cursorDot');
             const ring = document.getElementById('cursorRing');
-            let mouseX = 0, mouseY = 0;
-            let ringX = 0, ringY = 0;
+            let mx = 0, my = 0, rx = 0, ry = 0;
 
             document.addEventListener('mousemove', e => {
-                mouseX = e.clientX;
-                mouseY = e.clientY;
-                dot.style.left = mouseX - 4 + 'px';
-                dot.style.top = mouseY - 4 + 'px';
+                mx = e.clientX;
+                my = e.clientY;
+                dot.style.left = mx - 3 + 'px';
+                dot.style.top = my - 3 + 'px';
             });
 
-            function animateRing() {
-                ringX += (mouseX - ringX) * 0.12;
-                ringY += (mouseY - ringY) * 0.12;
-                ring.style.left = ringX - 20 + 'px';
-                ring.style.top = ringY - 20 + 'px';
-                requestAnimationFrame(animateRing);
-            }
-            animateRing();
+            (function loop() {
+                rx += (mx - rx) * 0.1;
+                ry += (my - ry) * 0.1;
+                ring.style.left = rx - 18 + 'px';
+                ring.style.top = ry - 18 + 'px';
+                requestAnimationFrame(loop);
+            })();
 
             document.querySelectorAll('[data-hover]').forEach(el => {
                 el.addEventListener('mouseenter', () => {
@@ -914,64 +1258,64 @@
                 });
             });
 
-            /* ---- Nav Scroll Effect ---- */
             const nav = document.getElementById('nav');
-            let lastScroll = 0;
-
-            window.addEventListener('scroll', () => {
-                const scrollY = window.scrollY;
-                nav.classList.toggle('scrolled', scrollY > 80);
-                lastScroll = scrollY;
-            }, { passive: true });
-
-            /* ---- Hero Parallax ---- */
             const heroBg = document.getElementById('heroBg');
             const hero = document.getElementById('hero');
 
+            let ticking = false;
             window.addEventListener('scroll', () => {
-                const scrollY = window.scrollY;
-                const heroH = hero.offsetHeight;
-                if (scrollY < heroH) {
-                    const yOffset = scrollY * 0.35;
-                    heroBg.style.transform = 'translate3d(0,' + yOffset + 'px,0) scale(1.05)';
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        const sy = window.scrollY;
+                        nav.classList.toggle('scrolled', sy > 60);
+
+                        if (sy < hero.offsetHeight) {
+                            heroBg.style.transform =
+                                'translate3d(0,' + (sy * 0.3) + 'px,0) scale(' + (1.05 + sy * 0.0001) + ')';
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
                 }
             }, { passive: true });
 
-            /* ---- Scroll Reveal ---- */
-            const reveals = document.querySelectorAll('.reveal');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('revealed');
-                        observer.unobserve(entry.target);
+            const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+            const obs = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('revealed');
+                        obs.unobserve(e.target);
                     }
                 });
-            }, {
-                threshold: 0.15,
-                rootMargin: '0px 0px -50px 0px'
-            });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-            reveals.forEach(el => observer.observe(el));
+            reveals.forEach(el => obs.observe(el));
 
-            /* ---- Smooth Scroll for Nav Links ---- */
-            document.querySelectorAll('a[href^="#"]').forEach(link => {
-                link.addEventListener('click', e => {
+            document.querySelectorAll('a[href^="#"]').forEach(a => {
+                a.addEventListener('click', e => {
                     e.preventDefault();
-                    const target = document.querySelector(link.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
+                    const t = document.querySelector(a.getAttribute('href'));
+                    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 });
             });
 
-            /* ---- Parallax mouse move on hero (subtle) ---- */
             hero.addEventListener('mousemove', e => {
-                const rect = hero.getBoundingClientRect();
-                const x = (e.clientX - rect.left) / rect.width - 0.5;
-                const y = (e.clientY - rect.top) / rect.height - 0.5;
-                const content = document.querySelector('.hero-content');
-                content.style.transform = 'translate(' + (x * -8) + 'px,' + (y * -8) + 'px)';
+                const r = hero.getBoundingClientRect();
+                const x = (e.clientX - r.left) / r.width - 0.5;
+                const y = (e.clientY - r.top) / r.height - 0.5;
+                document.querySelector('.hero-content').style.transform =
+                    'translate(' + (x * -10) + 'px,' + (y * -10) + 'px)';
+            });
+
+            const imgs = document.querySelectorAll('img[loading="lazy"]');
+            imgs.forEach(img => {
+                img.addEventListener('load', () => {
+                    img.style.opacity = '1';
+                });
+                if (!img.complete) {
+                    img.style.opacity = '0';
+                    img.style.transition = 'opacity 0.6s ease';
+                }
             });
         })();
     </script>
