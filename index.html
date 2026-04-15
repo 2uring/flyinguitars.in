@@ -744,104 +744,106 @@
             font-weight: 500;
         }
 
-        .trek-featured {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+        .trek-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
             margin-bottom: 4rem;
         }
 
-        .trek-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: 3px;
-            aspect-ratio: 16/10;
-            cursor: none;
+        .trek-row {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 2.5rem;
+            align-items: baseline;
+            padding: 2.5rem 0;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            color: inherit;
+            transition: padding-left 0.4s var(--ease-out-expo);
         }
 
-        .trek-card-bg {
-            position: absolute;
-            inset: 0;
-            background-size: cover;
-            background-position: center;
-            transition: transform 0.8s var(--ease-out-expo);
-        }
+        .trek-row:first-child { border-top: 1px solid var(--border); }
 
-        .trek-card:hover .trek-card-bg { transform: scale(1.06); }
+        .trek-row:hover { padding-left: 1rem; }
 
-        .trek-card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top,
-                rgba(11,11,11,0.95) 0%,
-                rgba(11,11,11,0.75) 30%,
-                rgba(11,11,11,0.45) 70%,
-                rgba(11,11,11,0.3) 100%
-            );
-            transition: background 0.5s;
-        }
-
-        .trek-card:hover::after {
-            background: linear-gradient(to top,
-                rgba(11,11,11,0.92) 0%,
-                rgba(11,11,11,0.6) 35%,
-                rgba(11,11,11,0.3) 70%,
-                rgba(11,11,11,0.15) 100%
-            );
-        }
-
-        .trek-card-content {
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            z-index: 2;
-            padding: 2.5rem;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.6);
-        }
-
-        .trek-card-badge {
-            display: inline-block;
+        .trek-row-number {
             font-family: var(--font-display);
-            font-size: 0.5rem;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
             color: var(--accent);
-            padding: 0.3rem 0.7rem;
-            border: 1px solid var(--border-accent);
-            border-radius: 2px;
-            margin-bottom: 1rem;
+            padding-top: 0.3rem;
         }
 
-        .trek-card-title {
+        .trek-row-body {}
+
+        .trek-row-title {
             font-family: var(--font-display);
             font-weight: 500;
-            font-size: clamp(1.4rem, 2.5vw, 2rem);
-            letter-spacing: 0.04em;
+            font-size: clamp(1.6rem, 3vw, 2.5rem);
+            letter-spacing: 0.03em;
+            line-height: 1.2;
             margin-bottom: 0.6rem;
+            transition: color 0.3s;
         }
 
-        .trek-card-meta {
+        .trek-row:hover .trek-row-title { color: var(--accent); }
+
+        .trek-row-meta {
             font-family: var(--font-body);
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: var(--text-secondary);
-            line-height: 1.7;
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
         }
 
-        .trek-card-desc {
+        .trek-row-desc {
             font-family: var(--font-body);
             font-weight: 300;
-            font-size: 0.95rem;
-            line-height: 1.7;
+            font-size: clamp(1rem, 1.4vw, 1.15rem);
+            line-height: 1.9;
             color: var(--text-secondary);
-            margin-top: 0.8rem;
-            opacity: 0;
-            transform: translateY(8px);
-            transition: all 0.5s var(--ease-out-expo) 0.05s;
+            max-width: 640px;
         }
 
-        .trek-card:hover .trek-card-desc {
-            opacity: 1;
-            transform: translateY(0);
+        .trek-row-cta {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-top: 0.3rem;
+            transition: color 0.3s, gap 0.4s var(--ease-out-expo);
+        }
+
+        .trek-row:hover .trek-row-cta {
+            color: var(--accent);
+            gap: 1rem;
+        }
+
+        .trek-row-cta-arrow {
+            display: inline-block;
+            width: 18px;
+            height: 1px;
+            background: currentColor;
+            position: relative;
+            transition: width 0.4s var(--ease-out-expo);
+        }
+
+        .trek-row:hover .trek-row-cta-arrow { width: 28px; }
+
+        .trek-row-cta-arrow::after {
+            content: '';
+            position: absolute;
+            right: 0; top: -3px;
+            width: 6px; height: 6px;
+            border-top: 1px solid currentColor;
+            border-right: 1px solid currentColor;
+            transform: rotate(45deg);
         }
 
         .treks-villages {
@@ -919,9 +921,9 @@
         }
 
         @media (max-width: 768px) {
-            .trek-featured { grid-template-columns: 1fr; }
-            .trek-card { aspect-ratio: 16/9; }
-            .trek-card-desc { opacity: 1; transform: translateY(0); }
+            .trek-row { grid-template-columns: 1fr; gap: 0.5rem; }
+            .trek-row-number { padding-top: 0; }
+            .trek-row-cta { margin-top: 0.5rem; }
             .treks-villages-header { flex-direction: column; gap: 1.5rem; }
         }
 
@@ -1414,33 +1416,37 @@
                 trek is a conversation with silence, altitude, and yourself.
             </p>
 
-            <div class="trek-featured">
-                <div class="trek-card reveal-left" data-hover>
-                    <div class="trek-card-bg" style="background-image: url('https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=900&q=85&auto=format&fit=crop')"></div>
-                    <div class="trek-card-content">
-                        <span class="trek-card-badge">Featured Trek</span>
-                        <h3 class="trek-card-title">Kashmir Great Lakes</h3>
-                        <div class="trek-card-meta">Sonamarg to Naranag &middot; ~72 km &middot; Done twice</div>
-                        <p class="trek-card-desc">
+            <div class="trek-list">
+                <a href="treks/kashmir-great-lakes.html" class="trek-row reveal" data-hover>
+                    <span class="trek-row-number">01</span>
+                    <div class="trek-row-body">
+                        <h3 class="trek-row-title">Kashmir Great Lakes</h3>
+                        <div class="trek-row-meta">Sonamarg to Naranag &middot; ~72 km &middot; 7 days &middot; Done twice</div>
+                        <p class="trek-row-desc">
                             Seven alpine lakes set in a corridor of wildflower meadows and snow-dusted passes.
-                            The kind of landscape that makes you go back — and I did. Twice. Each time the lakes
-                            looked different. Each time I came back different.
+                            The kind of landscape that makes you go back — and I did. Twice.
                         </p>
                     </div>
-                </div>
-                <div class="trek-card reveal-right" data-hover>
-                    <div class="trek-card-bg" style="background-image: url('https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=900&q=85&auto=format&fit=crop')"></div>
-                    <div class="trek-card-content">
-                        <span class="trek-card-badge">Featured Trek</span>
-                        <h3 class="trek-card-title">Pin Babha Pass</h3>
-                        <div class="trek-card-meta">Kafnu to Mud Village &middot; Spiti crossover</div>
-                        <p class="trek-card-desc">
+                    <span class="trek-row-cta">
+                        Read the story
+                        <span class="trek-row-cta-arrow"></span>
+                    </span>
+                </a>
+                <a href="treks/pin-babha-pass.html" class="trek-row reveal reveal-delay-1" data-hover>
+                    <span class="trek-row-number">02</span>
+                    <div class="trek-row-body">
+                        <h3 class="trek-row-title">Pin Babha Pass</h3>
+                        <div class="trek-row-meta">Kafnu to Mud Village &middot; Spiti crossover &middot; ~50 km</div>
+                        <p class="trek-row-desc">
                             A raw, remote crossing from the lush Kinnaur valley into the stark moonscape of Spiti.
-                            Glacial moraines, river crossings, and high-altitude solitude — the kind of trek that
-                            strips everything down to what matters.
+                            Glacial moraines, river crossings, and high-altitude solitude.
                         </p>
                     </div>
-                </div>
+                    <span class="trek-row-cta">
+                        Read the story
+                        <span class="trek-row-cta-arrow"></span>
+                    </span>
+                </a>
             </div>
 
             <div class="treks-villages reveal">

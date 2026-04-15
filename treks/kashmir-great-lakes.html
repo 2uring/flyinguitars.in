@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kashmir Great Lakes — flyinguitars</title>
+    <meta name="description" content="Kashmir Great Lakes trek — seven alpine lakes across 72 km from Sonamarg to Naranag. Done twice. By Faiz Haq.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b0b0b;
+            --surface: #131313;
+            --accent: #c49a6c;
+            --accent-dim: rgba(196, 154, 108, 0.3);
+            --border: rgba(255,255,255,0.06);
+            --border-accent: rgba(196, 154, 108, 0.2);
+            --text-primary: #ece7df;
+            --text-secondary: rgba(236, 231, 223, 0.55);
+            --text-tertiary: rgba(236, 231, 223, 0.25);
+            --font-display: 'Cinzel', serif;
+            --font-body: 'Cormorant Garamond', serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        ::selection { background: var(--accent); color: var(--bg); }
+        html { scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: var(--accent-dim) transparent; }
+
+        body {
+            background: var(--bg);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .grain {
+            position: fixed; inset: -50%; z-index: 9000; pointer-events: none; opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat; background-size: 256px;
+            animation: grainShift 0.5s steps(1) infinite;
+        }
+        @keyframes grainShift {
+            0% { transform: translate(0,0); } 25% { transform: translate(-5%,-5%); }
+            50% { transform: translate(5%,0); } 75% { transform: translate(-3%,5%); }
+        }
+
+        .back-link {
+            position: fixed; top: 1.5rem; left: 2rem; z-index: 100;
+            font-family: var(--font-body); font-size: 0.85rem;
+            letter-spacing: 0.15em; text-transform: uppercase;
+            color: var(--text-secondary); text-decoration: none;
+            display: flex; align-items: center; gap: 0.8rem;
+            transition: color 0.3s, gap 0.4s var(--ease-out-expo);
+            mix-blend-mode: difference;
+        }
+        .back-link:hover { color: var(--text-primary); gap: 1.2rem; }
+        .back-arrow {
+            display: inline-block; width: 20px; height: 1px;
+            background: currentColor; position: relative;
+            transition: width 0.4s var(--ease-out-expo);
+        }
+        .back-link:hover .back-arrow { width: 30px; }
+        .back-arrow::before {
+            content: ''; position: absolute; left: 0; top: -3px;
+            width: 7px; height: 7px;
+            border-bottom: 1px solid currentColor; border-left: 1px solid currentColor;
+            transform: rotate(45deg);
+        }
+
+        .trek-hero {
+            width: 100%; aspect-ratio: 21/9; max-height: 50vh;
+            background: var(--surface);
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden; position: relative;
+        }
+        .trek-hero-placeholder {
+            font-family: var(--font-body); font-size: 0.8rem;
+            letter-spacing: 0.3em; text-transform: uppercase;
+            color: var(--text-tertiary);
+        }
+        .trek-hero img {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+
+        .trek-page { max-width: 860px; margin: 0 auto; padding: 5rem 2rem 6rem; }
+
+        .trek-page-label {
+            font-family: var(--font-body); font-size: 0.72rem; font-weight: 400;
+            letter-spacing: 0.45em; text-transform: uppercase; color: var(--accent);
+            margin-bottom: 2rem; display: flex; align-items: center; gap: 1.5rem;
+        }
+        .trek-page-label::before {
+            content: ''; width: 40px; height: 1px; background: var(--accent-dim);
+        }
+
+        .trek-page-title {
+            font-family: var(--font-display); font-weight: 600;
+            font-size: clamp(2.5rem, 6vw, 4rem); letter-spacing: 0.03em;
+            line-height: 1.1; margin-bottom: 2rem;
+        }
+
+        .trek-meta-bar {
+            display: flex; flex-wrap: wrap; gap: 2rem;
+            padding: 2rem 0; margin-bottom: 3rem;
+            border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+        }
+        .trek-meta-item {}
+        .trek-meta-label {
+            font-family: var(--font-body); font-size: 0.65rem;
+            letter-spacing: 0.3em; text-transform: uppercase;
+            color: var(--accent); margin-bottom: 0.3rem;
+        }
+        .trek-meta-value {
+            font-family: var(--font-body); font-size: 1.1rem;
+            font-weight: 400; color: var(--text-primary);
+        }
+
+        .trek-story { margin-bottom: 4rem; }
+
+        .trek-story p {
+            font-family: var(--font-body); font-weight: 300;
+            font-size: clamp(1.1rem, 1.8vw, 1.3rem); line-height: 2.1;
+            color: var(--text-secondary); margin-bottom: 2rem;
+        }
+        .trek-story p strong { color: var(--text-primary); font-weight: 500; }
+
+        .trek-story h3 {
+            font-family: var(--font-display); font-weight: 500;
+            font-size: clamp(1.3rem, 2.5vw, 1.8rem); letter-spacing: 0.03em;
+            margin-bottom: 1.2rem; margin-top: 3rem; color: var(--text-primary);
+        }
+
+        .trek-story blockquote {
+            font-family: var(--font-body); font-style: italic; font-weight: 300;
+            font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.9;
+            color: var(--text-secondary); border-left: 2px solid var(--accent-dim);
+            padding-left: 2rem; margin: 3rem 0;
+        }
+
+        .trek-gallery {
+            margin: 4rem 0; padding: 3rem 0;
+            border-top: 1px solid var(--border);
+        }
+        .trek-gallery-title {
+            font-family: var(--font-body); font-size: 0.72rem;
+            letter-spacing: 0.45em; text-transform: uppercase;
+            color: var(--accent); margin-bottom: 2rem;
+        }
+        .trek-gallery-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 6px;
+        }
+        .trek-gallery-slot {
+            aspect-ratio: 16/10; background: var(--surface);
+            border-radius: 2px; display: flex;
+            align-items: center; justify-content: center; overflow: hidden;
+        }
+        .trek-gallery-slot span {
+            font-family: var(--font-body); font-size: 0.75rem;
+            letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--text-tertiary);
+        }
+        .trek-gallery-slot img {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+
+        .trek-back-bottom {
+            display: inline-flex; align-items: center; gap: 0.8rem;
+            font-family: var(--font-body); font-size: 0.9rem;
+            letter-spacing: 0.15em; text-transform: uppercase;
+            color: var(--text-secondary); text-decoration: none;
+            margin-top: 2rem; transition: color 0.3s, gap 0.4s var(--ease-out-expo);
+        }
+        .trek-back-bottom:hover { color: var(--accent); gap: 1.2rem; }
+
+        @media (max-width: 768px) {
+            .back-link { top: 1rem; left: 1rem; }
+            .trek-page { padding: 3rem 1.5rem 4rem; }
+            .trek-meta-bar { gap: 1.5rem; }
+            .trek-gallery-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="grain"></div>
+
+    <a href="../#treks" class="back-link">
+        <span class="back-arrow"></span>
+        Back
+    </a>
+
+    <div class="trek-hero">
+        <span class="trek-hero-placeholder">Photos coming soon</span>
+    </div>
+
+    <div class="trek-page">
+        <div class="trek-page-label">Trek 01</div>
+        <h1 class="trek-page-title">Kashmir Great Lakes</h1>
+
+        <div class="trek-meta-bar">
+            <div class="trek-meta-item">
+                <div class="trek-meta-label">Route</div>
+                <div class="trek-meta-value">Sonamarg to Naranag</div>
+            </div>
+            <div class="trek-meta-item">
+                <div class="trek-meta-label">Distance</div>
+                <div class="trek-meta-value">~72 km</div>
+            </div>
+            <div class="trek-meta-item">
+                <div class="trek-meta-label">Duration</div>
+                <div class="trek-meta-value">7 days</div>
+            </div>
+            <div class="trek-meta-item">
+                <div class="trek-meta-label">Max Altitude</div>
+                <div class="trek-meta-value">~4,200 m</div>
+            </div>
+            <div class="trek-meta-item">
+                <div class="trek-meta-label">Times Done</div>
+                <div class="trek-meta-value">Twice</div>
+            </div>
+        </div>
+
+        <div class="trek-story">
+            <p>
+                There are treks you do once and remember fondly. And then there's <strong>Kashmir Great Lakes</strong> —
+                the one that pulls you back. I've done this trek twice now, and each time it felt like a completely
+                different journey. Not because the trail changed, but because I did.
+            </p>
+
+            <h3>The trail</h3>
+            <p>
+                The trek begins at <strong>Sonamarg</strong> — the "Meadow of Gold" — where the Sindh river cuts through
+                a wide, grassy valley framed by snow-dusted peaks. From here, you climb through dense pine forests,
+                cross glacial streams, and ascend into a high-altitude corridor that connects <strong>seven alpine
+                lakes</strong>, each a different shade of impossible blue and green.
+            </p>
+            <p>
+                <strong>Vishansar, Kishansar, Gadsar, Satsar, Gangabal, Nundkol</strong> — the names alone carry a rhythm.
+                The lakes sit between 3,600 and 4,200 metres, nestled in valleys where wildflowers blanket the ground
+                in July and August. On clear days, the reflections in the water are so perfect they make you question
+                which way is up.
+            </p>
+
+            <h3>Why twice</h3>
+            <p>
+                The first time, I went for the lakes. The second time, I went for everything in between — the silence
+                of the passes at dawn, the way the light shifts over <strong>Gadsar Pass</strong> in the late afternoon,
+                the feeling of sleeping at 4,000 metres and waking up to a sky you can't photograph justice for.
+            </p>
+
+            <blockquote>
+                The first time you go for the destination. The second time you go for the journey.
+                Both times, the mountains give you exactly what you need.
+            </blockquote>
+
+            <h3>The descent</h3>
+            <p>
+                The trail ends at <strong>Naranag</strong>, a small village with an ancient temple and the quiet
+                satisfaction of having walked through one of the most beautiful landscapes on earth. Seven days.
+                Seventy-two kilometres. Seven lakes. And a head full of images that no camera can fully capture —
+                though I tried, both times.
+            </p>
+        </div>
+
+        <div class="trek-gallery">
+            <div class="trek-gallery-title">Gallery</div>
+            <div class="trek-gallery-grid">
+                <div class="trek-gallery-slot"><span>Photo 1</span></div>
+                <div class="trek-gallery-slot"><span>Photo 2</span></div>
+                <div class="trek-gallery-slot"><span>Photo 3</span></div>
+                <div class="trek-gallery-slot"><span>Photo 4</span></div>
+            </div>
+        </div>
+
+        <a href="../#treks" class="trek-back-bottom">
+            <span class="back-arrow"></span>
+            All treks
+        </a>
+    </div>
+</body>
+</html>
