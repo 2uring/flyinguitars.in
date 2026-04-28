@@ -152,6 +152,33 @@
             font-size: 0.65rem; letter-spacing: 0.2em;
             text-transform: uppercase; color: var(--text-dim);
         }
+        .globe-marker {
+            pointer-events: none;
+            transform: translate(4px, -50%);
+            display: flex; align-items: center; gap: 5px;
+        }
+        .globe-marker-dot {
+            width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0;
+            background: rgba(229,224,216,0.7);
+            box-shadow: 0 0 5px rgba(229,224,216,0.3);
+        }
+        .globe-marker.lake .globe-marker-dot {
+            background: rgba(100,180,220,0.8);
+            box-shadow: 0 0 6px rgba(100,180,220,0.4);
+        }
+        .globe-marker-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 8.5px; font-weight: 500;
+            letter-spacing: 0.14em; text-transform: uppercase;
+            color: rgba(229,224,216,0.85); white-space: nowrap;
+            text-shadow:
+                0 1px 4px rgba(0,0,0,1),
+                0 0px 8px rgba(0,0,0,0.9),
+                0 0px 16px rgba(0,0,0,0.5);
+        }
+        .globe-marker.lake .globe-marker-text {
+            color: rgba(100,180,220,0.9);
+        }
         .globe-legend {
             margin-top: 1rem; padding-top: 0.8rem;
             border-top: 1px solid var(--border);
@@ -361,21 +388,29 @@
         container.classList.add('is-loading');
         var w = container.offsetWidth;
 
-        var waypoints = [
-            { name: 'Sonamarg',   lat: 34.303, lng: 75.288, isLake: false },
-            { name: 'Nichnai',    lat: 34.340, lng: 75.230, isLake: false },
-            { name: 'Vishansar',  lat: 34.355, lng: 75.200, isLake: true },
-            { name: 'Kishansar',  lat: 34.365, lng: 75.178, isLake: true },
-            { name: 'GADSAR',     lat: 34.388, lng: 75.120, isLake: true },
-            { name: 'Satsar',     lat: 34.398, lng: 75.088, isLake: true },
-            { name: 'Gangabal',   lat: 34.415, lng: 74.988, isLake: true },
-            { name: 'Nundkol',    lat: 34.408, lng: 74.978, isLake: true },
-            { name: 'Naranag',    lat: 34.355, lng: 74.970, isLake: false }
+        var allPoints = [
+            { lat: 34.303, lng: 75.288, isLake: false },
+            { lat: 34.340, lng: 75.230, isLake: false },
+            { lat: 34.355, lng: 75.200, isLake: true },
+            { lat: 34.365, lng: 75.178, isLake: true },
+            { lat: 34.388, lng: 75.120, isLake: true },
+            { lat: 34.398, lng: 75.088, isLake: true },
+            { lat: 34.415, lng: 74.988, isLake: true },
+            { lat: 34.408, lng: 74.978, isLake: true },
+            { lat: 34.355, lng: 74.970, isLake: false }
         ];
 
-        var routePath = waypoints.map(function (l) { return [l.lat, l.lng]; });
+        var labels = [
+            { name: 'Sonamarg',  lat: 34.303, lng: 75.288, isLake: false },
+            { name: 'Vishansar', lat: 34.355, lng: 75.200, isLake: true },
+            { name: 'Gadsar',    lat: 34.388, lng: 75.120, isLake: true },
+            { name: 'Gangabal',  lat: 34.415, lng: 74.988, isLake: true },
+            { name: 'Naranag',   lat: 34.355, lng: 74.970, isLake: false }
+        ];
 
-        var lakeRings = waypoints.filter(function (l) { return l.isLake; });
+        var routePath = allPoints.map(function (p) { return [p.lat, p.lng]; });
+
+        var lakeRings = allPoints.filter(function (p) { return p.isLake; });
 
         var globe = Globe()
             .width(w).height(w)
@@ -385,15 +420,23 @@
             .showAtmosphere(true)
             .atmosphereColor('rgba(200,149,109,0.35)')
             .atmosphereAltitude(0.18)
-            .labelsData(waypoints)
-            .labelLat('lat').labelLng('lng').labelText('name')
-            .labelSize(function (d) { return d.isLake ? 1.1 : 0.9; })
-            .labelDotRadius(function (d) { return d.isLake ? 0.15 : 0.08; })
-            .labelColor(function (d) {
-                return d.isLake ? 'rgba(100,180,220,0.95)' : 'rgba(229,224,216,0.7)';
+            .pointsData(allPoints)
+            .pointLat('lat').pointLng('lng')
+            .pointColor(function (d) {
+                return d.isLake ? 'rgba(100,180,220,0.7)' : 'rgba(229,224,216,0.5)';
             })
-            .labelAltitude(0.003)
-            .labelResolution(3)
+            .pointRadius(function (d) { return d.isLake ? 0.06 : 0.04; })
+            .pointAltitude(0.003)
+            .htmlElementsData(labels)
+            .htmlLat('lat').htmlLng('lng')
+            .htmlAltitude(0.006)
+            .htmlElement(function (d) {
+                var el = document.createElement('div');
+                el.className = 'globe-marker' + (d.isLake ? ' lake' : '');
+                el.innerHTML = '<span class="globe-marker-dot"></span>'
+                    + '<span class="globe-marker-text">' + d.name + '</span>';
+                return el;
+            })
             .ringsData(lakeRings)
             .ringLat('lat').ringLng('lng')
             .ringColor(function () { return function (t) {
