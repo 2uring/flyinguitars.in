@@ -114,8 +114,29 @@
         .trek-globe-wrap { position: sticky; top: 4rem; }
         .trek-globe-viz {
             width: 100%; aspect-ratio: 1;
-            border-radius: 6px; overflow: hidden;
-            background: radial-gradient(circle at 50% 45%, rgba(200,149,109,0.04) 0%, var(--bg) 70%);
+            border-radius: 50%; overflow: hidden;
+            position: relative;
+            background: radial-gradient(circle at 48% 45%,
+                rgba(200,149,109,0.025) 0%, rgba(10,10,10,0.8) 50%, var(--bg) 70%);
+            box-shadow:
+                0 0 80px -10px rgba(200,149,109,0.07),
+                0 0 30px -5px rgba(200,149,109,0.04);
+        }
+        .trek-globe-viz::after {
+            content: ''; position: absolute; inset: 0;
+            border-radius: 50%;
+            border: 1px solid rgba(200,149,109,0.07);
+            pointer-events: none; z-index: 2;
+        }
+        @keyframes globePulse {
+            0%, 100% { opacity: 0.3; transform: scale(0.96); }
+            50% { opacity: 0.6; transform: scale(1); }
+        }
+        .trek-globe-viz.is-loading::before {
+            content: ''; position: absolute; inset: 10%;
+            border-radius: 50%; z-index: 3;
+            border: 1px solid rgba(200,149,109,0.08);
+            animation: globePulse 2s ease-in-out infinite;
         }
         .globe-info {
             margin-top: 1rem;
@@ -132,22 +153,22 @@
             text-transform: uppercase; color: var(--text-dim);
         }
         .globe-legend {
-            margin-top: 1.2rem; padding-top: 1rem;
+            margin-top: 1rem; padding-top: 0.8rem;
             border-top: 1px solid var(--border);
-            display: flex; flex-direction: column; gap: 0.5rem;
+            display: flex; gap: 1.5rem;
         }
         .globe-legend-item {
-            display: flex; align-items: center; gap: 0.6rem;
-            font-size: 0.75rem; color: var(--text-dim);
+            display: flex; align-items: center; gap: 0.5rem;
+            font-size: 0.68rem; color: var(--text-dim);
             letter-spacing: 0.05em;
         }
         .globe-legend-line {
-            width: 20px; height: 2px; border-radius: 1px; flex-shrink: 0;
+            width: 16px; height: 2px; border-radius: 1px; flex-shrink: 0;
         }
         .globe-legend-line.route { background: var(--accent); }
         .globe-legend-dot {
-            width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
-            background: var(--accent); margin: 0 7px;
+            width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0;
+            background: rgba(100,180,220,0.8); margin: 0 5.5px;
         }
 
         .trek-bottom { max-width: 860px; }
@@ -337,54 +358,55 @@
     (function () {
         var container = document.getElementById('globeViz');
         if (!container) return;
+        container.classList.add('is-loading');
         var w = container.offsetWidth;
 
-        var lakes = [
+        var waypoints = [
             { name: 'Sonamarg',   lat: 34.303, lng: 75.288, isLake: false },
             { name: 'Nichnai',    lat: 34.340, lng: 75.230, isLake: false },
             { name: 'Vishansar',  lat: 34.355, lng: 75.200, isLake: true },
             { name: 'Kishansar',  lat: 34.365, lng: 75.178, isLake: true },
-            { name: 'Gadsar',     lat: 34.388, lng: 75.120, isLake: true },
+            { name: 'GADSAR',     lat: 34.388, lng: 75.120, isLake: true },
             { name: 'Satsar',     lat: 34.398, lng: 75.088, isLake: true },
             { name: 'Gangabal',   lat: 34.415, lng: 74.988, isLake: true },
             { name: 'Nundkol',    lat: 34.408, lng: 74.978, isLake: true },
             { name: 'Naranag',    lat: 34.355, lng: 74.970, isLake: false }
         ];
 
-        var routePath = lakes.map(function (l) { return [l.lat, l.lng]; });
+        var routePath = waypoints.map(function (l) { return [l.lat, l.lng]; });
+
+        var lakeRings = waypoints.filter(function (l) { return l.isLake; });
 
         var globe = Globe()
-            .width(w)
-            .height(w)
+            .width(w).height(w)
             .backgroundColor('rgba(0,0,0,0)')
             .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
+            .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
             .showAtmosphere(true)
-            .atmosphereColor('#c8956d')
-            .atmosphereAltitude(0.12)
-            .labelsData(lakes)
-            .labelLat('lat')
-            .labelLng('lng')
-            .labelText('name')
-            .labelSize(function (d) {
-                return d.isLake ? 1.3 : 1.0;
-            })
-            .labelDotRadius(function (d) {
-                return d.isLake ? 0.18 : 0.1;
-            })
+            .atmosphereColor('rgba(200,149,109,0.35)')
+            .atmosphereAltitude(0.18)
+            .labelsData(waypoints)
+            .labelLat('lat').labelLng('lng').labelText('name')
+            .labelSize(function (d) { return d.isLake ? 1.1 : 0.9; })
+            .labelDotRadius(function (d) { return d.isLake ? 0.15 : 0.08; })
             .labelColor(function (d) {
-                return d.isLake ? 'rgba(100,180,220,0.9)' : 'rgba(229,224,216,0.85)';
+                return d.isLake ? 'rgba(100,180,220,0.95)' : 'rgba(229,224,216,0.7)';
             })
-            .labelResolution(2)
-            .pathsData([
-                {
-                    coords: routePath,
-                    color: ['rgba(200,149,109,0.95)', 'rgba(212,168,130,0.95)'],
-                    stroke: 2.5,
-                    dash: 0.008,
-                    gap: 0.003,
-                    animate: 16000
-                }
-            ])
+            .labelAltitude(0.003)
+            .labelResolution(3)
+            .ringsData(lakeRings)
+            .ringLat('lat').ringLng('lng')
+            .ringColor(function () { return function (t) {
+                return 'rgba(100,180,220,' + (0.4 * (1 - t)) + ')';
+            }; })
+            .ringMaxRadius(1)
+            .ringPropagationSpeed(0.8)
+            .ringRepeatPeriod(2000)
+            .pathsData([{
+                coords: routePath,
+                color: ['rgba(200,149,109,1)', 'rgba(212,168,130,1)'],
+                stroke: 3.5, dash: 0.01, gap: 0.003, animate: 14000
+            }])
             .pathPoints('coords')
             .pathPointLat(function (p) { return p[0]; })
             .pathPointLng(function (p) { return p[1]; })
@@ -395,14 +417,28 @@
             .pathDashAnimateTime(function (d) { return d.animate; })
             (container);
 
-        globe.pointOfView({ lat: 34.36, lng: 75.12, altitude: 0.05 }, 0);
-        globe.controls().autoRotate = true;
-        globe.controls().autoRotateSpeed = 0.25;
-        globe.controls().enableZoom = true;
+        globe.pointOfView({ lat: 34.37, lng: 75.12, altitude: 0.05 }, 0);
+
+        var controls = globe.controls();
+        controls.autoRotate = true;
+        controls.autoRotateSpeed = 0.2;
+        controls.enableZoom = true;
+        controls.minDistance = 101;
+        controls.maxDistance = 300;
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.1;
+        controls.rotateSpeed = 0.4;
+
+        globe.onGlobeReady(function () {
+            container.classList.remove('is-loading');
+            try {
+                var mat = globe.globeMaterial();
+                mat.bumpScale = 12;
+            } catch (e) {}
+        });
 
         var label = document.getElementById('globeLabel');
         var chapters = document.querySelectorAll('.trek-chapter');
-
         var obs = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
@@ -410,12 +446,11 @@
                     var lng = parseFloat(entry.target.dataset.lng);
                     var alt = parseFloat(entry.target.dataset.alt);
                     var name = entry.target.dataset.label || '';
-                    globe.pointOfView({ lat: lat, lng: lng, altitude: alt }, 1400);
+                    globe.pointOfView({ lat: lat, lng: lng, altitude: alt }, 1500);
                     if (name && label) label.textContent = name;
                 }
             });
-        }, { threshold: 0.25, rootMargin: '0px 0px -20% 0px' });
-
+        }, { threshold: 0.2, rootMargin: '0px 0px -25% 0px' });
         chapters.forEach(function (ch) { obs.observe(ch); });
 
         window.addEventListener('resize', function () {

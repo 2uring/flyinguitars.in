@@ -112,13 +112,32 @@
         }
 
         .trek-globe-col { position: relative; }
-        .trek-globe-wrap {
-            position: sticky; top: 4rem;
-        }
+        .trek-globe-wrap { position: sticky; top: 4rem; }
         .trek-globe-viz {
             width: 100%; aspect-ratio: 1;
-            border-radius: 6px; overflow: hidden;
-            background: radial-gradient(circle at 50% 45%, rgba(200,149,109,0.04) 0%, var(--bg) 70%);
+            border-radius: 50%; overflow: hidden;
+            position: relative;
+            background: radial-gradient(circle at 48% 45%,
+                rgba(200,149,109,0.025) 0%, rgba(10,10,10,0.8) 50%, var(--bg) 70%);
+            box-shadow:
+                0 0 80px -10px rgba(200,149,109,0.07),
+                0 0 30px -5px rgba(200,149,109,0.04);
+        }
+        .trek-globe-viz::after {
+            content: ''; position: absolute; inset: 0;
+            border-radius: 50%;
+            border: 1px solid rgba(200,149,109,0.07);
+            pointer-events: none; z-index: 2;
+        }
+        @keyframes globePulse {
+            0%, 100% { opacity: 0.3; transform: scale(0.96); }
+            50% { opacity: 0.6; transform: scale(1); }
+        }
+        .trek-globe-viz.is-loading::before {
+            content: ''; position: absolute; inset: 10%;
+            border-radius: 50%; z-index: 3;
+            border: 1px solid rgba(200,149,109,0.08);
+            animation: globePulse 2s ease-in-out infinite;
         }
         .globe-info {
             margin-top: 1rem;
@@ -136,23 +155,23 @@
             text-transform: uppercase; color: var(--text-dim);
         }
         .globe-legend {
-            margin-top: 1.2rem; padding-top: 1rem;
+            margin-top: 1rem; padding-top: 0.8rem;
             border-top: 1px solid var(--border);
-            display: flex; flex-direction: column; gap: 0.5rem;
+            display: flex; gap: 1.5rem;
         }
         .globe-legend-item {
-            display: flex; align-items: center; gap: 0.6rem;
-            font-size: 0.75rem; color: var(--text-dim);
+            display: flex; align-items: center; gap: 0.5rem;
+            font-size: 0.68rem; color: var(--text-dim);
             letter-spacing: 0.05em;
         }
         .globe-legend-line {
-            width: 20px; height: 2px; border-radius: 1px; flex-shrink: 0;
+            width: 16px; height: 2px; border-radius: 1px; flex-shrink: 0;
         }
         .globe-legend-line.route { background: var(--accent); }
         .globe-legend-line.road {
             background: repeating-linear-gradient(90deg,
-                var(--text-dim) 0, var(--text-dim) 4px,
-                transparent 4px, transparent 8px);
+                var(--text-dim) 0, var(--text-dim) 3px,
+                transparent 3px, transparent 6px);
             opacity: 0.5;
         }
 
@@ -402,84 +421,72 @@
     (function () {
         var container = document.getElementById('globeViz');
         if (!container) return;
+        container.classList.add('is-loading');
         var w = container.offsetWidth;
 
         var camps = [
-            { name: 'Kafnu',       lat: 31.606, lng: 78.032 },
-            { name: 'Muling',      lat: 31.698, lng: 77.995 },
-            { name: 'Kara Lake',   lat: 31.736, lng: 77.996 },
-            { name: 'Fustirang',   lat: 31.762, lng: 77.985 },
-            { name: 'Bhaba Pass',  lat: 31.780, lng: 77.997 },
-            { name: 'Bwalder',     lat: 31.864, lng: 78.005 },
-            { name: 'Mud Village', lat: 31.959, lng: 78.032 }
+            { name: 'Kafnu',       lat: 31.606, lng: 78.032, peak: false },
+            { name: 'Muling',      lat: 31.698, lng: 77.995, peak: false },
+            { name: 'Kara Lake',   lat: 31.736, lng: 77.996, peak: false },
+            { name: 'Fustirang',   lat: 31.762, lng: 77.985, peak: false },
+            { name: 'BHABA PASS',  lat: 31.780, lng: 77.997, peak: true  },
+            { name: 'Bwalder',     lat: 31.864, lng: 78.005, peak: false },
+            { name: 'Mud Village', lat: 31.959, lng: 78.032, peak: false }
         ];
 
-        var road = [
-            { name: 'Tapri',      lat: 31.517, lng: 78.096 },
-            { name: 'Kaza',       lat: 32.228, lng: 78.071 }
+        var secondary = [
+            { name: 'Tapri',  lat: 31.517, lng: 78.096, peak: false },
+            { name: 'Kaza',   lat: 32.228, lng: 78.071, peak: false }
         ];
 
-        var trekPath = camps.map(function (c) { return [c.lat, c.lng]; });
-
-        var onwardPath = [
-            [31.959, 78.032],
-            [32.228, 78.071]
-        ];
-
+        var trekPath  = camps.map(function (c) { return [c.lat, c.lng]; });
+        var onwardPath = [[31.959, 78.032], [32.228, 78.071]];
         var returnRoad = [
-            [32.228, 78.071],
-            [32.070, 78.597],
-            [31.562, 77.981],
-            [31.564, 77.870],
-            [31.561, 77.881],
-            [31.517, 78.096],
+            [32.228, 78.071], [32.070, 78.597], [31.562, 77.981],
+            [31.564, 77.870], [31.561, 77.881], [31.517, 78.096],
             [31.485, 77.694]
         ];
 
         var globe = Globe()
-            .width(w)
-            .height(w)
+            .width(w).height(w)
             .backgroundColor('rgba(0,0,0,0)')
             .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
+            .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
             .showAtmosphere(true)
-            .atmosphereColor('#c8956d')
-            .atmosphereAltitude(0.12)
-            .labelsData(camps.concat(road))
-            .labelLat('lat')
-            .labelLng('lng')
-            .labelText('name')
-            .labelSize(function (d) {
-                return d.name === 'Bhaba Pass' ? 1.6 : 1.1;
+            .atmosphereColor('rgba(200,149,109,0.35)')
+            .atmosphereAltitude(0.18)
+            .labelsData(camps.concat(secondary))
+            .labelLat('lat').labelLng('lng').labelText('name')
+            .labelSize(function (d) { return d.peak ? 1.8 : 0.9; })
+            .labelDotRadius(function (d) { return d.peak ? 0.25 : 0.1; })
+            .labelColor(function (d) {
+                return d.peak ? 'rgba(200,149,109,1)' : 'rgba(229,224,216,0.75)';
             })
-            .labelDotRadius(function (d) {
-                return d.name === 'Bhaba Pass' ? 0.2 : 0.12;
-            })
-            .labelColor(function () { return 'rgba(229,224,216,0.9)'; })
-            .labelResolution(2)
+            .labelAltitude(function (d) { return d.peak ? 0.005 : 0.002; })
+            .labelResolution(3)
+            .ringsData([{ lat: 31.780, lng: 77.997 }])
+            .ringLat('lat').ringLng('lng')
+            .ringColor(function () { return function (t) {
+                return 'rgba(200,149,109,' + (0.6 * (1 - t)) + ')';
+            }; })
+            .ringMaxRadius(1.8)
+            .ringPropagationSpeed(1.2)
+            .ringRepeatPeriod(1600)
             .pathsData([
                 {
                     coords: trekPath,
-                    color: ['rgba(200,149,109,0.95)', 'rgba(212,168,130,0.95)'],
-                    stroke: 2.5,
-                    dash: 0.01,
-                    gap: 0.004,
-                    animate: 14000
+                    color: ['rgba(200,149,109,1)', 'rgba(212,168,130,1)'],
+                    stroke: 3.5, dash: 0.012, gap: 0.004, animate: 12000
                 },
                 {
                     coords: onwardPath,
-                    color: ['rgba(229,224,216,0.25)', 'rgba(229,224,216,0.3)'],
-                    stroke: 1.2,
-                    dash: 0.004,
-                    gap: 0.006,
-                    animate: 0
+                    color: ['rgba(229,224,216,0.2)', 'rgba(229,224,216,0.25)'],
+                    stroke: 1.0, dash: 0.004, gap: 0.006, animate: 0
                 },
                 {
                     coords: returnRoad,
-                    color: ['rgba(229,224,216,0.2)', 'rgba(229,224,216,0.25)'],
-                    stroke: 1.2,
-                    dash: 0.004,
-                    gap: 0.006,
-                    animate: 0
+                    color: ['rgba(229,224,216,0.15)', 'rgba(229,224,216,0.2)'],
+                    stroke: 1.0, dash: 0.004, gap: 0.006, animate: 0
                 }
             ])
             .pathPoints('coords')
@@ -492,14 +499,28 @@
             .pathDashAnimateTime(function (d) { return d.animate; })
             (container);
 
-        globe.pointOfView({ lat: 31.70, lng: 78.0, altitude: 0.045 }, 0);
-        globe.controls().autoRotate = true;
-        globe.controls().autoRotateSpeed = 0.25;
-        globe.controls().enableZoom = true;
+        globe.pointOfView({ lat: 31.72, lng: 78.0, altitude: 0.05 }, 0);
+
+        var controls = globe.controls();
+        controls.autoRotate = true;
+        controls.autoRotateSpeed = 0.2;
+        controls.enableZoom = true;
+        controls.minDistance = 101;
+        controls.maxDistance = 300;
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.1;
+        controls.rotateSpeed = 0.4;
+
+        globe.onGlobeReady(function () {
+            container.classList.remove('is-loading');
+            try {
+                var mat = globe.globeMaterial();
+                mat.bumpScale = 12;
+            } catch (e) {}
+        });
 
         var label = document.getElementById('globeLabel');
         var chapters = document.querySelectorAll('.trek-chapter');
-
         var obs = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
@@ -507,12 +528,11 @@
                     var lng = parseFloat(entry.target.dataset.lng);
                     var alt = parseFloat(entry.target.dataset.alt);
                     var name = entry.target.dataset.label || '';
-                    globe.pointOfView({ lat: lat, lng: lng, altitude: alt }, 1400);
+                    globe.pointOfView({ lat: lat, lng: lng, altitude: alt }, 1500);
                     if (name && label) label.textContent = name;
                 }
             });
-        }, { threshold: 0.25, rootMargin: '0px 0px -20% 0px' });
-
+        }, { threshold: 0.2, rootMargin: '0px 0px -25% 0px' });
         chapters.forEach(function (ch) { obs.observe(ch); });
 
         window.addEventListener('resize', function () {
