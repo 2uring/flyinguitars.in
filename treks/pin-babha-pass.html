@@ -7,177 +7,182 @@
     <meta name="description" content="Pin Babha Pass trek — a raw crossover from Kinnaur to Spiti through one of Himachal's most remote high-altitude passes. By Faiz Haq.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
     <style>
-        :root {
-            --bg: #0b0b0b;
-            --surface: #131313;
-            --accent: #c49a6c;
-            --accent-dim: rgba(196, 154, 108, 0.3);
-            --border: rgba(255,255,255,0.06);
-            --border-accent: rgba(196, 154, 108, 0.2);
-            --text-primary: #ece7df;
-            --text-secondary: rgba(236, 231, 223, 0.55);
-            --text-tertiary: rgba(236, 231, 223, 0.25);
-            --font-display: 'Cinzel', serif;
-            --font-body: 'Cormorant Garamond', serif;
-            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        ::selection { background: var(--accent); color: var(--bg); }
-        html { scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: var(--accent-dim) transparent; }
-
-        body {
-            background: var(--bg);
-            color: var(--text-primary);
-            font-family: var(--font-body);
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .grain {
-            position: fixed; inset: -50%; z-index: 9000; pointer-events: none; opacity: 0.03;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-            background-repeat: repeat; background-size: 256px;
-            animation: grainShift 0.5s steps(1) infinite;
-        }
-        @keyframes grainShift {
-            0% { transform: translate(0,0); } 25% { transform: translate(-5%,-5%); }
-            50% { transform: translate(5%,0); } 75% { transform: translate(-3%,5%); }
-        }
-
         .back-link {
-            position: fixed; top: 1.5rem; left: 2rem; z-index: 100;
-            font-family: var(--font-body); font-size: 0.85rem;
-            letter-spacing: 0.15em; text-transform: uppercase;
-            color: var(--text-secondary); text-decoration: none;
-            display: flex; align-items: center; gap: 0.8rem;
-            transition: color 0.3s, gap 0.4s var(--ease-out-expo);
+            position: fixed;
+            top: 1.5rem; left: 2rem; z-index: 100;
+            font-size: 0.8rem;
+            font-weight: 400;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: color 0.3s, gap 0.35s var(--ease);
             mix-blend-mode: difference;
         }
-        .back-link:hover { color: var(--text-primary); gap: 1.2rem; }
+        .back-link:hover { color: var(--text); gap: 1.2rem; }
         .back-arrow {
-            display: inline-block; width: 20px; height: 1px;
-            background: currentColor; position: relative;
-            transition: width 0.4s var(--ease-out-expo);
+            display: inline-block;
+            width: 20px; height: 1px;
+            background: currentColor;
+            position: relative;
+            transition: width 0.35s var(--ease);
         }
-        .back-link:hover .back-arrow { width: 30px; }
+        .back-link:hover .back-arrow { width: 28px; }
         .back-arrow::before {
-            content: ''; position: absolute; left: 0; top: -3px;
-            width: 7px; height: 7px;
-            border-bottom: 1px solid currentColor; border-left: 1px solid currentColor;
+            content: '';
+            position: absolute;
+            left: 0; top: -3px;
+            width: 6px; height: 6px;
+            border-bottom: 1px solid currentColor;
+            border-left: 1px solid currentColor;
             transform: rotate(45deg);
         }
 
         .trek-hero {
-            width: 100%; aspect-ratio: 21/9; max-height: 50vh;
+            width: 100%;
+            aspect-ratio: 21/9;
+            max-height: 50vh;
             background: var(--surface);
-            display: flex; align-items: center; justify-content: center;
-            overflow: hidden; position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
         .trek-hero-placeholder {
-            font-family: var(--font-body); font-size: 0.8rem;
-            letter-spacing: 0.3em; text-transform: uppercase;
-            color: var(--text-tertiary);
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--text-dim);
         }
-        .trek-hero img {
-            width: 100%; height: 100%; object-fit: cover;
+        .trek-hero img { width: 100%; height: 100%; object-fit: cover; }
+
+        .trek-page {
+            max-width: var(--max-w-narrow);
+            margin: 0 auto;
+            padding: 5rem 2rem 6rem;
         }
 
-        .trek-page { max-width: 860px; margin: 0 auto; padding: 5rem 2rem 6rem; }
+        .trek-tag {
+            font-size: 0.65rem;
+            font-weight: 400;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .trek-tag::before {
+            content: '';
+            width: 28px; height: 1px;
+            background: var(--accent-dim);
+        }
 
-        .trek-page-label {
-            font-family: var(--font-body); font-size: 0.72rem; font-weight: 400;
-            letter-spacing: 0.45em; text-transform: uppercase; color: var(--accent);
-            margin-bottom: 2rem; display: flex; align-items: center; gap: 1.5rem;
-        }
-        .trek-page-label::before {
-            content: ''; width: 40px; height: 1px; background: var(--accent-dim);
-        }
-
-        .trek-page-title {
-            font-family: var(--font-display); font-weight: 600;
-            font-size: clamp(2.5rem, 6vw, 4rem); letter-spacing: 0.03em;
-            line-height: 1.1; margin-bottom: 2rem;
+        .trek-title {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.2rem, 6vw, 3.6rem);
+            letter-spacing: -0.01em;
+            line-height: 1.08;
+            margin-bottom: 2rem;
         }
 
-        .trek-meta-bar {
-            display: flex; flex-wrap: wrap; gap: 2rem;
-            padding: 2rem 0; margin-bottom: 3rem;
-            border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+        .trek-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 1.8rem 0;
+            margin-bottom: 3rem;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
         }
-        .trek-meta-item {}
         .trek-meta-label {
-            font-family: var(--font-body); font-size: 0.65rem;
-            letter-spacing: 0.3em; text-transform: uppercase;
-            color: var(--accent); margin-bottom: 0.3rem;
+            font-size: 0.6rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
         }
         .trek-meta-value {
-            font-family: var(--font-body); font-size: 1.1rem;
-            font-weight: 400; color: var(--text-primary);
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text);
         }
 
         .trek-story { margin-bottom: 4rem; }
-
         .trek-story p {
-            font-family: var(--font-body); font-weight: 300;
-            font-size: clamp(1.1rem, 1.8vw, 1.3rem); line-height: 2.1;
-            color: var(--text-secondary); margin-bottom: 2rem;
+            font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+            font-weight: 300;
+            line-height: 2;
+            color: var(--text-muted);
+            margin-bottom: 1.8rem;
         }
-        .trek-story p strong { color: var(--text-primary); font-weight: 500; }
-
+        .trek-story p strong { color: var(--text); font-weight: 400; }
         .trek-story h3 {
-            font-family: var(--font-display); font-weight: 500;
-            font-size: clamp(1.3rem, 2.5vw, 1.8rem); letter-spacing: 0.03em;
-            margin-bottom: 1.2rem; margin-top: 3rem; color: var(--text-primary);
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+            letter-spacing: -0.01em;
+            margin-bottom: 1rem;
+            margin-top: 2.5rem;
+            color: var(--text);
         }
-
         .trek-story blockquote {
-            font-family: var(--font-body); font-style: italic; font-weight: 300;
-            font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.9;
-            color: var(--text-secondary); border-left: 2px solid var(--accent-dim);
-            padding-left: 2rem; margin: 3rem 0;
+            font-style: italic;
+            font-weight: 300;
+            font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+            line-height: 1.85;
+            color: var(--text-muted);
+            border-left: 2px solid var(--accent-dim);
+            padding-left: 1.8rem;
+            margin: 2.5rem 0;
         }
 
         .trek-gallery {
-            margin: 4rem 0; padding: 3rem 0;
+            margin: 4rem 0;
+            padding-top: 2.5rem;
             border-top: 1px solid var(--border);
         }
-        .trek-gallery-title {
-            font-family: var(--font-body); font-size: 0.72rem;
-            letter-spacing: 0.45em; text-transform: uppercase;
-            color: var(--accent); margin-bottom: 2rem;
+        .trek-gallery-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
         }
         .trek-gallery-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 6px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px;
         }
         .trek-gallery-slot {
-            aspect-ratio: 16/10; background: var(--surface);
-            border-radius: 2px; display: flex;
-            align-items: center; justify-content: center; overflow: hidden;
+            aspect-ratio: 16/10;
+            background: var(--surface);
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
         .trek-gallery-slot span {
-            font-family: var(--font-body); font-size: 0.75rem;
-            letter-spacing: 0.2em; text-transform: uppercase;
-            color: var(--text-tertiary);
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-dim);
         }
-        .trek-gallery-slot img {
-            width: 100%; height: 100%; object-fit: cover;
-        }
-
-        .trek-back-bottom {
-            display: inline-flex; align-items: center; gap: 0.8rem;
-            font-family: var(--font-body); font-size: 0.9rem;
-            letter-spacing: 0.15em; text-transform: uppercase;
-            color: var(--text-secondary); text-decoration: none;
-            margin-top: 2rem; transition: color 0.3s, gap 0.4s var(--ease-out-expo);
-        }
-        .trek-back-bottom:hover { color: var(--accent); gap: 1.2rem; }
+        .trek-gallery-slot img { width: 100%; height: 100%; object-fit: cover; }
 
         @media (max-width: 768px) {
             .back-link { top: 1rem; left: 1rem; }
             .trek-page { padding: 3rem 1.5rem 4rem; }
-            .trek-meta-bar { gap: 1.5rem; }
+            .trek-meta { gap: 1.2rem; }
             .trek-gallery-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -195,86 +200,137 @@
     </div>
 
     <div class="trek-page">
-        <div class="trek-page-label">Trek 02</div>
-        <h1 class="trek-page-title">Pin Babha Pass</h1>
+        <div class="trek-tag">Trek 02</div>
+        <h1 class="trek-title">Pin Babha<br>Pass</h1>
 
-        <div class="trek-meta-bar">
-            <div class="trek-meta-item">
+        <div class="trek-meta">
+            <div>
                 <div class="trek-meta-label">Route</div>
                 <div class="trek-meta-value">Kafnu to Mud Village</div>
             </div>
-            <div class="trek-meta-item">
+            <div>
                 <div class="trek-meta-label">Crossover</div>
                 <div class="trek-meta-value">Kinnaur to Spiti</div>
             </div>
-            <div class="trek-meta-item">
+            <div>
                 <div class="trek-meta-label">Distance</div>
                 <div class="trek-meta-value">~50 km</div>
             </div>
-            <div class="trek-meta-item">
-                <div class="trek-meta-label">Max Altitude</div>
-                <div class="trek-meta-value">~4,890 m</div>
+            <div>
+                <div class="trek-meta-label">Pass Altitude</div>
+                <div class="trek-meta-value">4,919 m</div>
             </div>
-            <div class="trek-meta-item">
-                <div class="trek-meta-label">Difficulty</div>
-                <div class="trek-meta-value">Challenging</div>
+            <div>
+                <div class="trek-meta-label">Camps</div>
+                <div class="trek-meta-value">Muling &middot; Kara Lake &middot; Fustirang &middot; Bwalder</div>
+            </div>
+            <div>
+                <div class="trek-meta-label">Endpoint</div>
+                <div class="trek-meta-value">Mud Village &rarr; Kaza</div>
             </div>
         </div>
 
         <div class="trek-story">
             <p>
-                If Kashmir Great Lakes is the trek that seduces you, <strong>Pin Babha Pass</strong> is the one
-                that tests you. This isn't a manicured trail with signposts and tea stalls. It's a raw,
-                remote crossing from the lush green valleys of <strong>Kinnaur</strong> into the stark, lunar
-                moonscape of <strong>Spiti</strong> — two worlds separated by a single, knife-edge pass
-                at nearly 5,000 metres.
+                This trek tried to stop me before it even started.
             </p>
 
-            <h3>Kafnu to the pass</h3>
+            <h3>Getting to the trailhead</h3>
             <p>
-                The trek begins at <strong>Kafnu</strong>, a small village in the Sutlej valley. The first
-                few days are deceptively gentle — dense forests of deodar and pine, the sound of the Babha
-                river echoing through narrow gorges, and the occasional shepherd's hut marking the trail.
-                The green is overwhelming, almost tropical in its density.
+                The road from Shimla to <strong>Kafnu</strong> is not a road. It's a
+                negotiation with gravity. Five landslides between Rampur and the Kafnu
+                turn-off. Five. The bus stopped, we got out, and we walked. One
+                of the landslides had wiped the road clean off the mountainside. There
+                was a scramble path carved into the debris by people who'd done this
+                enough times to make it look normal. Entry point, exit point, final
+                exit. You climb over loose rock at 1,900 metres with your full pack,
+                hoping the hillside has finished moving for the day.
             </p>
             <p>
-                Then the treeline ends. The valley opens up into vast glacial moraines — grey rock, grey
-                sky, grey everything. The <strong>Babha river</strong> narrows to a glacial stream, and
-                the trail becomes a series of boulder fields and loose scree. You're climbing into a world
-                that feels increasingly stripped of everything non-essential.
+                We stayed the night at <strong>Tapri</strong>, a small town on
+                the Sutlej where the river is wide and loud and green. Next morning,
+                back on the road. More slides. More detours. Eventually the turn-off
+                appeared and a smaller road wound uphill through apple orchards to
+                <strong>Kafnu base camp</strong>. The trek hadn't started yet and I
+                was already tired. The Himalayas have a way of reminding you who's
+                in charge before you've even laced up.
             </p>
 
-            <h3>The pass</h3>
+            <h3>Up the Bhaba Valley</h3>
             <p>
-                <strong>Pin Babha Pass at ~4,890 metres</strong> isn't dramatic in the way you'd expect.
-                There's no sweeping panorama waiting for you at the top — just a narrow saddle between
-                two ridges, prayer flags snapping in a wind that hasn't stopped since you left the
-                treeline. But the feeling of standing there, knowing that the world on the other side
-                looks nothing like the one you just walked through, is unlike anything else.
+                The trail from <strong>Kafnu</strong> climbs through dense forest,
+                the kind where the canopy closes overhead and the only sounds are
+                the Bhaba river below and your own breathing. The first camp at
+                <strong>Muling</strong> sits in a clearing in the valley. Quiet.
+                Smoke from a shepherd's fire. Nothing to do except eat and sleep.
+            </p>
+            <p>
+                From Muling the valley opens up. <strong>Kara Lake</strong> appears
+                almost without warning, a glacial pool reflecting the ridgeline so
+                perfectly that you stop walking and just stand there for a while.
+                The water is absurdly clear and absurdly cold. I put my hand in
+                for about four seconds before common sense took over.
+            </p>
+            <p>
+                The push to <strong>Fustirang</strong> is where the landscape starts
+                to change. The trees thin out. The grass gets shorter. The valley
+                widens and the Bhaba river narrows to a glacial stream threading
+                through boulder fields. The air is thinner and the sky feels closer.
+                You're leaving the green world behind, and there's no going back
+                without retracing every step.
+            </p>
+
+            <h3>4,919 metres</h3>
+            <p>
+                <strong>Bhaba Pass</strong> is not dramatic the way you'd expect.
+                No sweeping panorama waiting at the top. Just a narrow saddle between
+                two ridges, prayer flags snapping in wind that hasn't stopped since
+                you left the treeline. The GPS read 4,919 metres. My lungs felt
+                every one of them.
+            </p>
+            <p>
+                But the thing about standing up there is this: behind you is
+                everything green. Forests, rivers, orchards, the road with its
+                landslides. Ahead of you is a completely different planet. Brown.
+                Grey. Dry. Vast. You can see the Pin Valley stretching out below
+                like a desert dropped between mountains. Same state, same country,
+                same range. Entirely different world.
             </p>
 
             <blockquote>
                 You walk out of green and into grey. Out of forests and into desert.
-                The pass doesn't separate two valleys — it separates two realities.
+                The pass doesn't separate two valleys. It separates two versions
+                of the Himalayas.
             </blockquote>
 
-            <h3>Into Spiti</h3>
+            <h3>The descent to Spiti</h3>
             <p>
-                The descent into <strong>Spiti</strong> is a study in contrasts. Where Kinnaur was lush,
-                Spiti is barren. Where the Babha valley was narrow and enclosed, the Pin valley opens
-                up into an impossibly wide, arid expanse — ochre and rust-coloured cliffs, dry river beds,
-                and a sky so clear it feels like you can see the curvature of the earth.
+                The camp at <strong>Bwalder</strong>, at about 3,950 metres on the
+                Spiti side, was the first night where the cold was serious. The
+                kind of cold where you wear everything you brought and still feel
+                it. But the sky. I don't have a photograph that does it justice.
+                No light pollution for a hundred kilometres in any direction.
+                The Milky Way wasn't a smudge overhead; it was structural, like
+                you could see the depth of it.
             </p>
             <p>
-                The trail ends at <strong>Mud Village</strong> in the Pin Valley — one of the highest
-                inhabited villages in Spiti. From there, you're in a different world entirely. The
-                crossing is complete. You've walked from one Himachal Pradesh into another, and neither
-                of them is the same after.
+                From Bwalder, the trail drops into the Pin Valley. Ochre cliffs,
+                dry river beds, a silence so complete you can hear your own
+                heartbeat. The trail ends at <strong>Mud Village</strong>, one
+                of the highest inhabited settlements in Spiti. Small stone houses.
+                Prayer wheels. A road that eventually leads to <strong>Kaza</strong>,
+                the nearest thing to a town in this part of the world.
+            </p>
+            <p>
+                I sat in Kaza the next evening with a cup of tea, looking at the
+                brown mountains on all sides, and thought about the green valley
+                on the other side of the pass. Fifty kilometres apart. Could be
+                fifty thousand.
             </p>
         </div>
 
         <div class="trek-gallery">
-            <div class="trek-gallery-title">Gallery</div>
+            <div class="trek-gallery-label">Gallery</div>
             <div class="trek-gallery-grid">
                 <div class="trek-gallery-slot"><span>Photo 1</span></div>
                 <div class="trek-gallery-slot"><span>Photo 2</span></div>
@@ -283,8 +339,8 @@
             </div>
         </div>
 
-        <a href="../#treks" class="trek-back-bottom">
-            <span class="back-arrow"></span>
+        <a href="../#treks" class="arrow-link">
+            <span class="arrow-link-line"></span>
             All treks
         </a>
     </div>
