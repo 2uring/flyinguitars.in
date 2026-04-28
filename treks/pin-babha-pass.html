@@ -13,31 +13,22 @@
         .back-link {
             position: fixed;
             top: 1.5rem; left: 2rem; z-index: 100;
-            font-size: 0.8rem;
-            font-weight: 400;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
+            font-size: 0.8rem; font-weight: 400;
+            letter-spacing: 0.12em; text-transform: uppercase;
+            color: var(--text-muted); text-decoration: none;
+            display: flex; align-items: center; gap: 0.8rem;
             transition: color 0.3s, gap 0.35s var(--ease);
             mix-blend-mode: difference;
         }
         .back-link:hover { color: var(--text); gap: 1.2rem; }
         .back-arrow {
-            display: inline-block;
-            width: 20px; height: 1px;
-            background: currentColor;
-            position: relative;
+            display: inline-block; width: 20px; height: 1px;
+            background: currentColor; position: relative;
             transition: width 0.35s var(--ease);
         }
         .back-link:hover .back-arrow { width: 28px; }
         .back-arrow::before {
-            content: '';
-            position: absolute;
-            left: 0; top: -3px;
+            content: ''; position: absolute; left: 0; top: -3px;
             width: 6px; height: 6px;
             border-bottom: 1px solid currentColor;
             border-left: 1px solid currentColor;
@@ -45,145 +36,163 @@
         }
 
         .trek-hero {
-            width: 100%;
-            aspect-ratio: 21/9;
-            max-height: 50vh;
+            width: 100%; aspect-ratio: 21/9; max-height: 50vh;
             background: var(--surface);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             overflow: hidden;
         }
         .trek-hero-placeholder {
-            font-size: 0.75rem;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            color: var(--text-dim);
+            font-size: 0.75rem; letter-spacing: 0.3em;
+            text-transform: uppercase; color: var(--text-dim);
         }
         .trek-hero img { width: 100%; height: 100%; object-fit: cover; }
 
         .trek-page {
-            max-width: var(--max-w-narrow);
+            max-width: 1200px;
             margin: 0 auto;
             padding: 5rem 2rem 6rem;
         }
+        .trek-header { max-width: 860px; }
 
         .trek-tag {
-            font-size: 0.65rem;
-            font-weight: 400;
-            letter-spacing: 0.4em;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+            font-size: 0.65rem; font-weight: 400;
+            letter-spacing: 0.4em; text-transform: uppercase;
+            color: var(--accent); margin-bottom: 1.5rem;
+            display: flex; align-items: center; gap: 1rem;
         }
         .trek-tag::before {
-            content: '';
-            width: 28px; height: 1px;
+            content: ''; width: 28px; height: 1px;
             background: var(--accent-dim);
         }
-
         .trek-title {
-            font-family: var(--font-display);
-            font-weight: 800;
+            font-family: var(--font-display); font-weight: 800;
             font-size: clamp(2.2rem, 6vw, 3.6rem);
-            letter-spacing: -0.01em;
-            line-height: 1.08;
-            margin-bottom: 2rem;
+            letter-spacing: -0.01em; line-height: 1.08; margin-bottom: 2rem;
         }
-
         .trek-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            padding: 1.8rem 0;
-            margin-bottom: 3rem;
+            display: flex; flex-wrap: wrap; gap: 2rem;
+            padding: 1.8rem 0; margin-bottom: 2rem;
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
         }
         .trek-meta-label {
-            font-size: 0.6rem;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            color: var(--accent);
+            font-size: 0.6rem; letter-spacing: 0.25em;
+            text-transform: uppercase; color: var(--accent);
             margin-bottom: 0.25rem;
         }
-        .trek-meta-value {
-            font-size: 1rem;
-            font-weight: 400;
-            color: var(--text);
-        }
+        .trek-meta-value { font-size: 1rem; font-weight: 400; color: var(--text); }
 
-        .trek-story { margin-bottom: 4rem; }
-        .trek-story p {
-            font-size: clamp(1.05rem, 1.6vw, 1.2rem);
-            font-weight: 300;
-            line-height: 2;
-            color: var(--text-muted);
-            margin-bottom: 1.8rem;
+        /* ——— JOURNEY: two-column story + globe ——— */
+        .trek-journey {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 3rem;
+            margin: 2rem 0 4rem;
+            align-items: start;
         }
-        .trek-story p strong { color: var(--text); font-weight: 400; }
-        .trek-story h3 {
-            font-family: var(--font-display);
-            font-weight: 700;
+        .trek-chapter { margin-bottom: 2.5rem; }
+        .trek-chapter h3 {
+            font-family: var(--font-display); font-weight: 700;
             font-size: clamp(1.2rem, 2.2vw, 1.6rem);
             letter-spacing: -0.01em;
-            margin-bottom: 1rem;
-            margin-top: 2.5rem;
-            color: var(--text);
+            margin-bottom: 1rem; color: var(--text);
         }
-        .trek-story blockquote {
-            font-style: italic;
-            font-weight: 300;
-            font-size: clamp(1.1rem, 1.8vw, 1.35rem);
-            line-height: 1.85;
-            color: var(--text-muted);
+        .trek-chapter p {
+            font-size: clamp(1.02rem, 1.5vw, 1.15rem);
+            font-weight: 300; line-height: 2;
+            color: var(--text-muted); margin-bottom: 1.5rem;
+        }
+        .trek-chapter p strong { color: var(--text); font-weight: 400; }
+        .trek-chapter blockquote {
+            font-style: italic; font-weight: 300;
+            font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+            line-height: 1.85; color: var(--text-muted);
             border-left: 2px solid var(--accent-dim);
-            padding-left: 1.8rem;
-            margin: 2.5rem 0;
+            padding-left: 1.8rem; margin: 2rem 0;
         }
 
+        .trek-globe-col { position: relative; }
+        .trek-globe-wrap {
+            position: sticky; top: 4rem;
+        }
+        .trek-globe-viz {
+            width: 100%; aspect-ratio: 1;
+            border-radius: 6px; overflow: hidden;
+            background: radial-gradient(circle at 50% 45%, rgba(200,149,109,0.04) 0%, var(--bg) 70%);
+        }
+        .globe-info {
+            margin-top: 1rem;
+            display: flex; justify-content: space-between;
+            align-items: baseline;
+        }
+        .globe-label {
+            font-family: var(--font-display); font-weight: 700;
+            font-size: 0.85rem; letter-spacing: 0.02em;
+            color: var(--accent);
+            transition: opacity 0.4s;
+        }
+        .globe-hint {
+            font-size: 0.65rem; letter-spacing: 0.2em;
+            text-transform: uppercase; color: var(--text-dim);
+        }
+        .globe-legend {
+            margin-top: 1.2rem; padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            display: flex; flex-direction: column; gap: 0.5rem;
+        }
+        .globe-legend-item {
+            display: flex; align-items: center; gap: 0.6rem;
+            font-size: 0.75rem; color: var(--text-dim);
+            letter-spacing: 0.05em;
+        }
+        .globe-legend-line {
+            width: 20px; height: 2px; border-radius: 1px; flex-shrink: 0;
+        }
+        .globe-legend-line.route { background: var(--accent); }
+        .globe-legend-line.road {
+            background: repeating-linear-gradient(90deg,
+                var(--text-dim) 0, var(--text-dim) 4px,
+                transparent 4px, transparent 8px);
+            opacity: 0.5;
+        }
+
+        .trek-bottom { max-width: 860px; }
         .trek-gallery {
-            margin: 4rem 0;
-            padding-top: 2.5rem;
+            margin: 2rem 0 4rem; padding-top: 2.5rem;
             border-top: 1px solid var(--border);
         }
         .trek-gallery-label {
-            font-size: 0.65rem;
-            letter-spacing: 0.4em;
-            text-transform: uppercase;
-            color: var(--accent);
+            font-size: 0.65rem; letter-spacing: 0.4em;
+            text-transform: uppercase; color: var(--accent);
             margin-bottom: 1.5rem;
         }
         .trek-gallery-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5px;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 5px;
         }
         .trek-gallery-slot {
-            aspect-ratio: 16/10;
-            background: var(--surface);
-            border-radius: 2px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
+            aspect-ratio: 16/10; background: var(--surface);
+            border-radius: 2px; display: flex;
+            align-items: center; justify-content: center; overflow: hidden;
         }
         .trek-gallery-slot span {
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--text-dim);
+            font-size: 0.7rem; letter-spacing: 0.2em;
+            text-transform: uppercase; color: var(--text-dim);
         }
-        .trek-gallery-slot img { width: 100%; height: 100%; object-fit: cover; }
 
+        @media (max-width: 1024px) {
+            .trek-journey { grid-template-columns: 1fr; }
+            .trek-globe-col { order: -1; }
+            .trek-globe-wrap {
+                position: relative; top: 0;
+                max-width: 420px; margin: 0 auto 1rem;
+            }
+        }
         @media (max-width: 768px) {
             .back-link { top: 1rem; left: 1rem; }
             .trek-page { padding: 3rem 1.5rem 4rem; }
             .trek-meta { gap: 1.2rem; }
             .trek-gallery-grid { grid-template-columns: 1fr; }
+            .trek-globe-wrap { max-width: 320px; }
         }
     </style>
 </head>
@@ -200,149 +209,303 @@
     </div>
 
     <div class="trek-page">
-        <div class="trek-tag">Trek 02</div>
-        <h1 class="trek-title">Pin Babha<br>Pass</h1>
-
-        <div class="trek-meta">
-            <div>
-                <div class="trek-meta-label">Route</div>
-                <div class="trek-meta-value">Kafnu to Mud Village</div>
-            </div>
-            <div>
-                <div class="trek-meta-label">Crossover</div>
-                <div class="trek-meta-value">Kinnaur to Spiti</div>
-            </div>
-            <div>
-                <div class="trek-meta-label">Distance</div>
-                <div class="trek-meta-value">~50 km</div>
-            </div>
-            <div>
-                <div class="trek-meta-label">Pass Altitude</div>
-                <div class="trek-meta-value">4,919 m</div>
-            </div>
-            <div>
-                <div class="trek-meta-label">Camps</div>
-                <div class="trek-meta-value">Muling &middot; Kara Lake &middot; Fustirang &middot; Bwalder</div>
-            </div>
-            <div>
-                <div class="trek-meta-label">Endpoint</div>
-                <div class="trek-meta-value">Mud Village &rarr; Kaza</div>
-            </div>
-        </div>
-
-        <div class="trek-story">
-            <p>
-                This trek tried to stop me before it even started.
-            </p>
-
-            <h3>Getting to the trailhead</h3>
-            <p>
-                The road from Shimla to <strong>Kafnu</strong> is not a road. It's a
-                negotiation with gravity. Five landslides between Rampur and the Kafnu
-                turn-off. Five. The bus stopped, we got out, and we walked. One
-                of the landslides had wiped the road clean off the mountainside. There
-                was a scramble path carved into the debris by people who'd done this
-                enough times to make it look normal. Entry point, exit point, final
-                exit. You climb over loose rock at 1,900 metres with your full pack,
-                hoping the hillside has finished moving for the day.
-            </p>
-            <p>
-                We stayed the night at <strong>Tapri</strong>, a small town on
-                the Sutlej where the river is wide and loud and green. Next morning,
-                back on the road. More slides. More detours. Eventually the turn-off
-                appeared and a smaller road wound uphill through apple orchards to
-                <strong>Kafnu base camp</strong>. The trek hadn't started yet and I
-                was already tired. The Himalayas have a way of reminding you who's
-                in charge before you've even laced up.
-            </p>
-
-            <h3>Up the Bhaba Valley</h3>
-            <p>
-                The trail from <strong>Kafnu</strong> climbs through dense forest,
-                the kind where the canopy closes overhead and the only sounds are
-                the Bhaba river below and your own breathing. The first camp at
-                <strong>Muling</strong> sits in a clearing in the valley. Quiet.
-                Smoke from a shepherd's fire. Nothing to do except eat and sleep.
-            </p>
-            <p>
-                From Muling the valley opens up. <strong>Kara Lake</strong> appears
-                almost without warning, a glacial pool reflecting the ridgeline so
-                perfectly that you stop walking and just stand there for a while.
-                The water is absurdly clear and absurdly cold. I put my hand in
-                for about four seconds before common sense took over.
-            </p>
-            <p>
-                The push to <strong>Fustirang</strong> is where the landscape starts
-                to change. The trees thin out. The grass gets shorter. The valley
-                widens and the Bhaba river narrows to a glacial stream threading
-                through boulder fields. The air is thinner and the sky feels closer.
-                You're leaving the green world behind, and there's no going back
-                without retracing every step.
-            </p>
-
-            <h3>4,919 metres</h3>
-            <p>
-                <strong>Bhaba Pass</strong> is not dramatic the way you'd expect.
-                No sweeping panorama waiting at the top. Just a narrow saddle between
-                two ridges, prayer flags snapping in wind that hasn't stopped since
-                you left the treeline. The GPS read 4,919 metres. My lungs felt
-                every one of them.
-            </p>
-            <p>
-                But the thing about standing up there is this: behind you is
-                everything green. Forests, rivers, orchards, the road with its
-                landslides. Ahead of you is a completely different planet. Brown.
-                Grey. Dry. Vast. You can see the Pin Valley stretching out below
-                like a desert dropped between mountains. Same state, same country,
-                same range. Entirely different world.
-            </p>
-
-            <blockquote>
-                You walk out of green and into grey. Out of forests and into desert.
-                The pass doesn't separate two valleys. It separates two versions
-                of the Himalayas.
-            </blockquote>
-
-            <h3>The descent to Spiti</h3>
-            <p>
-                The camp at <strong>Bwalder</strong>, at about 3,950 metres on the
-                Spiti side, was the first night where the cold was serious. The
-                kind of cold where you wear everything you brought and still feel
-                it. But the sky. I don't have a photograph that does it justice.
-                No light pollution for a hundred kilometres in any direction.
-                The Milky Way wasn't a smudge overhead; it was structural, like
-                you could see the depth of it.
-            </p>
-            <p>
-                From Bwalder, the trail drops into the Pin Valley. Ochre cliffs,
-                dry river beds, a silence so complete you can hear your own
-                heartbeat. The trail ends at <strong>Mud Village</strong>, one
-                of the highest inhabited settlements in Spiti. Small stone houses.
-                Prayer wheels. A road that eventually leads to <strong>Kaza</strong>,
-                the nearest thing to a town in this part of the world.
-            </p>
-            <p>
-                I sat in Kaza the next evening with a cup of tea, looking at the
-                brown mountains on all sides, and thought about the green valley
-                on the other side of the pass. Fifty kilometres apart. Could be
-                fifty thousand.
-            </p>
-        </div>
-
-        <div class="trek-gallery">
-            <div class="trek-gallery-label">Gallery</div>
-            <div class="trek-gallery-grid">
-                <div class="trek-gallery-slot"><span>Photo 1</span></div>
-                <div class="trek-gallery-slot"><span>Photo 2</span></div>
-                <div class="trek-gallery-slot"><span>Photo 3</span></div>
-                <div class="trek-gallery-slot"><span>Photo 4</span></div>
+        <div class="trek-header">
+            <div class="trek-tag">Trek 02</div>
+            <h1 class="trek-title">Pin Babha<br>Pass</h1>
+            <div class="trek-meta">
+                <div>
+                    <div class="trek-meta-label">Route</div>
+                    <div class="trek-meta-value">Kafnu to Mud Village</div>
+                </div>
+                <div>
+                    <div class="trek-meta-label">Crossover</div>
+                    <div class="trek-meta-value">Kinnaur to Spiti</div>
+                </div>
+                <div>
+                    <div class="trek-meta-label">Distance</div>
+                    <div class="trek-meta-value">~50 km</div>
+                </div>
+                <div>
+                    <div class="trek-meta-label">Pass Altitude</div>
+                    <div class="trek-meta-value">4,919 m</div>
+                </div>
+                <div>
+                    <div class="trek-meta-label">Camps</div>
+                    <div class="trek-meta-value">Muling &middot; Kara Lake &middot; Fustirang &middot; Bwalder</div>
+                </div>
+                <div>
+                    <div class="trek-meta-label">Endpoint</div>
+                    <div class="trek-meta-value">Mud Village &rarr; Kaza</div>
+                </div>
             </div>
         </div>
 
-        <a href="../#treks" class="arrow-link">
-            <span class="arrow-link-line"></span>
-            All treks
-        </a>
+        <div class="trek-journey">
+            <div class="trek-narrative">
+
+                <div class="trek-chapter" data-lat="31.55" data-lng="77.9" data-alt="0.08" data-label="Approach — Kinnaur">
+                    <h3>Getting to the trailhead</h3>
+                    <p>
+                        This trek tried to stop me before it even started.
+                    </p>
+                    <p>
+                        The road from Shimla to <strong>Kafnu</strong> is not a road. It's a
+                        negotiation with gravity. Five landslides between Rampur and the Kafnu
+                        turn-off. Five. The bus stopped, we got out, and we walked. One
+                        of the landslides had wiped the road clean off the mountainside. There
+                        was a scramble path carved into the debris by people who'd done this
+                        enough times to make it look normal. Entry point, exit point, final
+                        exit. You climb over loose rock at 1,900 metres with your full pack,
+                        hoping the hillside has finished moving for the day.
+                    </p>
+                    <p>
+                        We stayed the night at <strong>Tapri</strong>, a small town on
+                        the Sutlej where the river is wide and loud and green. Next morning,
+                        back on the road. More slides. More detours. Eventually the turn-off
+                        appeared and a smaller road wound uphill through apple orchards to
+                        <strong>Kafnu base camp</strong>. The trek hadn't started yet and I
+                        was already tired. The Himalayas have a way of reminding you who's
+                        in charge before you've even laced up.
+                    </p>
+                </div>
+
+                <div class="trek-chapter" data-lat="31.71" data-lng="78.0" data-alt="0.035" data-label="Bhaba Valley">
+                    <h3>Up the Bhaba Valley</h3>
+                    <p>
+                        The trail from <strong>Kafnu</strong> climbs through dense forest,
+                        the kind where the canopy closes overhead and the only sounds are
+                        the Bhaba river below and your own breathing. The first camp at
+                        <strong>Muling</strong> sits in a clearing in the valley. Quiet.
+                        Smoke from a shepherd's fire. Nothing to do except eat and sleep.
+                    </p>
+                    <p>
+                        From Muling the valley opens up. <strong>Kara Lake</strong> appears
+                        almost without warning, a glacial pool reflecting the ridgeline so
+                        perfectly that you stop walking and just stand there for a while.
+                        The water is absurdly clear and absurdly cold. I put my hand in
+                        for about four seconds before common sense took over.
+                    </p>
+                    <p>
+                        The push to <strong>Fustirang</strong> is where the landscape starts
+                        to change. The trees thin out. The grass gets shorter. The valley
+                        widens and the Bhaba river narrows to a glacial stream threading
+                        through boulder fields. The air is thinner and the sky feels closer.
+                        You're leaving the green world behind, and there's no going back
+                        without retracing every step.
+                    </p>
+                </div>
+
+                <div class="trek-chapter" data-lat="31.78" data-lng="78.0" data-alt="0.025" data-label="Bhaba Pass — 4,919 m">
+                    <h3>4,919 metres</h3>
+                    <p>
+                        <strong>Bhaba Pass</strong> is not dramatic the way you'd expect.
+                        No sweeping panorama waiting at the top. Just a narrow saddle between
+                        two ridges, prayer flags snapping in wind that hasn't stopped since
+                        you left the treeline. The GPS read 4,919 metres. My lungs felt
+                        every one of them.
+                    </p>
+                    <p>
+                        But the thing about standing up there is this: behind you is
+                        everything green. Forests, rivers, orchards, the road with its
+                        landslides. Ahead of you is a completely different planet. Brown.
+                        Grey. Dry. Vast. You can see the Pin Valley stretching out below
+                        like a desert dropped between mountains. Same state, same country,
+                        same range. Entirely different world.
+                    </p>
+                    <blockquote>
+                        You walk out of green and into grey. Out of forests and into desert.
+                        The pass doesn't separate two valleys. It separates two versions
+                        of the Himalayas.
+                    </blockquote>
+                </div>
+
+                <div class="trek-chapter" data-lat="31.92" data-lng="78.04" data-alt="0.06" data-label="Pin Valley — Spiti">
+                    <h3>The descent to Spiti</h3>
+                    <p>
+                        The camp at <strong>Bwalder</strong>, at about 3,950 metres on the
+                        Spiti side, was the first night where the cold was serious. The
+                        kind of cold where you wear everything you brought and still feel
+                        it. But the sky. I don't have a photograph that does it justice.
+                        No light pollution for a hundred kilometres in any direction.
+                        The Milky Way wasn't a smudge overhead; it was structural, like
+                        you could see the depth of it.
+                    </p>
+                    <p>
+                        From Bwalder, the trail drops into the Pin Valley. Ochre cliffs,
+                        dry river beds, a silence so complete you can hear your own
+                        heartbeat. The trail ends at <strong>Mud Village</strong>, one
+                        of the highest inhabited settlements in Spiti. Small stone houses.
+                        Prayer wheels. A road that eventually leads to <strong>Kaza</strong>,
+                        the nearest thing to a town in this part of the world.
+                    </p>
+                    <p>
+                        I sat in Kaza the next evening with a cup of tea, looking at the
+                        brown mountains on all sides, and thought about the green valley
+                        on the other side of the pass. Fifty kilometres apart. Could be
+                        fifty thousand.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="trek-globe-col">
+                <div class="trek-globe-wrap">
+                    <div class="trek-globe-viz" id="globeViz"></div>
+                    <div class="globe-info">
+                        <span class="globe-label" id="globeLabel">Approach — Kinnaur</span>
+                        <span class="globe-hint">Drag to explore</span>
+                    </div>
+                    <div class="globe-legend">
+                        <div class="globe-legend-item">
+                            <span class="globe-legend-line route"></span>
+                            Trek route
+                        </div>
+                        <div class="globe-legend-item">
+                            <span class="globe-legend-line road"></span>
+                            Road approach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="trek-bottom">
+            <div class="trek-gallery">
+                <div class="trek-gallery-label">Gallery</div>
+                <div class="trek-gallery-grid">
+                    <div class="trek-gallery-slot"><span>Photo 1</span></div>
+                    <div class="trek-gallery-slot"><span>Photo 2</span></div>
+                    <div class="trek-gallery-slot"><span>Photo 3</span></div>
+                    <div class="trek-gallery-slot"><span>Photo 4</span></div>
+                </div>
+            </div>
+            <a href="../#treks" class="arrow-link">
+                <span class="arrow-link-line"></span>
+                All treks
+            </a>
+        </div>
     </div>
+
+    <script src="//unpkg.com/globe.gl"></script>
+    <script>
+    (function () {
+        var container = document.getElementById('globeViz');
+        if (!container) return;
+        var w = container.offsetWidth;
+
+        var camps = [
+            { name: 'Kafnu',       lat: 31.606, lng: 78.032 },
+            { name: 'Muling',      lat: 31.698, lng: 77.995 },
+            { name: 'Kara Lake',   lat: 31.736, lng: 77.996 },
+            { name: 'Fustirang',   lat: 31.762, lng: 77.985 },
+            { name: 'Bhaba Pass',  lat: 31.780, lng: 77.997 },
+            { name: 'Bwalder',     lat: 31.864, lng: 78.005 },
+            { name: 'Mud Village', lat: 31.959, lng: 78.032 }
+        ];
+
+        var road = [
+            { name: 'Tapri',      lat: 31.517, lng: 78.096 },
+            { name: 'Kafnu Cut',  lat: 31.544, lng: 78.010 }
+        ];
+
+        var trekPath = camps.map(function (c) { return [c.lat, c.lng]; });
+
+        var approachPath = [
+            [31.485, 77.694],
+            [31.517, 78.096],
+            [31.544, 78.010],
+            [31.606, 78.032]
+        ];
+
+        var onwardPath = [
+            [31.959, 78.032],
+            [32.228, 78.071]
+        ];
+
+        var globe = Globe()
+            .width(w)
+            .height(w)
+            .backgroundColor('rgba(0,0,0,0)')
+            .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
+            .showAtmosphere(true)
+            .atmosphereColor('#c8956d')
+            .atmosphereAltitude(0.12)
+            .labelsData(camps.concat(road))
+            .labelLat('lat')
+            .labelLng('lng')
+            .labelText('name')
+            .labelSize(function (d) {
+                return d.name === 'Bhaba Pass' ? 1.6 : 1.1;
+            })
+            .labelDotRadius(function (d) {
+                return d.name === 'Bhaba Pass' ? 0.2 : 0.12;
+            })
+            .labelColor(function () { return 'rgba(229,224,216,0.9)'; })
+            .labelResolution(2)
+            .pathsData([
+                {
+                    coords: trekPath,
+                    color: ['rgba(200,149,109,0.95)', 'rgba(212,168,130,0.95)'],
+                    stroke: 2.5,
+                    dash: 0.01,
+                    gap: 0.004,
+                    animate: 14000
+                },
+                {
+                    coords: approachPath,
+                    color: ['rgba(229,224,216,0.2)', 'rgba(229,224,216,0.25)'],
+                    stroke: 1.2,
+                    dash: 0.004,
+                    gap: 0.006,
+                    animate: 0
+                },
+                {
+                    coords: onwardPath,
+                    color: ['rgba(229,224,216,0.2)', 'rgba(229,224,216,0.25)'],
+                    stroke: 1.2,
+                    dash: 0.004,
+                    gap: 0.006,
+                    animate: 0
+                }
+            ])
+            .pathPoints('coords')
+            .pathPointLat(function (p) { return p[0]; })
+            .pathPointLng(function (p) { return p[1]; })
+            .pathColor(function (d) { return d.color; })
+            .pathStroke(function (d) { return d.stroke; })
+            .pathDashLength(function (d) { return d.dash; })
+            .pathDashGap(function (d) { return d.gap; })
+            .pathDashAnimateTime(function (d) { return d.animate; })
+            (container);
+
+        globe.pointOfView({ lat: 31.75, lng: 78.0, altitude: 0.065 }, 0);
+        globe.controls().autoRotate = true;
+        globe.controls().autoRotateSpeed = 0.25;
+        globe.controls().enableZoom = true;
+
+        var label = document.getElementById('globeLabel');
+        var chapters = document.querySelectorAll('.trek-chapter');
+
+        var obs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    var lat = parseFloat(entry.target.dataset.lat);
+                    var lng = parseFloat(entry.target.dataset.lng);
+                    var alt = parseFloat(entry.target.dataset.alt);
+                    var name = entry.target.dataset.label || '';
+                    globe.pointOfView({ lat: lat, lng: lng, altitude: alt }, 1400);
+                    if (name && label) label.textContent = name;
+                }
+            });
+        }, { threshold: 0.25, rootMargin: '0px 0px -20% 0px' });
+
+        chapters.forEach(function (ch) { obs.observe(ch); });
+
+        window.addEventListener('resize', function () {
+            var w = container.offsetWidth;
+            globe.width(w).height(w);
+        });
+    })();
+    </script>
 </body>
 </html>
