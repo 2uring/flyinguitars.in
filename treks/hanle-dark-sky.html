@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delhi → Hanle → Tso Moriri — flyinguitars</title>
+    <meta name="description" content="A 3,000 km self-drive loop from Delhi through Kashmir, Ladakh's darkest sky at Hanle, Tso Moriri, and back via Manali. September 2026.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .back-link {
+            position: fixed; top: 1.5rem; left: 2rem; z-index: 100;
+            font-size: 0.8rem; font-weight: 400;
+            letter-spacing: 0.12em; text-transform: uppercase;
+            color: var(--text-muted); text-decoration: none;
+            display: flex; align-items: center; gap: 0.8rem;
+            transition: color 0.3s, gap 0.35s var(--ease);
+            mix-blend-mode: difference;
+        }
+        .back-link:hover { color: var(--text); gap: 1.2rem; }
+        .back-arrow {
+            display: inline-block; width: 20px; height: 1px;
+            background: currentColor; position: relative;
+            transition: width 0.35s var(--ease);
+        }
+        .back-link:hover .back-arrow { width: 28px; }
+        .back-arrow::before {
+            content: ''; position: absolute; left: 0; top: -3px;
+            width: 6px; height: 6px;
+            border-bottom: 1px solid currentColor;
+            border-left: 1px solid currentColor;
+            transform: rotate(45deg);
+        }
+
+        .trip-page {
+            max-width: 900px; margin: 0 auto;
+            padding: 6rem 2rem 5rem;
+        }
+
+        .trip-badge {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            font-size: 0.6rem; font-weight: 500;
+            letter-spacing: 0.3em; text-transform: uppercase;
+            color: var(--bg);
+            background: var(--accent);
+            padding: 0.35rem 0.9rem;
+            border-radius: 2px;
+            margin-bottom: 2rem;
+        }
+
+        .trip-title {
+            font-family: var(--font-display); font-weight: 800;
+            font-size: clamp(2rem, 5.5vw, 3.4rem);
+            letter-spacing: -0.01em; line-height: 1.1;
+            margin-bottom: 0.8rem;
+        }
+        .trip-subtitle {
+            font-size: clamp(1rem, 1.8vw, 1.2rem);
+            font-weight: 300; color: var(--text-muted);
+            margin-bottom: 3rem; line-height: 1.6;
+        }
+
+        .trip-meta {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1.5rem; padding: 2rem 0; margin-bottom: 3rem;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .trip-meta-label {
+            font-size: 0.58rem; letter-spacing: 0.25em;
+            text-transform: uppercase; color: var(--accent);
+            margin-bottom: 0.25rem;
+        }
+        .trip-meta-value {
+            font-size: 0.95rem; font-weight: 400; color: var(--text);
+        }
+
+        .trip-poster {
+            margin: 2rem 0 3.5rem;
+            border-radius: 4px; overflow: hidden;
+            border: 1px solid var(--border);
+            background: var(--surface);
+        }
+        .trip-poster object, .trip-poster embed {
+            width: 100%; height: 600px; display: block;
+        }
+        .trip-poster-fallback {
+            padding: 2rem; text-align: center;
+        }
+        .trip-poster-fallback a {
+            color: var(--accent); text-decoration: none;
+            font-size: 0.85rem; letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--accent-dim);
+            padding-bottom: 2px;
+        }
+
+        .trip-section { margin-bottom: 3.5rem; }
+        .trip-section h2 {
+            font-family: var(--font-display); font-weight: 700;
+            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+            letter-spacing: -0.01em;
+            margin-bottom: 1.2rem; color: var(--text);
+        }
+        .trip-section p {
+            font-size: clamp(1rem, 1.4vw, 1.1rem);
+            font-weight: 300; line-height: 2;
+            color: var(--text-muted); margin-bottom: 1.2rem;
+        }
+        .trip-section p strong { color: var(--text); font-weight: 400; }
+
+        .itinerary {
+            display: flex; flex-direction: column; gap: 0;
+        }
+        .itin-day {
+            display: grid;
+            grid-template-columns: 3.5rem 1fr auto;
+            gap: 1rem; align-items: baseline;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .itin-day:first-child { border-top: 1px solid var(--border); }
+        .itin-num {
+            font-family: var(--font-display); font-weight: 700;
+            font-size: 0.65rem; letter-spacing: 0.1em;
+            color: var(--accent);
+        }
+        .itin-title {
+            font-size: 0.95rem; font-weight: 400; color: var(--text);
+        }
+        .itin-title span {
+            font-weight: 300; color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        .itin-badge {
+            font-size: 0.55rem; font-weight: 500;
+            letter-spacing: 0.15em; text-transform: uppercase;
+            padding: 0.2rem 0.5rem; border-radius: 2px;
+            white-space: nowrap;
+        }
+        .itin-badge.drive { color: var(--text-muted); border: 1px solid var(--border); }
+        .itin-badge.darksky { color: #1f8a82; border: 1px solid rgba(31,138,130,0.3); background: rgba(31,138,130,0.06); }
+        .itin-badge.rest { color: var(--accent); border: 1px solid var(--border-accent); background: var(--accent-glow); }
+        .itin-badge.lake { color: #5ba3d9; border: 1px solid rgba(91,163,217,0.3); background: rgba(91,163,217,0.06); }
+
+        .highlights-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 1.2rem; margin-top: 1.5rem;
+        }
+        .highlight-card {
+            padding: 1.5rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+        }
+        .highlight-card h3 {
+            font-family: var(--font-display); font-weight: 700;
+            font-size: 0.85rem; letter-spacing: 0.02em;
+            margin-bottom: 0.5rem; color: var(--text);
+        }
+        .highlight-card p {
+            font-size: 0.85rem; font-weight: 300;
+            line-height: 1.7; color: var(--text-muted);
+            margin: 0;
+        }
+        .highlight-card .stat {
+            font-family: var(--font-display); font-weight: 800;
+            font-size: 1.4rem; color: var(--accent);
+            margin-bottom: 0.3rem; display: block;
+        }
+
+        .fact-list {
+            list-style: none; display: flex;
+            flex-direction: column; gap: 0.8rem;
+            margin-top: 1rem;
+        }
+        .fact-list li {
+            font-size: 0.95rem; font-weight: 300;
+            line-height: 1.7; color: var(--text-muted);
+            padding-left: 1.4rem; position: relative;
+        }
+        .fact-list li::before {
+            content: ''; position: absolute;
+            left: 0; top: 0.6rem;
+            width: 5px; height: 5px; border-radius: 50%;
+            background: var(--accent-dim);
+        }
+        .fact-list li strong { color: var(--text); font-weight: 400; }
+
+        @media (max-width: 768px) {
+            .back-link { top: 1rem; left: 1rem; }
+            .trip-page { padding: 4rem 1.5rem 4rem; }
+            .highlights-grid { grid-template-columns: 1fr; }
+            .itin-day { grid-template-columns: 2.5rem 1fr; gap: 0.6rem; }
+            .itin-badge { grid-column: 2; margin-top: -0.3rem; }
+            .trip-poster object, .trip-poster embed { height: 400px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="grain"></div>
+
+    <a href="../#treks" class="back-link">
+        <span class="back-arrow"></span>
+        Back
+    </a>
+
+    <div class="trip-page">
+        <div class="trip-badge">Upcoming &middot; Sept 2026</div>
+        <h1 class="trip-title">Delhi → Hanle →<br>Tso Moriri</h1>
+        <p class="trip-subtitle">
+            A 3,000 km self-drive loop through Kashmir, Ladakh, and Himachal.
+            Built around one goal: India's darkest sky on the September new moon.
+        </p>
+
+        <div class="trip-meta">
+            <div>
+                <div class="trip-meta-label">Dates</div>
+                <div class="trip-meta-value">4–15 Sept 2026</div>
+            </div>
+            <div>
+                <div class="trip-meta-label">Distance</div>
+                <div class="trip-meta-value">~3,000 km</div>
+            </div>
+            <div>
+                <div class="trip-meta-label">Duration</div>
+                <div class="trip-meta-value">12 days</div>
+            </div>
+            <div>
+                <div class="trip-meta-label">Max Altitude</div>
+                <div class="trip-meta-value">5,059 m (Lachulung La)</div>
+            </div>
+            <div>
+                <div class="trip-meta-label">Vehicle</div>
+                <div class="trip-meta-value">Grand Vitara (FWD)</div>
+            </div>
+            <div>
+                <div class="trip-meta-label">New Moon</div>
+                <div class="trip-meta-value">11 Sept &middot; 0% glow</div>
+            </div>
+        </div>
+
+        <div class="trip-poster">
+            <object data="../img/hanle-trip-poster.pdf" type="application/pdf" width="100%" height="600">
+                <div class="trip-poster-fallback">
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.8rem;">Trip poster</p>
+                    <a href="../img/hanle-trip-poster.pdf" target="_blank">Open full poster (PDF)</a>
+                </div>
+            </object>
+        </div>
+
+        <div class="trip-section">
+            <h2>The idea</h2>
+            <p>
+                A self-driven trans-Himalayan circuit built around one specific astronomical event:
+                the <strong>11 September new moon</strong>, when the post-monsoon atmosphere
+                over Ladakh's Changthang plateau runs at its clearest. Three nights at
+                <strong>Hanle (4,500 m)</strong>, home to the Indian Astronomical Observatory,
+                with zero moon interference and some of the darkest skies on Earth.
+            </p>
+            <p>
+                The route goes up through <strong>Kashmir</strong> and over Zoji La for gradual
+                acclimatization, spends the core days in the Changthang dark-sky zone, adds a
+                night at <strong>Tso Moriri</strong>, and drops back to Delhi via the legendary
+                <strong>Manali-Leh highway</strong> — Lachulung La, the More Plains,
+                Baralacha La — shedding nearly 5 km of altitude in two days.
+            </p>
+        </div>
+
+        <div class="trip-section">
+            <h2>Why Hanle</h2>
+            <ul class="fact-list">
+                <li><strong>India's first Dark Sky Reserve</strong> — designated in 2022, one of the darkest places on the planet accessible by road</li>
+                <li><strong>Indian Astronomical Observatory (IAO)</strong> at 4,500 m — operates India's highest optical telescope, the 2-metre Chandra telescope</li>
+                <li><strong>Bortle Class 1–2</strong> — the darkest classification on the light pollution scale. Zodiacal light, gegenschein, and the zodiacal band are all visible to the naked eye</li>
+                <li><strong>Milky Way arch horizon to horizon</strong> — in September's clear post-monsoon air with no moon, the galactic core sets spectacularly in the west</li>
+                <li><strong>Changthang Plateau</strong> — average elevation 4,500 m, one of the most remote inhabited regions in India. Wild kiang (Tibetan wild ass), Tibetan wolf, and the occasional snow leopard</li>
+                <li><strong>11 Sept 2026: 0% illumination</strong> — the night of new moon. Darkest possible sky. A once-a-month window that September's dry atmosphere makes extraordinary</li>
+            </ul>
+        </div>
+
+        <div class="trip-section">
+            <h2>The numbers</h2>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <span class="stat">5,059 m</span>
+                    <h3>Lachulung La</h3>
+                    <p>Highest point on the return via Manali highway. One of India's highest motorable passes.</p>
+                </div>
+                <div class="highlight-card">
+                    <span class="stat">4,522 m</span>
+                    <h3>Tso Moriri</h3>
+                    <p>One of the highest lakes in India. Overnight camp at Korzok on the shore.</p>
+                </div>
+                <div class="highlight-card">
+                    <span class="stat">3,528 m</span>
+                    <h3>Zoji La</h3>
+                    <p>Gateway to Ladakh from Kashmir. Just past Drass — the 2nd coldest inhabited place on Earth.</p>
+                </div>
+                <div class="highlight-card">
+                    <span class="stat">−2°C</span>
+                    <h3>Night temps</h3>
+                    <p>Expected overnight lows at Hanle and Tso Moriri. Full winter layers at 4,500 m in September.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="trip-section">
+            <h2>Day by day</h2>
+            <div class="itinerary">
+                <div class="itin-day">
+                    <span class="itin-num">Day 01</span>
+                    <span class="itin-title">Delhi → Jammu <span>~590 km &middot; NH44 across Punjab plains</span></span>
+                    <span class="itin-badge drive">Drive</span>
+                </div>
+                <div class="itin-day">
+                    <span class="itin-num">Day 02</span>
+                    <span class="itin-title">Jammu → Srinagar <span>~250 km &middot; Ramban, Banihal, Jawahar Tunnel</span></span>
+                    <span class="itin-badge drive">Drive</span>
+                </div>
+                <div class="itin-day">
+                    <span class="itin-num">Day 03</span>
+                    <span class="itin-title">Srinagar → Kargil <span>~215 km &middot; Zoji La (3,528 m) &middot; Drass</span></span>
+                    <span class="itin-badge drive">Drive</span>
+                </div>
+                <div class="itin-day">
+                    <span class="itin-num">Day 04</span>
+                    <span class="itin-title">Kargil → Leh <span>~215 km &middot; Namika La, Fotu La, Lamayuru, Magnetic Hill</span></span>
+                    <span class="itin-badge drive">Drive</span>
+                </div>
+                <div class="itin-day">
+                    <span class="itin-num">Day 05</span>
+                    <span class="itin-title">Leh — Acclimatize <span>Rest day &middot; Shanti Stupa &middot; EDF permit &middot; fuel up</span></span>
+                    <span class="itin-badge rest">Rest</span>
+                </div>
+                <div class="itin-day">
+                    <span class="itin-num">Day 06</span>
+                    <span class="itin-title">Leh → Hanle <span>~250 km &middot; Upshi, Chumathang, Nyoma, Loma</span></span>
+                    <span class="itin-badge darksky">Dark Sky</span>
+                </div>
+                <div class="itin-day">
+                    <span class="itin-num">Day 07</span>
+                    <span class="itin-title">Hanle — Observatory <span>Rest &middot; IAO visit &middot; deep-sky imaging &middot; Astro night 2</span></span>
+                    <span class="itin-badge darksky">Dark Sky</span>
+                </div>
+                <div class="itin-day">
+                    <span class="itin-num">Day 08</span>
+                    <span class="itin-title">Hanle — New Moon <span>11 Sept &middot; 0% illumination &middot; Milky Way arch &middot; Astro night 3</span></span>
+                    <span class="itin-badge darksky">Dark Sky</span>
+                </div>
+                <div class="itin-day">
+                    <span class="itin-num">Day 09</span>
+                    <span class="itin-title">Hanle → Tso Moriri <span>~180 km &middot; Loma, Nyoma, Mahe, Sumdo, Korzok</span></span>
+                    <span class="itin-badge lake">Lake</span>
+                </div>
+                <div class="itin-day">
+                    <span class="itin-num">Day 10</span>
+                    <span class="itin-title">Tso Moriri → Jispa <span>~280 km &middot; Tso Kar, More Plains, Pang, Sarchu</span></span>
+                    <span class="itin-badge drive">Drive</span>
+                </div>
+                <div class="itin-day">
+                    <span class="itin-num">Day 11</span>
+                    <span class="itin-title">Jispa → Manali <span>~120 km &middot; Atal Tunnel &middot; back to green and oxygen</span></span>
+                    <span class="itin-badge drive">Drive</span>
+                </div>
+                <div class="itin-day">
+                    <span class="itin-num">Day 12</span>
+                    <span class="itin-title">Manali → Delhi <span>~530 km &middot; Final push home with a full memory card</span></span>
+                    <span class="itin-badge drive">Drive</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="trip-section">
+            <h2>What to look forward to</h2>
+            <ul class="fact-list">
+                <li><strong>Milky Way core</strong> setting over the Changthang plateau — September is the last month to catch the galactic centre before it disappears for winter</li>
+                <li><strong>Andromeda Galaxy (M31)</strong> high overhead at midnight — visible as a fuzzy patch to the naked eye, extraordinary through binoculars</li>
+                <li><strong>Lamayuru Moonland</strong> on Day 4 — eroded clay formations that look like another planet. Oldest monastery in Ladakh sits on top</li>
+                <li><strong>Magnetic Hill</strong> — the optical illusion where vehicles appear to roll uphill. Gimmick, but you have to try it</li>
+                <li><strong>More Plains</strong> on the return — one of the highest plateaus in the world, dead flat at 4,600 m, with the Manali highway running straight as a ruler through it</li>
+                <li><strong>Tso Moriri at dawn</strong> — surrounded by 6,000 m peaks, the lake changes colour every hour. Korzok monastery on the shore. Wild kiang herds nearby</li>
+                <li><strong>Drass</strong> — the second coldest inhabited place on Earth after Yakutsk. Temperature has hit −60°C. In September it's a pleasant 15°C</li>
+                <li><strong>Atal Tunnel (9.02 km)</strong> — world's longest highway tunnel above 3,000 m. In 10 minutes you go from cold, barren Lahaul to green, lush Manali</li>
+                <li><strong>The entire Manali-Leh highway in one day</strong> — Lachulung La, Baralacha La, the nala crossings, Rohtang. 5,000 m to 2,000 m in a single driving day</li>
+            </ul>
+        </div>
+
+        <div class="trip-section">
+            <h2>Logistics</h2>
+            <p>
+                <strong>All-tarmac, FWD-friendly route.</strong> The entire loop is on sealed road —
+                no off-road sections. Grand Vitara in FWD handles it comfortably. Own white-plate
+                vehicle required (rented self-drives barred from Ladakh sightseeing permits).
+            </p>
+            <p>
+                <strong>~₹45,000 per person</strong> all-in (2 sharing, ~₹91k total). Fuel ₹20k,
+                stays, food, EDF permit, ₹12k buffer. September is post-peak season —
+                accommodation is available without advance booking at most stops.
+            </p>
+            <p>
+                <strong>Key constraints:</strong> One acclimatization day in Leh mandatory. Carry
+                15L fuel reserve for Tso Moriri → Manali stretch (long gap, no pumps). Cross
+                nalas early morning. EDF permit for Hanle applied online. −2°C nights.
+                Tight schedule with no spare days.
+            </p>
+        </div>
+
+        <a href="../#treks" class="arrow-link" style="margin-top: 2rem;">
+            <span class="arrow-link-line"></span>
+            All treks
+        </a>
+    </div>
+</body>
+</html>
