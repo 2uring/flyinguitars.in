@@ -189,6 +189,78 @@
         }
         .fact-list li strong { color: var(--text); font-weight: 400; }
 
+        /* ——— COUNTDOWN ——— */
+        .countdown {
+            margin: 0 0 3.5rem;
+            padding: 2.5rem 2rem;
+            background: linear-gradient(135deg, rgba(200,149,109,0.04) 0%, rgba(10,10,10,0.6) 100%);
+            border: 1px solid rgba(200,149,109,0.1);
+            border-radius: 6px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .countdown::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(200,149,109,0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .countdown-label {
+            font-size: 0.6rem; font-weight: 500;
+            letter-spacing: 0.35em; text-transform: uppercase;
+            color: var(--accent); margin-bottom: 1.5rem;
+            position: relative;
+        }
+        .countdown-grid {
+            display: flex;
+            justify-content: center;
+            gap: clamp(1rem, 4vw, 2.5rem);
+            position: relative;
+        }
+        .countdown-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 60px;
+        }
+        .countdown-number {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            letter-spacing: -0.02em;
+            color: var(--text);
+            line-height: 1;
+            transition: transform 0.3s var(--ease), opacity 0.3s;
+        }
+        .countdown-number.tick {
+            transform: translateY(-3px);
+            opacity: 0.7;
+        }
+        .countdown-desc {
+            font-size: 0.6rem; font-weight: 400;
+            letter-spacing: 0.25em; text-transform: uppercase;
+            color: var(--text-dim);
+            margin-top: 0.6rem;
+        }
+        .countdown-sep {
+            font-family: var(--font-display);
+            font-size: clamp(1.4rem, 3.5vw, 2rem);
+            color: var(--accent-dim);
+            align-self: flex-start;
+            margin-top: 0.4rem;
+        }
+        .countdown-target {
+            margin-top: 1.5rem;
+            font-size: 0.75rem; font-weight: 300;
+            letter-spacing: 0.08em;
+            color: var(--text-dim);
+            position: relative;
+        }
+        .countdown-target strong {
+            color: var(--text-muted); font-weight: 400;
+        }
+
         @media (max-width: 768px) {
             .back-link { top: 1rem; left: 1rem; }
             .trip-page { padding: 4rem 1.5rem 4rem; }
@@ -196,6 +268,7 @@
             .itin-day { grid-template-columns: 2.5rem 1fr; gap: 0.6rem; }
             .itin-badge { grid-column: 2; margin-top: -0.3rem; }
             .trip-poster object, .trip-poster embed { height: 400px; }
+            .countdown { padding: 2rem 1.2rem; }
         }
     </style>
 </head>
@@ -214,6 +287,34 @@
             A 3,000 km self-drive loop through Kashmir, Ladakh, and Himachal.
             Built around one goal: India's darkest sky on the September new moon.
         </p>
+
+        <div class="countdown" id="countdown">
+            <div class="countdown-label">Departure in</div>
+            <div class="countdown-grid">
+                <div class="countdown-unit">
+                    <span class="countdown-number" id="cd-days">--</span>
+                    <span class="countdown-desc">Days</span>
+                </div>
+                <span class="countdown-sep">:</span>
+                <div class="countdown-unit">
+                    <span class="countdown-number" id="cd-hours">--</span>
+                    <span class="countdown-desc">Hours</span>
+                </div>
+                <span class="countdown-sep">:</span>
+                <div class="countdown-unit">
+                    <span class="countdown-number" id="cd-mins">--</span>
+                    <span class="countdown-desc">Min</span>
+                </div>
+                <span class="countdown-sep">:</span>
+                <div class="countdown-unit">
+                    <span class="countdown-number" id="cd-secs">--</span>
+                    <span class="countdown-desc">Sec</span>
+                </div>
+            </div>
+            <div class="countdown-target">
+                <strong>4 Sept 2026</strong> &middot; Delhi departure &middot; 05:00 IST
+            </div>
+        </div>
 
         <div class="trip-meta">
             <div>
@@ -413,5 +514,51 @@
             All treks
         </a>
     </div>
+
+    <script>
+    (function () {
+        var target = new Date('2026-09-04T05:00:00+05:30').getTime();
+        var days = document.getElementById('cd-days');
+        var hours = document.getElementById('cd-hours');
+        var mins = document.getElementById('cd-mins');
+        var secs = document.getElementById('cd-secs');
+        var prev = {};
+
+        function pad(n) { return n < 10 ? '0' + n : String(n); }
+
+        function tick(el, val) {
+            if (prev[el.id] !== val) {
+                el.textContent = val;
+                el.classList.add('tick');
+                setTimeout(function () { el.classList.remove('tick'); }, 200);
+                prev[el.id] = val;
+            }
+        }
+
+        function update() {
+            var now = Date.now();
+            var diff = target - now;
+            if (diff <= 0) {
+                days.textContent = '00';
+                hours.textContent = '00';
+                mins.textContent = '00';
+                secs.textContent = '00';
+                document.querySelector('.countdown-label').textContent = 'Trip underway';
+                return;
+            }
+            var d = Math.floor(diff / 86400000);
+            var h = Math.floor((diff % 86400000) / 3600000);
+            var m = Math.floor((diff % 3600000) / 60000);
+            var s = Math.floor((diff % 60000) / 1000);
+            tick(days, String(d));
+            tick(hours, pad(h));
+            tick(mins, pad(m));
+            tick(secs, pad(s));
+        }
+
+        update();
+        setInterval(update, 1000);
+    })();
+    </script>
 </body>
 </html>
