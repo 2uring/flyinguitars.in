@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-20T03:32:37.168035+05:30",
-  "updatedLabel": "20 Jun 2026 · 03:32 IST",
+  "updated": "2026-06-20T04:02:54.769919+05:30",
+  "updatedLabel": "20 Jun 2026 · 04:02 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "ddf78b67e8d824679b1c51a6d91aa8e5248f889882d3db202866c25d97f97332",
+  "contentHash": "3b54de9f918c18da32200ce648258ca60b5d9fe2b94e9a8a2807df069785dd83",
   "count": 104,
   "matches": [
     {
@@ -608,7 +608,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "score": {
@@ -1204,8 +1204,8 @@
         "time": "03:30",
         "label": "Sat 20 Jun · 03:30 IST"
       },
-      "status": "TIMED",
-      "live": false,
+      "status": "IN_PLAY",
+      "live": true,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -1227,11 +1227,11 @@
         "crest": "https://crests.football-data.org/morocco.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
+        "home": 0,
+        "away": 1,
         "halfHome": null,
         "halfAway": null,
-        "winner": null
+        "winner": "AWAY_TEAM"
       },
       "lineups": null
     },
@@ -1585,7 +1585,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "away": {
@@ -2569,7 +2569,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "away": {
