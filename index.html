@@ -559,6 +559,26 @@
         </div>
     </section>
 
+    <section class="wc-home" id="worldcup">
+        <a class="wc-poster reveal" href="worldcup.html" aria-label="Open the FIFA World Cup hub">
+            <span class="wc-poster-flag" id="wcPosterFlag">World Cup 2026 · Underway</span>
+            <div class="wc-ribbon"></div>
+            <div class="wc-kicker">Ke Nako · It's Time</div>
+            <h2 class="wc-title">FIFA World Cup</h2>
+            <p class="wc-sub">
+                Every match in <strong>IST</strong>, live scores and starting line-ups —
+                a flyinguitars tribute to South Africa 2010.
+            </p>
+            <div class="wc-poster-stats" id="wcPosterStats">
+                <div class="wc-poster-stat"><div class="n" id="wcPosterTotal">—</div><div class="l">Matches</div></div>
+                <div class="wc-poster-stat"><div class="n live" id="wcPosterLive">—</div><div class="l">Live now</div></div>
+                <div class="wc-poster-stat"><div class="n" id="wcPosterDone">—</div><div class="l">Played</div></div>
+            </div>
+            <div class="wc-poster-next" id="wcPosterNext"></div>
+            <span class="wc-poster-cta">Open the World Cup hub <span class="arrow"></span></span>
+        </a>
+    </section>
+
     <section class="intro" id="about">
         <div class="section-inner">
             <p class="intro-lead reveal">
@@ -790,25 +810,6 @@
         </div>
     </section>
 
-    <section class="wc-home" id="worldcup">
-        <a class="wc-poster reveal" href="worldcup.html" aria-label="Open the FIFA World Cup hub">
-            <div class="wc-ribbon"></div>
-            <div class="wc-kicker">Ke Nako · It's Time</div>
-            <h2 class="wc-title">FIFA World Cup</h2>
-            <p class="wc-sub">
-                Every match in <strong>IST</strong>, live scores and starting line-ups —
-                a flyinguitars tribute to South Africa 2010.
-            </p>
-            <div class="wc-poster-stats" id="wcPosterStats">
-                <div class="wc-poster-stat"><div class="n" id="wcPosterTotal">—</div><div class="l">Matches</div></div>
-                <div class="wc-poster-stat"><div class="n live" id="wcPosterLive">—</div><div class="l">Live now</div></div>
-                <div class="wc-poster-stat"><div class="n" id="wcPosterDone">—</div><div class="l">Played</div></div>
-            </div>
-            <div class="wc-poster-next" id="wcPosterNext"></div>
-            <span class="wc-poster-cta">Open the World Cup hub <span class="arrow"></span></span>
-        </a>
-    </section>
-
     <section class="contact" id="contact">
         <div class="section-inner">
             <div class="section-tag reveal">Contact</div>
@@ -908,6 +909,7 @@
         var elLive = document.getElementById('wcPosterLive');
         var elDone = document.getElementById('wcPosterDone');
         var elNext = document.getElementById('wcPosterNext');
+        var elFlag = document.getElementById('wcPosterFlag');
 
         function fill() {
             fetch('wc-data.json?t=' + Date.now(), { cache: 'no-store' })
@@ -919,6 +921,16 @@
                     elTotal.textContent = ms.length || '—';
                     elLive.textContent = live.length;
                     elDone.textContent = done.length;
+
+                    if (elFlag) {
+                        if (live.length) {
+                            elFlag.classList.add('is-live');
+                            elFlag.textContent = live.length + ' Live Now';
+                        } else {
+                            elFlag.classList.remove('is-live');
+                            elFlag.textContent = 'World Cup 2026 · Underway';
+                        }
+                    }
 
                     if (live.length) {
                         var l = live[0];

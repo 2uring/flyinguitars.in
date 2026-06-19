@@ -495,6 +495,37 @@
     z-index: 0;
 }
 .wc-poster > * { position: relative; z-index: 2; }
+.wc-poster-flag {
+    position: absolute;
+    top: 1.3rem; left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-body);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--wc-ink);
+    background: linear-gradient(120deg, var(--wc-gold), var(--wc-gold-deep));
+    padding: 0.4rem 1.1rem;
+    border-radius: 100px;
+    white-space: nowrap;
+    box-shadow: 0 8px 24px -10px rgba(255, 206, 33, 0.6);
+}
+.wc-poster-flag.is-live {
+    color: #fff;
+    background: linear-gradient(120deg, var(--wc-red), #b81d1d);
+    box-shadow: 0 8px 24px -10px rgba(226, 54, 54, 0.7);
+}
+.wc-poster-flag.is-live::before {
+    content: '';
+    width: 7px; height: 7px; border-radius: 50%;
+    background: #fff;
+    animation: wcPulse 1.2s infinite;
+}
 .wc-poster:hover {
     transform: translateY(-5px);
     border-color: rgba(255, 206, 33, 0.4);
@@ -570,6 +601,6 @@
     .wc-player { width: 50px; }
     .wc-player-name { font-size: 0.55rem; max-width: 52px; }
     .wc-home { padding: 5rem 1.5rem; }
-    .wc-poster { padding: 2.4rem 1.3rem 2rem; }
+    .wc-poster { padding: 3.2rem 1.3rem 2rem; }
     .wc-poster-stats { gap: 1.6rem; }
 }
