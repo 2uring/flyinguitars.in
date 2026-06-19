@@ -1,0 +1,29 @@
+# Optional: run the FIFA WC fetcher as a systemd *user* service so it
+# starts on boot and is supervised by systemd.
+#
+# Install:
+#   mkdir -p ~/.config/systemd/user
+#   cp scripts/wc-fetch.service ~/.config/systemd/user/
+#   # edit WorkingDirectory below to the absolute repo path if different
+#   systemctl --user daemon-reload
+#   systemctl --user enable --now wc-fetch.service
+#   loginctl enable-linger "$USER"   # keep it running after logout
+#
+# Logs:  journalctl --user -u wc-fetch.service -f
+
+[Unit]
+Description=flyinguitars FIFA World Cup live data fetcher
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/scratch/flyinguitars
+ExecStart=/usr/bin/python3 /scratch/flyinguitars/scripts/wc_fetch.py
+Restart=always
+RestartSec=30
+# Read the token from an environment file if you prefer (optional):
+# EnvironmentFile=%h/.config/flyinguitars-wc.env
+
+[Install]
+WantedBy=default.target

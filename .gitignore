@@ -1,1 +1,4 @@
 access_token
+scripts/.fd_token
+scripts/wc_fetch.log
+scripts/wc_daemon.pid
