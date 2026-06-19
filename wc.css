@@ -438,6 +438,129 @@
 .wc-coach span { color: var(--wc-gold); }
 .wc-nolineup { text-align: center; color: var(--text-dim); padding: 2rem 1rem; font-size: 0.9rem; }
 
+/* ===========================================================================
+   HOME-PAGE POSTER  (compact teaser that links to worldcup.html)
+   =========================================================================== */
+.wc-home { padding: 7rem 2.5rem; }
+.wc-poster {
+    --wc-gold: #ffce21;
+    --wc-gold-deep: #f5a300;
+    --wc-green: #2fa84f;
+    --wc-green-deep: #047a3a;
+    --wc-red: #e23636;
+    --wc-ink: #0b1a10;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 3.2rem 2rem 2.6rem;
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid rgba(255, 206, 33, 0.18);
+    background:
+        radial-gradient(120% 90% at 50% -10%, rgba(47, 168, 79, 0.16) 0%, transparent 55%),
+        radial-gradient(90% 80% at 100% 0%, rgba(255, 206, 33, 0.12) 0%, transparent 50%),
+        #080a07;
+    transition: transform 0.5s var(--ease), box-shadow 0.5s, border-color 0.5s;
+}
+.wc-poster::before { /* contained African sun */
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 720px; height: 720px;
+    transform: translate(-50%, -50%);
+    background: conic-gradient(from 0deg,
+        rgba(255, 206, 33, 0.12) 0deg, transparent 12deg,
+        rgba(255, 206, 33, 0.12) 24deg, transparent 36deg,
+        rgba(255, 206, 33, 0.12) 48deg, transparent 60deg,
+        rgba(255, 206, 33, 0.12) 72deg, transparent 84deg,
+        rgba(255, 206, 33, 0.12) 96deg, transparent 108deg,
+        rgba(255, 206, 33, 0.12) 120deg, transparent 132deg,
+        rgba(255, 206, 33, 0.12) 144deg, transparent 156deg,
+        rgba(255, 206, 33, 0.12) 168deg, transparent 180deg,
+        rgba(255, 206, 33, 0.12) 192deg, transparent 204deg,
+        rgba(255, 206, 33, 0.12) 216deg, transparent 228deg,
+        rgba(255, 206, 33, 0.12) 240deg, transparent 252deg,
+        rgba(255, 206, 33, 0.12) 264deg, transparent 276deg,
+        rgba(255, 206, 33, 0.12) 288deg, transparent 300deg,
+        rgba(255, 206, 33, 0.12) 312deg, transparent 324deg,
+        rgba(255, 206, 33, 0.12) 336deg, transparent 348deg);
+    -webkit-mask-image: radial-gradient(circle, #000 0%, transparent 60%);
+    mask-image: radial-gradient(circle, #000 0%, transparent 60%);
+    animation: wcSun 90s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+.wc-poster > * { position: relative; z-index: 2; }
+.wc-poster:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 206, 33, 0.4);
+    box-shadow: 0 34px 70px -34px rgba(255, 206, 33, 0.4);
+}
+.wc-poster .wc-ribbon { max-width: 460px; margin: 0 auto 2rem; }
+.wc-poster .wc-title { font-size: clamp(2.2rem, 7vw, 4.6rem); }
+.wc-poster .wc-sub { max-width: 620px; margin: 0.9rem auto 0; }
+
+.wc-poster-stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2.4rem;
+    margin: 1.8rem 0 0.4rem;
+}
+.wc-poster-stat { text-align: center; }
+.wc-poster-stat .n {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.7rem;
+    color: var(--wc-gold);
+    line-height: 1;
+}
+.wc-poster-stat .n.live { color: var(--wc-red); }
+.wc-poster-stat .l {
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-top: 0.4rem;
+}
+.wc-poster-next {
+    margin-top: 1.6rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+}
+.wc-poster-next strong { color: var(--text); font-weight: 500; }
+.wc-poster-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-top: 1.9rem;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--wc-ink);
+    background: linear-gradient(120deg, var(--wc-gold), var(--wc-gold-deep));
+    padding: 0.7rem 1.4rem;
+    border-radius: 100px;
+    transition: gap 0.35s var(--ease), box-shadow 0.35s;
+}
+.wc-poster:hover .wc-poster-cta { gap: 1.1rem; box-shadow: 0 10px 30px -12px rgba(255, 206, 33, 0.6); }
+.wc-poster-cta .arrow {
+    width: 18px; height: 1px; background: currentColor; position: relative;
+}
+.wc-poster-cta .arrow::after {
+    content: ''; position: absolute; right: 0; top: -3px;
+    width: 6px; height: 6px;
+    border-top: 1px solid currentColor; border-right: 1px solid currentColor;
+    transform: rotate(45deg);
+}
+
 /* ——— responsive ——— */
 @media (max-width: 768px) {
     .wc { padding: 5rem 1.2rem; }
@@ -446,4 +569,7 @@
     .wc-pitch { min-height: 320px; }
     .wc-player { width: 50px; }
     .wc-player-name { font-size: 0.55rem; max-width: 52px; }
+    .wc-home { padding: 5rem 1.5rem; }
+    .wc-poster { padding: 2.4rem 1.3rem 2rem; }
+    .wc-poster-stats { gap: 1.6rem; }
 }

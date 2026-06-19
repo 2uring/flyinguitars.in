@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIFA World Cup — Live Scores, Fixtures (IST) &amp; Line-ups — flyinguitars</title>
+    <meta name="description" content="Every FIFA World Cup match in IST with live scores and starting line-ups — a flyinguitars tribute to South Africa 2010.">
+    <meta name="theme-color" content="#080a07">
+    <meta property="og:title" content="FIFA World Cup — Live Scores &amp; Fixtures in IST">
+    <meta property="og:description" content="Every World Cup match in IST with live scores and line-ups.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="wc.css">
+    <style>
+        .back-link {
+            position: fixed;
+            top: 1.5rem; left: 2rem; z-index: 200;
+            font-size: 0.8rem; font-weight: 400;
+            letter-spacing: 0.12em; text-transform: uppercase;
+            color: var(--text); text-decoration: none;
+            display: flex; align-items: center; gap: 0.8rem;
+            transition: color 0.3s, gap 0.35s var(--ease);
+            mix-blend-mode: difference;
+        }
+        .back-link:hover { gap: 1.2rem; }
+        .back-arrow {
+            display: inline-block; width: 20px; height: 1px;
+            background: currentColor; position: relative;
+            transition: width 0.35s var(--ease);
+        }
+        .back-link:hover .back-arrow { width: 28px; }
+        .back-arrow::before {
+            content: ''; position: absolute; left: 0; top: -3px;
+            width: 6px; height: 6px;
+            border-bottom: 1px solid currentColor;
+            border-left: 1px solid currentColor;
+            transform: rotate(45deg);
+        }
+        /* this page IS the section, so give it top room for the back link */
+        .wc.wc-page { padding-top: 6rem; min-height: 100vh; }
+    </style>
+</head>
+<body>
+    <div class="grain"></div>
+
+    <a href="index.html" class="back-link">
+        <span class="back-arrow"></span>
+        flyinguitars
+    </a>
+
+    <section class="wc wc-page" id="worldcup">
+        <div class="wc-inner">
+            <div class="wc-ribbon"></div>
+            <div class="wc-head">
+                <div class="wc-kicker">Ke Nako · It's Time</div>
+                <h1 class="wc-title">FIFA World Cup</h1>
+                <p class="wc-sub">
+                    Every match, every kickoff in <strong>IST</strong> — with live scores
+                    and starting line-ups, the way you'd see them on Google.
+                </p>
+            </div>
+            <div class="wc-meta">
+                <span class="wc-dot" id="wcStatusDot"></span>
+                <span id="wcUpdated">syncing…</span>
+            </div>
+
+            <div class="wc-tabs" id="wcTabs">
+                <button class="wc-tab active" data-filter="all">All</button>
+                <button class="wc-tab" data-filter="live">Live</button>
+                <button class="wc-tab" data-filter="upcoming">Upcoming</button>
+                <button class="wc-tab" data-filter="finished">Finished</button>
+            </div>
+
+            <div class="wc-grid" id="wcGrid">
+                <div class="wc-loading">Loading World Cup fixtures…</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="wc-modal" id="wcModal" aria-hidden="true">
+        <div class="wc-modal-box">
+            <button class="wc-modal-close" id="wcModalClose" aria-label="Close">&times;</button>
+            <div id="wcModalContent"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <span>&copy; 2026 Faiz Haq</span>
+        <span class="footer-logo">flyinguitars</span>
+        <span>Hyderabad, IN</span>
+    </footer>
+
+    <script src="wc.js"></script>
+</body>
+</html>
