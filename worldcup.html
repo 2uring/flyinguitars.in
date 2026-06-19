@@ -93,6 +93,100 @@
         <span>Hyderabad, IN</span>
     </footer>
 
+    <button id="wcMusicBtn" class="wc-music-btn" type="button"
+            aria-label="Play Wavin' Flag by K'naan" aria-pressed="false" title="Wavin' Flag — K'naan">
+        <span class="wc-music-disc"><span class="wc-music-icon" id="wcMusicIcon">&#9654;</span></span>
+        <span class="wc-music-label" id="wcMusicLabel">Play <strong>Wavin'&nbsp;Flag</strong></span>
+    </button>
+    <div id="wcYTWrap" aria-hidden="true" style="position:fixed; left:-9999px; top:0; width:240px; height:135px; pointer-events:none;">
+        <div id="wcYT"></div>
+    </div>
+
     <script src="wc.js"></script>
+    <script>
+    /* ——— Wavin' Flag (K'naan) background player via YouTube IFrame API ——— */
+    (function () {
+        var VIDEO_ID = 'WTJSt4wP2ME'; // K'NAAN — Wavin' Flag (Coca-Cola Celebration Mix)
+        var WATCH_URL = 'https://www.youtube.com/watch?v=' + VIDEO_ID;
+        var btn = document.getElementById('wcMusicBtn');
+        var icon = document.getElementById('wcMusicIcon');
+        var label = document.getElementById('wcMusicLabel');
+        if (!btn) return;
+
+        var player = null;
+        var apiLoading = false;
+        var ready = false;
+
+        var PLAY = '\u25B6';   // ▶
+        var PAUSE = '\u2759\u2759'; // ❙❙-ish (two bars)
+
+        function setState(s) {
+            btn.classList.remove('loading', 'playing');
+            if (s === 'loading') {
+                btn.classList.add('loading');
+                icon.innerHTML = '&#8226;';
+                label.innerHTML = 'Loading&hellip;';
+                btn.setAttribute('aria-pressed', 'false');
+            } else if (s === 'playing') {
+                btn.classList.add('playing');
+                icon.textContent = PAUSE;
+                label.innerHTML = 'Now playing &middot; <strong>Wavin\u2019 Flag</strong>';
+                btn.setAttribute('aria-pressed', 'true');
+            } else { // paused / idle
+                icon.textContent = PLAY;
+                label.innerHTML = 'Play <strong>Wavin\u2019 Flag</strong>';
+                btn.setAttribute('aria-pressed', 'false');
+            }
+        }
+
+        function loadApi() {
+            if (apiLoading) return;
+            apiLoading = true;
+            var prev = window.onYouTubeIframeAPIReady;
+            window.onYouTubeIframeAPIReady = function () {
+                if (typeof prev === 'function') { try { prev(); } catch (e) {} }
+                createPlayer();
+            };
+            var tag = document.createElement('script');
+            tag.src = 'https://www.youtube.com/iframe_api';
+            document.head.appendChild(tag);
+        }
+
+        function createPlayer() {
+            player = new YT.Player('wcYT', {
+                videoId: VIDEO_ID,
+                width: '240', height: '135',
+                playerVars: { autoplay: 1, playsinline: 1, rel: 0, modestbranding: 1 },
+                events: {
+                    onReady: function (e) { ready = true; e.target.playVideo(); },
+                    onStateChange: function (e) {
+                        if (e.data === YT.PlayerState.PLAYING) setState('playing');
+                        else if (e.data === YT.PlayerState.PAUSED) setState('paused');
+                        else if (e.data === YT.PlayerState.ENDED) setState('paused');
+                    },
+                    onError: function () {
+                        // embedding blocked or unavailable — fall back to opening YouTube
+                        setState('paused');
+                        label.innerHTML = 'Opens on <strong>YouTube</strong>';
+                        btn.onclick = function () { window.open(WATCH_URL, '_blank', 'noopener'); };
+                        window.open(WATCH_URL, '_blank', 'noopener');
+                    }
+                }
+            });
+        }
+
+        btn.addEventListener('click', function () {
+            if (!player) {
+                if (!window.YT || !window.YT.Player) { setState('loading'); loadApi(); }
+                else { setState('loading'); createPlayer(); }
+                return;
+            }
+            if (!ready) return;
+            var st = player.getPlayerState();
+            if (st === YT.PlayerState.PLAYING) player.pauseVideo();
+            else player.playVideo();
+        });
+    })();
+    </script>
 </body>
 </html>
