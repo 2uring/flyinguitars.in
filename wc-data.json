@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-20T03:12:04.784607+05:30",
-  "updatedLabel": "20 Jun 2026 · 03:12 IST",
+  "updated": "2026-06-20T03:17:15.212263+05:30",
+  "updatedLabel": "20 Jun 2026 · 03:17 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "f7ca937a6f198697d628c44d5135a41df82d87b9e9c92d4a6ea3d4482d09ead3",
+  "contentHash": "ddf78b67e8d824679b1c51a6d91aa8e5248f889882d3db202866c25d97f97332",
   "count": 104,
   "matches": [
     {
@@ -120,11 +120,11 @@
         "crest": "https://crests.football-data.org/bosnia.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": null
+        "home": 1,
+        "away": 1,
+        "halfHome": 0,
+        "halfAway": 1,
+        "winner": "DRAW"
       },
       "lineups": null
     },
