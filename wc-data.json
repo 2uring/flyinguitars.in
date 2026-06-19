@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-19T23:37:32.008606+05:30",
-  "updatedLabel": "19 Jun 2026 · 23:37 IST",
+  "updated": "2026-06-20T01:04:06.624914+05:30",
+  "updatedLabel": "20 Jun 2026 · 01:04 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "4903ec0451ba531e150ba17f181bd8c847705869dbe1ea79f32c40c05db7236d",
+  "contentHash": "1e73f13c626e495b33d35cb6246361e202418f8c445a39e0dc39452e05f3df37",
   "count": 104,
   "matches": [
     {
@@ -1163,8 +1163,8 @@
         "time": "00:30",
         "label": "Sat 20 Jun · 00:30 IST"
       },
-      "status": "TIMED",
-      "live": false,
+      "status": "IN_PLAY",
+      "live": true,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -1186,11 +1186,11 @@
         "crest": "https://crests.football-data.org/779.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
+        "home": 1,
+        "away": 0,
         "halfHome": null,
         "halfAway": null,
-        "winner": null
+        "winner": "HOME_TEAM"
       },
       "lineups": null
     },
