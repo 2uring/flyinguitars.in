@@ -156,7 +156,7 @@
             player = new YT.Player('wcYT', {
                 videoId: VIDEO_ID,
                 width: '240', height: '135',
-                playerVars: { autoplay: 1, playsinline: 1, rel: 0, modestbranding: 1 },
+                playerVars: { autoplay: 1, playsinline: 1, rel: 0, modestbranding: 1, start: 12 },
                 events: {
                     onReady: function (e) { ready = true; e.target.playVideo(); },
                     onStateChange: function (e) {
@@ -186,6 +186,12 @@
             if (st === YT.PlayerState.PLAYING) player.pauseVideo();
             else player.playVideo();
         });
+
+        // Auto-start playback from 0:12 as soon as the page opens. Some browsers
+        // block autoplay with sound until the user interacts — if that happens the
+        // button stays available so the user can start/pause manually.
+        setState('loading');
+        loadApi();
     })();
     </script>
 </body>

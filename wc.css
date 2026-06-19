@@ -199,6 +199,7 @@
     border-radius: 12px;
     padding: 1.15rem 1.2rem 1rem;
     overflow: hidden;
+    cursor: pointer;
     transition: transform 0.4s var(--ease), border-color 0.4s, box-shadow 0.4s;
 }
 .wc-card::before {  /* gold left spine */

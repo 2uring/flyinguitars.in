@@ -191,12 +191,28 @@
     if (modal) modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
 
+    function openMatchOnGoogle(m) {
+        var home = (m.home && (m.home.name || m.home.short)) || '';
+        var away = (m.away && (m.away.name || m.away.short)) || '';
+        var q = (home + ' vs ' + away + ' FIFA World Cup').trim();
+        window.open('https://www.google.com/search?q=' + encodeURIComponent(q), '_blank', 'noopener');
+    }
+
     grid.addEventListener('click', function (e) {
-        var btn = e.target.closest('.wc-lineups-btn');
-        if (!btn || btn.disabled) return;
         var card = e.target.closest('.wc-card');
+        if (!card) return;
         var m = state.matches.find(function (x) { return String(x.id) === card.getAttribute('data-id'); });
-        if (m) openModal(m);
+        if (!m) return;
+
+        // Line-ups button keeps its own behaviour (opens the modal).
+        var lineupsBtn = e.target.closest('.wc-lineups-btn');
+        if (lineupsBtn) {
+            if (!lineupsBtn.disabled) openModal(m);
+            return;
+        }
+
+        // Clicking anywhere else on a match card opens its Google sports page.
+        openMatchOnGoogle(m);
     });
 
     tabsEl.addEventListener('click', function (e) {
