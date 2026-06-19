@@ -160,7 +160,7 @@
                 events: {
                     onReady: function (e) { ready = true; e.target.playVideo(); },
                     onStateChange: function (e) {
-                        if (e.data === YT.PlayerState.PLAYING) setState('playing');
+                        if (e.data === YT.PlayerState.PLAYING) { setState('playing'); removeGestureKick(); }
                         else if (e.data === YT.PlayerState.PAUSED) setState('paused');
                         else if (e.data === YT.PlayerState.ENDED) setState('paused');
                     },
@@ -187,9 +187,36 @@
             else player.playVideo();
         });
 
-        // Auto-start playback from 0:12 as soon as the page opens. Some browsers
-        // block autoplay with sound until the user interacts — if that happens the
-        // button stays available so the user can start/pause manually.
+        // Mobile browsers (and desktop Chrome/Safari) block autoplay WITH SOUND
+        // until the user interacts with the page. So we try to autoplay on load
+        // (works where allowed), and otherwise start playback from 0:12 on the
+        // user's very first interaction anywhere on the page — tap, click, scroll
+        // or key — which makes it feel automatic without a deliberate button press.
+        var GESTURE_EVENTS = ['pointerdown', 'touchend', 'click', 'keydown', 'scroll'];
+
+        function onFirstGesture() {
+            if (!player) {
+                if (!window.YT || !window.YT.Player) { setState('loading'); loadApi(); }
+                else { setState('loading'); createPlayer(); }
+                return;
+            }
+            if (ready && player.getPlayerState() !== YT.PlayerState.PLAYING) {
+                player.playVideo();
+            }
+        }
+
+        function removeGestureKick() {
+            GESTURE_EVENTS.forEach(function (ev) {
+                document.removeEventListener(ev, onFirstGesture, true);
+            });
+        }
+
+        GESTURE_EVENTS.forEach(function (ev) {
+            // capture phase + passive so we never interfere with other handlers
+            document.addEventListener(ev, onFirstGesture, { capture: true, passive: true });
+        });
+
+        // Attempt straight autoplay too (succeeds on desktop / where policy allows).
         setState('loading');
         loadApi();
     })();
