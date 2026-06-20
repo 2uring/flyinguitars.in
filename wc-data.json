@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-20T23:23:59.057655+05:30",
-  "updatedLabel": "20 Jun 2026 · 23:23 IST",
+  "updated": "2026-06-20T23:28:36.362552+05:30",
+  "updatedLabel": "20 Jun 2026 · 23:28 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "a124163d6e2cd7e92d8e5f25437a31299e73b80c007459b5f16257c5266c0cda",
+  "contentHash": "c41b17fdce2ad4c46e0198afc13f21d6aa30d55c4ce29425c612e99976be7346",
   "count": 104,
   "matches": [
     {
@@ -608,7 +608,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URU",
+        "tla": "URY",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "score": {
@@ -1327,7 +1327,7 @@
         "time": "22:30",
         "label": "Sat 20 Jun · 22:30 IST"
       },
-      "status": "IN_PLAY",
+      "status": "PAUSED",
       "live": true,
       "finished": false,
       "minute": null,
@@ -1352,8 +1352,8 @@
       "score": {
         "home": 2,
         "away": 0,
-        "halfHome": null,
-        "halfAway": null,
+        "halfHome": 2,
+        "halfAway": 0,
         "winner": "HOME_TEAM"
       },
       "lineups": null
@@ -1585,7 +1585,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URU",
+        "tla": "URY",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "away": {
@@ -2569,7 +2569,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URU",
+        "tla": "URY",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "away": {
