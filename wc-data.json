@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-20T06:33:29.971957+05:30",
-  "updatedLabel": "20 Jun 2026 · 06:33 IST",
+  "updated": "2026-06-20T06:47:26.056852+05:30",
+  "updatedLabel": "20 Jun 2026 · 06:47 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "c510cb1f047aa64237d51d2cd684c44384867fff1268216041d8c6bc4178c0dd",
+  "contentHash": "fdc75ce90ce3017403910633888bff88dbb700ae3a18c8a97abb01fe8bcd016c",
   "count": 104,
   "matches": [
     {
@@ -1268,7 +1268,7 @@
         "crest": "https://crests.football-data.org/haiti.svg"
       },
       "score": {
-        "home": 1,
+        "home": 2,
         "away": 0,
         "halfHome": null,
         "halfAway": null,
