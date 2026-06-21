@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-21T05:12:55.780028+05:30",
-  "updatedLabel": "21 Jun 2026 · 05:12 IST",
+  "updated": "2026-06-21T06:03:31.013630+05:30",
+  "updatedLabel": "21 Jun 2026 · 06:03 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "77213c50242bd694661c6ec2580a8eedbb1da31092f58cf2621f51d9ad550a02",
+  "contentHash": "c369d7d966875f0724a1ff56fabeca24cfac13f3211e5a185c2cf13ec74038cd",
   "count": 104,
   "matches": [
     {
@@ -1409,8 +1409,8 @@
         "time": "05:30",
         "label": "Sun 21 Jun · 05:30 IST"
       },
-      "status": "TIMED",
-      "live": false,
+      "status": "IN_PLAY",
+      "live": true,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -1432,11 +1432,11 @@
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
+        "home": 0,
+        "away": 0,
         "halfHome": null,
         "halfAway": null,
-        "winner": null
+        "winner": "DRAW"
       },
       "lineups": null
     },
