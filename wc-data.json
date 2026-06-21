@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-21T10:07:23.759594+05:30",
-  "updatedLabel": "21 Jun 2026 · 10:07 IST",
+  "updated": "2026-06-21T10:08:33.525727+05:30",
+  "updatedLabel": "21 Jun 2026 · 10:08 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "8193e63d2aa08f49339834c520743d489d0e621dc58c64cc8b5611a3b94a9dc8",
+  "contentHash": "f85e5d27056d450f4bb37274b991daa6ac10d4e234be8b1254de152fb2498132",
   "count": 104,
   "matches": [
     {
@@ -362,7 +362,7 @@
         "id": 9460,
         "name": "Curaçao",
         "short": "Curaçao",
-        "tla": "CUW",
+        "tla": "CUR",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "score": {
@@ -1428,7 +1428,7 @@
         "id": 9460,
         "name": "Curaçao",
         "short": "Curaçao",
-        "tla": "CUW",
+        "tla": "CUR",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "score": {
@@ -1474,7 +1474,7 @@
       },
       "score": {
         "home": 0,
-        "away": 1,
+        "away": 2,
         "halfHome": null,
         "halfAway": null,
         "winner": "AWAY_TEAM"
@@ -2282,7 +2282,7 @@
         "id": 9460,
         "name": "Curaçao",
         "short": "Curaçao",
-        "tla": "CUW",
+        "tla": "CUR",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "away": {
