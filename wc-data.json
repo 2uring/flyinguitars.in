@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-21T10:08:33.525727+05:30",
-  "updatedLabel": "21 Jun 2026 · 10:08 IST",
+  "updated": "2026-06-21T10:26:42.013086+05:30",
+  "updatedLabel": "21 Jun 2026 · 10:26 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "f85e5d27056d450f4bb37274b991daa6ac10d4e234be8b1254de152fb2498132",
+  "contentHash": "3d58217cc58b785b27d25f9c49927f5952cdca1b84b7f11a4e4901e2badb3f50",
   "count": 104,
   "matches": [
     {
@@ -362,7 +362,7 @@
         "id": 9460,
         "name": "Curaçao",
         "short": "Curaçao",
-        "tla": "CUR",
+        "tla": "CUW",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "score": {
@@ -608,7 +608,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "score": {
@@ -1428,7 +1428,7 @@
         "id": 9460,
         "name": "Curaçao",
         "short": "Curaçao",
-        "tla": "CUR",
+        "tla": "CUW",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "score": {
@@ -1450,7 +1450,7 @@
         "time": "09:30",
         "label": "Sun 21 Jun · 09:30 IST"
       },
-      "status": "IN_PLAY",
+      "status": "PAUSED",
       "live": true,
       "finished": false,
       "minute": null,
@@ -1475,8 +1475,8 @@
       "score": {
         "home": 0,
         "away": 2,
-        "halfHome": null,
-        "halfAway": null,
+        "halfHome": 0,
+        "halfAway": 2,
         "winner": "AWAY_TEAM"
       },
       "lineups": null
@@ -1585,7 +1585,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "away": {
@@ -2282,7 +2282,7 @@
         "id": 9460,
         "name": "Curaçao",
         "short": "Curaçao",
-        "tla": "CUR",
+        "tla": "CUW",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "away": {
@@ -2569,7 +2569,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "away": {
