@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-22T01:47:28.275113+05:30",
-  "updatedLabel": "22 Jun 2026 · 01:47 IST",
+  "updated": "2026-06-22T02:07:30.804136+05:30",
+  "updatedLabel": "22 Jun 2026 · 02:07 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "6275429e9dc40fdcad87ee6e56845a4a425e2357290e177d1037dd9be91166ce",
+  "contentHash": "69e269e0a7c58c0dcbc6fc183769eafe384842aa2c3886e2236e47d8a7c8a0de",
   "count": 104,
   "matches": [
     {
@@ -1514,7 +1514,7 @@
         "crest": "https://crests.football-data.org/saudi_arabia.svg"
       },
       "score": {
-        "home": 5,
+        "home": 4,
         "away": 0,
         "halfHome": 3,
         "halfAway": 0,
