@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-22T03:13:29.633126+05:30",
-  "updatedLabel": "22 Jun 2026 · 03:13 IST",
+  "updated": "2026-06-22T03:34:03.920146+05:30",
+  "updatedLabel": "22 Jun 2026 · 03:34 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "e5f69ff73402fb6639e8d77a1945ca156ee7f50920fbeb734f065ce81dfbd756",
+  "contentHash": "e011b23dd84bfcc4d948d156d3709c480426300d0dab2ffee322360a97946b91",
   "count": 104,
   "matches": [
     {
@@ -1573,8 +1573,8 @@
         "time": "03:30",
         "label": "Mon 22 Jun · 03:30 IST"
       },
-      "status": "TIMED",
-      "live": false,
+      "status": "IN_PLAY",
+      "live": true,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -1596,11 +1596,11 @@
         "crest": "https://crests.football-data.org/cape_verde.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
+        "home": 0,
+        "away": 0,
         "halfHome": null,
         "halfAway": null,
-        "winner": null
+        "winner": "DRAW"
       },
       "lineups": null
     },
