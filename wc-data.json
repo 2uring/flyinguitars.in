@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-23T00:37:23.548743+05:30",
-  "updatedLabel": "23 Jun 2026 · 00:37 IST",
+  "updated": "2026-06-23T03:00:28.296679+05:30",
+  "updatedLabel": "23 Jun 2026 · 03:00 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "c47d2abb929735c91521ee81fab27c64eea1abd32f7930f1d886f1a5f0a2caf3",
+  "contentHash": "5fde5f3b57e6d59c6125431c2ede4ca365e2734d111d6f33ff888701a6aa68f6",
   "count": 104,
   "matches": [
     {
@@ -1696,8 +1696,8 @@
         "time": "02:30",
         "label": "Tue 23 Jun · 02:30 IST"
       },
-      "status": "TIMED",
-      "live": false,
+      "status": "IN_PLAY",
+      "live": true,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -1719,11 +1719,11 @@
         "crest": "https://crests.football-data.org/iraq.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
+        "home": 1,
+        "away": 0,
         "halfHome": null,
         "halfAway": null,
-        "winner": null
+        "winner": "HOME_TEAM"
       },
       "lineups": null
     },
