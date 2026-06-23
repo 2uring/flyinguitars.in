@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-23T05:09:31.437319+05:30",
-  "updatedLabel": "23 Jun 2026 · 05:09 IST",
+  "updated": "2026-06-23T05:36:34.108740+05:30",
+  "updatedLabel": "23 Jun 2026 · 05:36 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "541ebc81ee1347912b7f0c67b0352812e52c96c062dac09a4b490f12b38983b8",
+  "contentHash": "929bbb1781f25d9f86e2780ed0c6fefc95b13c8afcf91ec7766d388491564515",
   "count": 104,
   "matches": [
     {
@@ -608,7 +608,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "score": {
@@ -1585,7 +1585,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "away": {
@@ -1737,8 +1737,8 @@
         "time": "05:30",
         "label": "Tue 23 Jun · 05:30 IST"
       },
-      "status": "TIMED",
-      "live": false,
+      "status": "IN_PLAY",
+      "live": true,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -1760,11 +1760,11 @@
         "crest": "https://crests.football-data.org/senegal.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
+        "home": 0,
+        "away": 0,
         "halfHome": null,
         "halfAway": null,
-        "winner": null
+        "winner": "DRAW"
       },
       "lineups": null
     },
@@ -2569,7 +2569,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "away": {
