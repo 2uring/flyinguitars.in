@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-23T23:07:43.660749+05:30",
-  "updatedLabel": "23 Jun 2026 · 23:07 IST",
+  "updated": "2026-06-23T23:14:33.531553+05:30",
+  "updatedLabel": "23 Jun 2026 · 23:14 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "99b02806660c8f0108ce7fcb45e60c9b9788785e07fb23c676d50d3bf610abee",
+  "contentHash": "5c75b2a642728a581df50e21bf3da545c9228f80e4076d48d66032fcce23cd1d",
   "count": 104,
   "matches": [
     {
@@ -362,7 +362,7 @@
         "id": 9460,
         "name": "Curaçao",
         "short": "Curaçao",
-        "tla": "CUW",
+        "tla": "CUR",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "score": {
@@ -608,7 +608,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URU",
+        "tla": "URY",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "score": {
@@ -1428,7 +1428,7 @@
         "id": 9460,
         "name": "Curaçao",
         "short": "Curaçao",
-        "tla": "CUW",
+        "tla": "CUR",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "score": {
@@ -1585,7 +1585,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URU",
+        "tla": "URY",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "away": {
@@ -1842,8 +1842,8 @@
         "crest": "https://crests.football-data.org/8070.png"
       },
       "score": {
-        "home": 2,
-        "away": 1,
+        "home": 3,
+        "away": 0,
         "halfHome": null,
         "halfAway": null,
         "winner": "HOME_TEAM"
@@ -2282,7 +2282,7 @@
         "id": 9460,
         "name": "Curaçao",
         "short": "Curaçao",
-        "tla": "CUW",
+        "tla": "CUR",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "away": {
@@ -2569,7 +2569,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URU",
+        "tla": "URY",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "away": {
