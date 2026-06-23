@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-24T00:11:38.252584+05:30",
-  "updatedLabel": "24 Jun 2026 · 00:11 IST",
+  "updated": "2026-06-24T00:12:55.492682+05:30",
+  "updatedLabel": "24 Jun 2026 · 00:12 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "c7c862d08137d17b5b6f31992bae04cde51c28b049d022ace43a54ae9ded0b1f",
+  "contentHash": "122d51fd5d055fb02cf8b23a3d58fce3e9c5b88ea84a68a4a10d8bee81ca7aa2",
   "count": 104,
   "matches": [
     {
@@ -3058,11 +3058,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": 759,
-        "name": "Germany",
-        "short": "Germany",
-        "tla": "GER",
-        "crest": "https://crests.football-data.org/759.svg"
+        "id": null,
+        "name": "TBD",
+        "short": "TBD",
+        "tla": null,
+        "crest": null
       },
       "away": {
         "id": null,
@@ -3222,11 +3222,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": 769,
-        "name": "Mexico",
-        "short": "Mexico",
-        "tla": "MEX",
-        "crest": "https://crests.football-data.org/769.svg"
+        "id": null,
+        "name": "TBD",
+        "short": "TBD",
+        "tla": null,
+        "crest": null
       },
       "away": {
         "id": null,
@@ -3345,11 +3345,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": 771,
-        "name": "United States",
-        "short": "USA",
-        "tla": "USA",
-        "crest": "https://crests.football-data.org/usa.svg"
+        "id": null,
+        "name": "TBD",
+        "short": "TBD",
+        "tla": null,
+        "crest": null
       },
       "away": {
         "id": null,
