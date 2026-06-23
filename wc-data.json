@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-23T05:37:51.596679+05:30",
-  "updatedLabel": "23 Jun 2026 · 05:37 IST",
+  "updated": "2026-06-23T05:46:40.695540+05:30",
+  "updatedLabel": "23 Jun 2026 · 05:46 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "085514d09e4d704865f60485e42a2f8ecf44d5f57948a5704025872ffb705576",
+  "contentHash": "204694f84ca42dcc908d076e1feae756a17f71e44a7c523d908b4c9ccaf58228",
   "count": 104,
   "matches": [
     {
@@ -608,7 +608,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "score": {
@@ -1585,7 +1585,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "away": {
@@ -1719,7 +1719,7 @@
         "crest": "https://crests.football-data.org/iraq.svg"
       },
       "score": {
-        "home": 1,
+        "home": 2,
         "away": 0,
         "halfHome": 1,
         "halfAway": 0,
@@ -2569,7 +2569,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "away": {
