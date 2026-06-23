@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-24T00:40:44.216079+05:30",
-  "updatedLabel": "24 Jun 2026 · 00:40 IST",
+  "updated": "2026-06-24T00:45:54.492511+05:30",
+  "updatedLabel": "24 Jun 2026 · 00:45 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "e29aabe636eb92e861e141b6525ce9c99f641ae0cc460d97807fa21000aa26b2",
+  "contentHash": "fa1ed3c19ede859b1ca580adced8310d36afc3851dac2a54a5960de5ae460fc6",
   "count": 104,
   "matches": [
     {
@@ -120,11 +120,11 @@
         "crest": "https://crests.football-data.org/bosnia.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": null
+        "home": 1,
+        "away": 1,
+        "halfHome": 0,
+        "halfAway": 1,
+        "winner": "DRAW"
       },
       "lineups": null
     },
@@ -608,7 +608,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "score": {
@@ -1585,7 +1585,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "away": {
@@ -1860,7 +1860,7 @@
         "time": "01:30",
         "label": "Wed 24 Jun · 01:30 IST"
       },
-      "status": "TIMED",
+      "status": "SCHEDULED",
       "live": false,
       "finished": false,
       "minute": null,
@@ -2569,7 +2569,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "away": {
