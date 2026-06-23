@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-23T09:11:11.647323+05:30",
-  "updatedLabel": "23 Jun 2026 · 09:11 IST",
+  "updated": "2026-06-23T09:13:29.855463+05:30",
+  "updatedLabel": "23 Jun 2026 · 09:13 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "69819bef0215ff09bf5e3551c9d4b65c90fa459cc4b52031c3214b3a26cc5a14",
+  "contentHash": "d216741cfd4caa28757497546fd63f7f162077c372305166737199e85bba2e7e",
   "count": 104,
   "matches": [
     {
@@ -608,7 +608,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "score": {
@@ -1585,7 +1585,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "away": {
@@ -1801,11 +1801,11 @@
         "crest": "https://crests.football-data.org/algeria.svg"
       },
       "score": {
-        "home": 0,
+        "home": 1,
         "away": 0,
         "halfHome": null,
         "halfAway": null,
-        "winner": "DRAW"
+        "winner": "HOME_TEAM"
       },
       "lineups": null
     },
@@ -2569,7 +2569,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "away": {
@@ -3058,11 +3058,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 759,
+        "name": "Germany",
+        "short": "Germany",
+        "tla": "GER",
+        "crest": "https://crests.football-data.org/759.svg"
       },
       "away": {
         "id": null,
@@ -3222,11 +3222,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 769,
+        "name": "Mexico",
+        "short": "Mexico",
+        "tla": "MEX",
+        "crest": "https://crests.football-data.org/769.svg"
       },
       "away": {
         "id": null,
@@ -3345,11 +3345,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 771,
+        "name": "United States",
+        "short": "USA",
+        "tla": "USA",
+        "crest": "https://crests.football-data.org/usa.svg"
       },
       "away": {
         "id": null,
