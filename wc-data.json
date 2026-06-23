@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-23T08:02:17.893059+05:30",
-  "updatedLabel": "23 Jun 2026 · 08:02 IST",
+  "updated": "2026-06-23T09:03:10.727495+05:30",
+  "updatedLabel": "23 Jun 2026 · 09:03 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "b5f1f5280b42dc0b98507ee815669d532531f13583ab95b5f977c3d693572c4e",
+  "contentHash": "69819bef0215ff09bf5e3551c9d4b65c90fa459cc4b52031c3214b3a26cc5a14",
   "count": 104,
   "matches": [
     {
@@ -1778,8 +1778,8 @@
         "time": "08:30",
         "label": "Tue 23 Jun · 08:30 IST"
       },
-      "status": "TIMED",
-      "live": false,
+      "status": "IN_PLAY",
+      "live": true,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -1801,11 +1801,11 @@
         "crest": "https://crests.football-data.org/algeria.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
+        "home": 0,
+        "away": 0,
         "halfHome": null,
         "halfAway": null,
-        "winner": null
+        "winner": "DRAW"
       },
       "lineups": null
     },
