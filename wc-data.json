@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-25T04:46:24.115443+05:30",
-  "updatedLabel": "25 Jun 2026 · 04:46 IST",
+  "updated": "2026-06-25T04:47:55.413566+05:30",
+  "updatedLabel": "25 Jun 2026 · 04:47 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "f0ec9951f763244001adec7a9dba288c7904c44b664c7440911d4a76e9fb0400",
+  "contentHash": "2cd33a9537a3eac4a7066b4e7f729a3c3be4579b539bf69e3cdc5d8aac714e3f",
   "count": 104,
   "matches": [
     {
@@ -2106,7 +2106,7 @@
         "time": "03:30",
         "label": "Thu 25 Jun · 03:30 IST"
       },
-      "status": "LIVE",
+      "status": "IN_PLAY",
       "live": true,
       "finished": false,
       "minute": null,
