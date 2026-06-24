@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-24T23:48:28.021851+05:30",
-  "updatedLabel": "24 Jun 2026 · 23:48 IST",
+  "updated": "2026-06-25T01:00:34.034707+05:30",
+  "updatedLabel": "25 Jun 2026 · 01:00 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "cbf8875c3c894e5f0c192784eb1f3dc9463317a1edc75be439ad127871b137c0",
+  "contentHash": "e00e83d4a728bdf6d1181ea4eafed08555cc78cc6b17f8e6b54ee1892ce5671b",
   "count": 104,
   "matches": [
     {
@@ -1983,8 +1983,8 @@
         "time": "00:30",
         "label": "Thu 25 Jun · 00:30 IST"
       },
-      "status": "TIMED",
-      "live": false,
+      "status": "IN_PLAY",
+      "live": true,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -2006,11 +2006,11 @@
         "crest": "https://crests.football-data.org/canada.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
+        "home": 0,
+        "away": 0,
         "halfHome": null,
         "halfAway": null,
-        "winner": null
+        "winner": "DRAW"
       },
       "lineups": null
     },
@@ -2024,8 +2024,8 @@
         "time": "00:30",
         "label": "Thu 25 Jun · 00:30 IST"
       },
-      "status": "TIMED",
-      "live": false,
+      "status": "IN_PLAY",
+      "live": true,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -2047,11 +2047,11 @@
         "crest": "https://crests.football-data.org/8030.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
+        "home": 0,
+        "away": 0,
         "halfHome": null,
         "halfAway": null,
-        "winner": null
+        "winner": "DRAW"
       },
       "lineups": null
     },
