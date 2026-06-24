@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-25T04:19:43.389607+05:30",
-  "updatedLabel": "25 Jun 2026 · 04:19 IST",
+  "updated": "2026-06-25T04:22:16.455641+05:30",
+  "updatedLabel": "25 Jun 2026 · 04:22 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "ec2ed9d90155d92ea43519a8b98527e13071678281bdf811795bcbdce1db8e77",
+  "contentHash": "66ec53be53539346af3aa624898ad2b6a392588b6a32da8088b329d1199afe27",
   "count": 104,
   "matches": [
     {
@@ -120,11 +120,11 @@
         "crest": "https://crests.football-data.org/bosnia.svg"
       },
       "score": {
-        "home": 1,
-        "away": 1,
-        "halfHome": 0,
-        "halfAway": 1,
-        "winner": "DRAW"
+        "home": null,
+        "away": null,
+        "halfHome": null,
+        "halfAway": null,
+        "winner": null
       },
       "lineups": null
     },
@@ -2088,11 +2088,11 @@
         "crest": "https://crests.football-data.org/haiti.svg"
       },
       "score": {
-        "home": 1,
+        "home": 2,
         "away": 2,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": "AWAY_TEAM"
+        "halfHome": 0,
+        "halfAway": 0,
+        "winner": "DRAW"
       },
       "lineups": null
     },
