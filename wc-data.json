@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-25T01:41:58.450198+05:30",
-  "updatedLabel": "25 Jun 2026 · 01:41 IST",
+  "updated": "2026-06-25T01:43:30.136346+05:30",
+  "updatedLabel": "25 Jun 2026 · 01:43 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "985ada454edba392daf826b10a2071eca234a706a1cbc38939095b3892af7166",
+  "contentHash": "a34e548fa7a9d473620ff6236a161d37398a25b9ca1ad80d895e9aae389b7a68",
   "count": 104,
   "matches": [
     {
@@ -362,7 +362,7 @@
         "id": 9460,
         "name": "Curaçao",
         "short": "Curaçao",
-        "tla": "CUW",
+        "tla": "CUR",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "score": {
@@ -1428,7 +1428,7 @@
         "id": 9460,
         "name": "Curaçao",
         "short": "Curaçao",
-        "tla": "CUW",
+        "tla": "CUR",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "score": {
@@ -2024,7 +2024,7 @@
         "time": "00:30",
         "label": "Thu 25 Jun · 00:30 IST"
       },
-      "status": "PAUSED",
+      "status": "LIVE",
       "live": true,
       "finished": false,
       "minute": null,
@@ -2282,7 +2282,7 @@
         "id": 9460,
         "name": "Curaçao",
         "short": "Curaçao",
-        "tla": "CUW",
+        "tla": "CUR",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "away": {
