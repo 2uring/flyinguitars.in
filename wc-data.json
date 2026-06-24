@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-25T03:05:44.251868+05:30",
-  "updatedLabel": "25 Jun 2026 · 03:05 IST",
+  "updated": "2026-06-25T04:02:03.265910+05:30",
+  "updatedLabel": "25 Jun 2026 · 04:02 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "3dc2c8367d5681dd6617e39719efe87fd490707c0af63126cb58794fd8d1e16b",
+  "contentHash": "8c7b9bf728e4f7745d951a5314704106ae35748ac3730a6cca478193831b6d26",
   "count": 104,
   "matches": [
     {
@@ -608,7 +608,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "score": {
@@ -1585,7 +1585,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "away": {
@@ -2065,8 +2065,8 @@
         "time": "03:30",
         "label": "Thu 25 Jun · 03:30 IST"
       },
-      "status": "TIMED",
-      "live": false,
+      "status": "LIVE",
+      "live": true,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -2088,11 +2088,11 @@
         "crest": "https://crests.football-data.org/haiti.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
+        "home": 0,
+        "away": 1,
         "halfHome": null,
         "halfAway": null,
-        "winner": null
+        "winner": "AWAY_TEAM"
       },
       "lineups": null
     },
@@ -2106,8 +2106,8 @@
         "time": "03:30",
         "label": "Thu 25 Jun · 03:30 IST"
       },
-      "status": "TIMED",
-      "live": false,
+      "status": "LIVE",
+      "live": true,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -2129,11 +2129,11 @@
         "crest": "https://crests.football-data.org/764.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
+        "home": 0,
+        "away": 2,
         "halfHome": null,
         "halfAway": null,
-        "winner": null
+        "winner": "AWAY_TEAM"
       },
       "lineups": null
     },
@@ -2569,7 +2569,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "away": {
