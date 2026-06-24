@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-24T08:37:19.939751+05:30",
-  "updatedLabel": "24 Jun 2026 · 08:37 IST",
+  "updated": "2026-06-24T08:38:29.903867+05:30",
+  "updatedLabel": "24 Jun 2026 · 08:38 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "12589e5d2419257a5c137fe2b24ed0003c9b2e52989edc7f8a30e67e04776250",
+  "contentHash": "db7ce1e66f467adf047d38471c538a4d84883737246652c724a1744fe7a89b46",
   "count": 104,
   "matches": [
     {
@@ -3058,11 +3058,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": 759,
-        "name": "Germany",
-        "short": "Germany",
-        "tla": "GER",
-        "crest": "https://crests.football-data.org/759.svg"
+        "id": null,
+        "name": "TBD",
+        "short": "TBD",
+        "tla": null,
+        "crest": null
       },
       "away": {
         "id": null,
@@ -3222,11 +3222,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": 769,
-        "name": "Mexico",
-        "short": "Mexico",
-        "tla": "MEX",
-        "crest": "https://crests.football-data.org/769.svg"
+        "id": null,
+        "name": "TBD",
+        "short": "TBD",
+        "tla": null,
+        "crest": null
       },
       "away": {
         "id": null,
@@ -3345,11 +3345,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": 771,
-        "name": "United States",
-        "short": "USA",
-        "tla": "USA",
-        "crest": "https://crests.football-data.org/usa.svg"
+        "id": null,
+        "name": "TBD",
+        "short": "TBD",
+        "tla": null,
+        "crest": null
       },
       "away": {
         "id": null,
@@ -3550,11 +3550,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": 762,
-        "name": "Argentina",
-        "short": "Argentina",
-        "tla": "ARG",
-        "crest": "https://crests.football-data.org/762.png"
+        "id": null,
+        "name": "TBD",
+        "short": "TBD",
+        "tla": null,
+        "crest": null
       },
       "away": {
         "id": null,
