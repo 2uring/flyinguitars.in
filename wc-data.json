@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-25T07:03:05.021235+05:30",
-  "updatedLabel": "25 Jun 2026 · 07:03 IST",
+  "updated": "2026-06-25T07:06:37.606468+05:30",
+  "updatedLabel": "25 Jun 2026 · 07:06 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "ca5f6c5633801fca2ea46eb044486031b52de8fa17f047738de5f667ce66db72",
+  "contentHash": "f1ee4ef20f9219b4f54439f8d6dfb1c16246a15be40102811784fca55a7f481d",
   "count": 104,
   "matches": [
     {
@@ -2147,8 +2147,8 @@
         "time": "06:30",
         "label": "Thu 25 Jun · 06:30 IST"
       },
-      "status": "IN_PLAY",
-      "live": true,
+      "status": "TIMED",
+      "live": false,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -2170,11 +2170,11 @@
         "crest": "https://crests.football-data.org/769.svg"
       },
       "score": {
-        "home": 0,
-        "away": 0,
+        "home": null,
+        "away": null,
         "halfHome": null,
         "halfAway": null,
-        "winner": "DRAW"
+        "winner": null
       },
       "lineups": null
     },
@@ -2188,8 +2188,8 @@
         "time": "06:30",
         "label": "Thu 25 Jun · 06:30 IST"
       },
-      "status": "IN_PLAY",
-      "live": true,
+      "status": "TIMED",
+      "live": false,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -2211,11 +2211,11 @@
         "crest": "https://crests.football-data.org/772.png"
       },
       "score": {
-        "home": 0,
-        "away": 0,
+        "home": null,
+        "away": null,
         "halfHome": null,
         "halfAway": null,
-        "winner": "DRAW"
+        "winner": null
       },
       "lineups": null
     },
@@ -3058,11 +3058,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 759,
+        "name": "Germany",
+        "short": "Germany",
+        "tla": "GER",
+        "crest": "https://crests.football-data.org/759.svg"
       },
       "away": {
         "id": null,
@@ -3222,11 +3222,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 769,
+        "name": "Mexico",
+        "short": "Mexico",
+        "tla": "MEX",
+        "crest": "https://crests.football-data.org/769.svg"
       },
       "away": {
         "id": null,
@@ -3345,11 +3345,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 771,
+        "name": "United States",
+        "short": "USA",
+        "tla": "USA",
+        "crest": "https://crests.football-data.org/usa.svg"
       },
       "away": {
         "id": null,
@@ -3550,11 +3550,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 762,
+        "name": "Argentina",
+        "short": "Argentina",
+        "tla": "ARG",
+        "crest": "https://crests.football-data.org/762.png"
       },
       "away": {
         "id": null,
