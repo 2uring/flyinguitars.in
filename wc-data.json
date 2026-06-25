@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-25T08:26:25.692401+05:30",
-  "updatedLabel": "25 Jun 2026 · 08:26 IST",
+  "updated": "2026-06-25T08:30:12.859934+05:30",
+  "updatedLabel": "25 Jun 2026 · 08:30 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "7d8a1cf33f0ad9f2e1c398e5204ff1f397920e19cb70c1e3b42b11630c850a27",
+  "contentHash": "74b403a8fc4742df740cf2ba0e9b9dcc18bc451e711c10c8418d23c4045536d8",
   "count": 104,
   "matches": [
     {
@@ -362,7 +362,7 @@
         "id": 9460,
         "name": "Curaçao",
         "short": "Curaçao",
-        "tla": "CUR",
+        "tla": "CUW",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "score": {
@@ -608,7 +608,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "score": {
@@ -1428,7 +1428,7 @@
         "id": 9460,
         "name": "Curaçao",
         "short": "Curaçao",
-        "tla": "CUR",
+        "tla": "CUW",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "score": {
@@ -1585,7 +1585,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "away": {
@@ -2171,7 +2171,7 @@
       },
       "score": {
         "home": 0,
-        "away": 2,
+        "away": 3,
         "halfHome": 0,
         "halfAway": 0,
         "winner": "AWAY_TEAM"
@@ -2282,7 +2282,7 @@
         "id": 9460,
         "name": "Curaçao",
         "short": "Curaçao",
-        "tla": "CUR",
+        "tla": "CUW",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "away": {
@@ -2569,7 +2569,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "away": {
