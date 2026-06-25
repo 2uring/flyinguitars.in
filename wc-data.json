@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-25T06:32:47.713568+05:30",
-  "updatedLabel": "25 Jun 2026 · 06:32 IST",
+  "updated": "2026-06-25T07:03:05.021235+05:30",
+  "updatedLabel": "25 Jun 2026 · 07:03 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "5a46ae6e999279b30b3edab0ba5a47efb8a408cc5f8134351b585c7015cdb8ad",
+  "contentHash": "ca5f6c5633801fca2ea46eb044486031b52de8fa17f047738de5f667ce66db72",
   "count": 104,
   "matches": [
     {
@@ -120,11 +120,11 @@
         "crest": "https://crests.football-data.org/bosnia.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": null
+        "home": 1,
+        "away": 1,
+        "halfHome": 0,
+        "halfAway": 1,
+        "winner": "DRAW"
       },
       "lineups": null
     },
@@ -608,7 +608,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "score": {
@@ -1585,7 +1585,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "away": {
@@ -2147,8 +2147,8 @@
         "time": "06:30",
         "label": "Thu 25 Jun · 06:30 IST"
       },
-      "status": "TIMED",
-      "live": false,
+      "status": "IN_PLAY",
+      "live": true,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -2170,11 +2170,11 @@
         "crest": "https://crests.football-data.org/769.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
+        "home": 0,
+        "away": 0,
         "halfHome": null,
         "halfAway": null,
-        "winner": null
+        "winner": "DRAW"
       },
       "lineups": null
     },
@@ -2188,8 +2188,8 @@
         "time": "06:30",
         "label": "Thu 25 Jun · 06:30 IST"
       },
-      "status": "TIMED",
-      "live": false,
+      "status": "IN_PLAY",
+      "live": true,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -2211,11 +2211,11 @@
         "crest": "https://crests.football-data.org/772.png"
       },
       "score": {
-        "home": null,
-        "away": null,
+        "home": 0,
+        "away": 0,
         "halfHome": null,
         "halfAway": null,
-        "winner": null
+        "winner": "DRAW"
       },
       "lineups": null
     },
@@ -2569,7 +2569,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "away": {
