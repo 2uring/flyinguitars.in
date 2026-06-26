@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-26T08:35:20.562913+05:30",
-  "updatedLabel": "26 Jun 2026 · 08:35 IST",
+  "updated": "2026-06-26T08:36:23.313630+05:30",
+  "updatedLabel": "26 Jun 2026 · 08:36 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "1cb2df822572469fcd0ee2a4425e8a7415ef1b5ba390a9791024a648e209c06e",
+  "contentHash": "4c9dbd9be733f7bd60f1771f54903acf72a8b1d2cc445dfe35285f6a20a0d3ab",
   "count": 104,
   "matches": [
     {
@@ -608,7 +608,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URU",
+        "tla": "URY",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "score": {
@@ -1585,7 +1585,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URU",
+        "tla": "URY",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "away": {
@@ -2229,9 +2229,9 @@
         "time": "01:30",
         "label": "Fri 26 Jun · 01:30 IST"
       },
-      "status": "FINISHED",
+      "status": "TIMED",
       "live": false,
-      "finished": true,
+      "finished": false,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_E",
@@ -2252,11 +2252,11 @@
         "crest": "https://crests.football-data.org/759.svg"
       },
       "score": {
-        "home": 2,
-        "away": 1,
-        "halfHome": 1,
-        "halfAway": 1,
-        "winner": "HOME_TEAM"
+        "home": null,
+        "away": null,
+        "halfHome": null,
+        "halfAway": null,
+        "winner": null
       },
       "lineups": null
     },
@@ -2270,9 +2270,9 @@
         "time": "01:30",
         "label": "Fri 26 Jun · 01:30 IST"
       },
-      "status": "FINISHED",
+      "status": "TIMED",
       "live": false,
-      "finished": true,
+      "finished": false,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_E",
@@ -2293,11 +2293,11 @@
         "crest": "https://crests.football-data.org/787.svg"
       },
       "score": {
-        "home": 0,
-        "away": 2,
-        "halfHome": 0,
-        "halfAway": 1,
-        "winner": "AWAY_TEAM"
+        "home": null,
+        "away": null,
+        "halfHome": null,
+        "halfAway": null,
+        "winner": null
       },
       "lineups": null
     },
@@ -2311,9 +2311,9 @@
         "time": "04:30",
         "label": "Fri 26 Jun · 04:30 IST"
       },
-      "status": "FINISHED",
+      "status": "TIMED",
       "live": false,
-      "finished": true,
+      "finished": false,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_F",
@@ -2334,11 +2334,11 @@
         "crest": "https://crests.football-data.org/8601.svg"
       },
       "score": {
-        "home": 1,
-        "away": 3,
-        "halfHome": 0,
-        "halfAway": 2,
-        "winner": "AWAY_TEAM"
+        "home": null,
+        "away": null,
+        "halfHome": null,
+        "halfAway": null,
+        "winner": null
       },
       "lineups": null
     },
@@ -2352,9 +2352,9 @@
         "time": "04:30",
         "label": "Fri 26 Jun · 04:30 IST"
       },
-      "status": "FINISHED",
+      "status": "TIMED",
       "live": false,
-      "finished": true,
+      "finished": false,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_F",
@@ -2375,11 +2375,11 @@
         "crest": "https://crests.football-data.org/792.svg"
       },
       "score": {
-        "home": 1,
-        "away": 1,
-        "halfHome": 0,
-        "halfAway": 0,
-        "winner": "DRAW"
+        "home": null,
+        "away": null,
+        "halfHome": null,
+        "halfAway": null,
+        "winner": null
       },
       "lineups": null
     },
@@ -2393,8 +2393,8 @@
         "time": "07:30",
         "label": "Fri 26 Jun · 07:30 IST"
       },
-      "status": "PAUSED",
-      "live": true,
+      "status": "TIMED",
+      "live": false,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -2416,11 +2416,11 @@
         "crest": "https://crests.football-data.org/usa.svg"
       },
       "score": {
-        "home": 2,
-        "away": 1,
-        "halfHome": 2,
-        "halfAway": 1,
-        "winner": "HOME_TEAM"
+        "home": null,
+        "away": null,
+        "halfHome": null,
+        "halfAway": null,
+        "winner": null
       },
       "lineups": null
     },
@@ -2434,8 +2434,8 @@
         "time": "07:30",
         "label": "Fri 26 Jun · 07:30 IST"
       },
-      "status": "PAUSED",
-      "live": true,
+      "status": "TIMED",
+      "live": false,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -2457,11 +2457,11 @@
         "crest": "https://crests.football-data.org/779.svg"
       },
       "score": {
-        "home": 0,
-        "away": 0,
-        "halfHome": 0,
-        "halfAway": 0,
-        "winner": "DRAW"
+        "home": null,
+        "away": null,
+        "halfHome": null,
+        "halfAway": null,
+        "winner": null
       },
       "lineups": null
     },
@@ -2569,7 +2569,7 @@
         "id": 758,
         "name": "Uruguay",
         "short": "Uruguay",
-        "tla": "URU",
+        "tla": "URY",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "away": {
