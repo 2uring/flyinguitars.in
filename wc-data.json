@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-26T05:53:53.434016+05:30",
-  "updatedLabel": "26 Jun 2026 · 05:53 IST",
+  "updated": "2026-06-26T05:56:54.082993+05:30",
+  "updatedLabel": "26 Jun 2026 · 05:56 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "f383b74a379c9e94f6a8de46241e33d7bf8a4501541296d22012f5b78fd3e6ea",
+  "contentHash": "702e55cac943af0b8b37a941c4b8866c6296f7fa85c6882e5f72c8ae92bb96e0",
   "count": 104,
   "matches": [
     {
@@ -2335,7 +2335,7 @@
       },
       "score": {
         "home": 1,
-        "away": 2,
+        "away": 3,
         "halfHome": 0,
         "halfAway": 2,
         "winner": "AWAY_TEAM"
@@ -3058,11 +3058,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 759,
+        "name": "Germany",
+        "short": "Germany",
+        "tla": "GER",
+        "crest": "https://crests.football-data.org/759.svg"
       },
       "away": {
         "id": null,
@@ -3222,11 +3222,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 769,
+        "name": "Mexico",
+        "short": "Mexico",
+        "tla": "MEX",
+        "crest": "https://crests.football-data.org/769.svg"
       },
       "away": {
         "id": null,
@@ -3345,11 +3345,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 771,
+        "name": "United States",
+        "short": "USA",
+        "tla": "USA",
+        "crest": "https://crests.football-data.org/usa.svg"
       },
       "away": {
         "id": null,
@@ -3550,11 +3550,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 762,
+        "name": "Argentina",
+        "short": "Argentina",
+        "tla": "ARG",
+        "crest": "https://crests.football-data.org/762.png"
       },
       "away": {
         "id": null,
