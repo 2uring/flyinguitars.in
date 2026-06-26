@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-27T02:12:05.277777+05:30",
-  "updatedLabel": "27 Jun 2026 · 02:12 IST",
+  "updated": "2026-06-27T02:14:37.416126+05:30",
+  "updatedLabel": "27 Jun 2026 · 02:14 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "5e529c4495b00a0353c9083d84f7a31c1ee558ed0ed0daa3a20ef6f0a52ffbad",
+  "contentHash": "092329525af03f90441ff92ee15b381967face83c03fbff88c5a126f7c250c94",
   "count": 104,
   "matches": [
     {
@@ -2539,7 +2539,7 @@
         "crest": "https://crests.football-data.org/iraq.svg"
       },
       "score": {
-        "home": 3,
+        "home": 4,
         "away": 0,
         "halfHome": 1,
         "halfAway": 0,
