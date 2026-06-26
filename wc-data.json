@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-26T07:15:37.718451+05:30",
-  "updatedLabel": "26 Jun 2026 · 07:15 IST",
+  "updated": "2026-06-26T08:01:26.675980+05:30",
+  "updatedLabel": "26 Jun 2026 · 08:01 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "d492c5decded132133aed31c18f0d55e2414bfc530225585d19606621966d0f4",
+  "contentHash": "86426ceb820728a613c6e2e2a9a8cf1c26ddb499bf95458e2714b9c099a6148f",
   "count": 104,
   "matches": [
     {
@@ -2393,8 +2393,8 @@
         "time": "07:30",
         "label": "Fri 26 Jun · 07:30 IST"
       },
-      "status": "TIMED",
-      "live": false,
+      "status": "IN_PLAY",
+      "live": true,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -2416,11 +2416,11 @@
         "crest": "https://crests.football-data.org/usa.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
+        "home": 1,
+        "away": 1,
         "halfHome": null,
         "halfAway": null,
-        "winner": null
+        "winner": "DRAW"
       },
       "lineups": null
     },
@@ -2434,8 +2434,8 @@
         "time": "07:30",
         "label": "Fri 26 Jun · 07:30 IST"
       },
-      "status": "TIMED",
-      "live": false,
+      "status": "IN_PLAY",
+      "live": true,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -2457,11 +2457,11 @@
         "crest": "https://crests.football-data.org/779.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
+        "home": 0,
+        "away": 0,
         "halfHome": null,
         "halfAway": null,
-        "winner": null
+        "winner": "DRAW"
       },
       "lineups": null
     },
