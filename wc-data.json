@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-26T08:36:23.313630+05:30",
-  "updatedLabel": "26 Jun 2026 · 08:36 IST",
+  "updated": "2026-06-26T09:06:41.039204+05:30",
+  "updatedLabel": "26 Jun 2026 · 09:06 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "4c9dbd9be733f7bd60f1771f54903acf72a8b1d2cc445dfe35285f6a20a0d3ab",
+  "contentHash": "eb32cd2ffc49dd01ea04be4f02e5399ccc92e66d161f93786122fe461e1a81e9",
   "count": 104,
   "matches": [
     {
@@ -2229,9 +2229,9 @@
         "time": "01:30",
         "label": "Fri 26 Jun · 01:30 IST"
       },
-      "status": "TIMED",
+      "status": "FINISHED",
       "live": false,
-      "finished": false,
+      "finished": true,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_E",
@@ -2252,11 +2252,11 @@
         "crest": "https://crests.football-data.org/759.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": null
+        "home": 2,
+        "away": 1,
+        "halfHome": 1,
+        "halfAway": 1,
+        "winner": "HOME_TEAM"
       },
       "lineups": null
     },
@@ -2270,9 +2270,9 @@
         "time": "01:30",
         "label": "Fri 26 Jun · 01:30 IST"
       },
-      "status": "TIMED",
+      "status": "FINISHED",
       "live": false,
-      "finished": false,
+      "finished": true,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_E",
@@ -2293,11 +2293,11 @@
         "crest": "https://crests.football-data.org/787.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": null
+        "home": 0,
+        "away": 2,
+        "halfHome": 0,
+        "halfAway": 1,
+        "winner": "AWAY_TEAM"
       },
       "lineups": null
     },
@@ -2311,9 +2311,9 @@
         "time": "04:30",
         "label": "Fri 26 Jun · 04:30 IST"
       },
-      "status": "TIMED",
+      "status": "FINISHED",
       "live": false,
-      "finished": false,
+      "finished": true,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_F",
@@ -2334,11 +2334,11 @@
         "crest": "https://crests.football-data.org/8601.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": null
+        "home": 1,
+        "away": 3,
+        "halfHome": 0,
+        "halfAway": 2,
+        "winner": "AWAY_TEAM"
       },
       "lineups": null
     },
@@ -2352,9 +2352,9 @@
         "time": "04:30",
         "label": "Fri 26 Jun · 04:30 IST"
       },
-      "status": "TIMED",
+      "status": "FINISHED",
       "live": false,
-      "finished": false,
+      "finished": true,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_F",
@@ -2375,11 +2375,11 @@
         "crest": "https://crests.football-data.org/792.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": null
+        "home": 1,
+        "away": 1,
+        "halfHome": 0,
+        "halfAway": 0,
+        "winner": "DRAW"
       },
       "lineups": null
     },
@@ -2393,8 +2393,8 @@
         "time": "07:30",
         "label": "Fri 26 Jun · 07:30 IST"
       },
-      "status": "TIMED",
-      "live": false,
+      "status": "IN_PLAY",
+      "live": true,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -2416,11 +2416,11 @@
         "crest": "https://crests.football-data.org/usa.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": null
+        "home": 2,
+        "away": 2,
+        "halfHome": 2,
+        "halfAway": 1,
+        "winner": "DRAW"
       },
       "lineups": null
     },
@@ -2434,8 +2434,8 @@
         "time": "07:30",
         "label": "Fri 26 Jun · 07:30 IST"
       },
-      "status": "TIMED",
-      "live": false,
+      "status": "IN_PLAY",
+      "live": true,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -2457,11 +2457,11 @@
         "crest": "https://crests.football-data.org/779.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": null
+        "home": 0,
+        "away": 0,
+        "halfHome": 0,
+        "halfAway": 0,
+        "winner": "DRAW"
       },
       "lineups": null
     },
