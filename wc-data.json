@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-27T01:31:10.332049+05:30",
-  "updatedLabel": "27 Jun 2026 · 01:31 IST",
+  "updated": "2026-06-27T01:32:27.901094+05:30",
+  "updatedLabel": "27 Jun 2026 · 01:32 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "fd5e5bc3ca3f1584fcf7409fe9a5dc345ce7494271053d1323eb417e63517845",
+  "contentHash": "080b726cdebb0531a7d26cd69f0dacb02e985d39bdda1b95668ad0a8bebb44d5",
   "count": 104,
   "matches": [
     {
@@ -2147,9 +2147,9 @@
         "time": "06:30",
         "label": "Thu 25 Jun · 06:30 IST"
       },
-      "status": "TIMED",
+      "status": "FINISHED",
       "live": false,
-      "finished": false,
+      "finished": true,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_A",
@@ -2170,11 +2170,11 @@
         "crest": "https://crests.football-data.org/769.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": null
+        "home": 0,
+        "away": 3,
+        "halfHome": 0,
+        "halfAway": 0,
+        "winner": "AWAY_TEAM"
       },
       "lineups": null
     },
@@ -2188,9 +2188,9 @@
         "time": "06:30",
         "label": "Thu 25 Jun · 06:30 IST"
       },
-      "status": "TIMED",
+      "status": "FINISHED",
       "live": false,
-      "finished": false,
+      "finished": true,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_A",
@@ -2211,11 +2211,11 @@
         "crest": "https://crests.football-data.org/772.png"
       },
       "score": {
-        "home": null,
-        "away": null,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": null
+        "home": 1,
+        "away": 0,
+        "halfHome": 0,
+        "halfAway": 0,
+        "winner": "HOME_TEAM"
       },
       "lineups": null
     },
@@ -2229,9 +2229,9 @@
         "time": "01:30",
         "label": "Fri 26 Jun · 01:30 IST"
       },
-      "status": "TIMED",
+      "status": "FINISHED",
       "live": false,
-      "finished": false,
+      "finished": true,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_E",
@@ -2252,11 +2252,11 @@
         "crest": "https://crests.football-data.org/759.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": null
+        "home": 2,
+        "away": 1,
+        "halfHome": 1,
+        "halfAway": 1,
+        "winner": "HOME_TEAM"
       },
       "lineups": null
     },
@@ -2270,9 +2270,9 @@
         "time": "01:30",
         "label": "Fri 26 Jun · 01:30 IST"
       },
-      "status": "TIMED",
+      "status": "FINISHED",
       "live": false,
-      "finished": false,
+      "finished": true,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_E",
@@ -2293,11 +2293,11 @@
         "crest": "https://crests.football-data.org/787.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": null
+        "home": 0,
+        "away": 2,
+        "halfHome": 0,
+        "halfAway": 1,
+        "winner": "AWAY_TEAM"
       },
       "lineups": null
     },
@@ -2311,9 +2311,9 @@
         "time": "04:30",
         "label": "Fri 26 Jun · 04:30 IST"
       },
-      "status": "TIMED",
+      "status": "FINISHED",
       "live": false,
-      "finished": false,
+      "finished": true,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_F",
@@ -2334,11 +2334,11 @@
         "crest": "https://crests.football-data.org/8601.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": null
+        "home": 1,
+        "away": 3,
+        "halfHome": 0,
+        "halfAway": 2,
+        "winner": "AWAY_TEAM"
       },
       "lineups": null
     },
@@ -2352,9 +2352,9 @@
         "time": "04:30",
         "label": "Fri 26 Jun · 04:30 IST"
       },
-      "status": "TIMED",
+      "status": "FINISHED",
       "live": false,
-      "finished": false,
+      "finished": true,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_F",
@@ -2375,11 +2375,11 @@
         "crest": "https://crests.football-data.org/792.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": null
+        "home": 1,
+        "away": 1,
+        "halfHome": 0,
+        "halfAway": 0,
+        "winner": "DRAW"
       },
       "lineups": null
     },
@@ -2516,7 +2516,7 @@
         "time": "00:30",
         "label": "Sat 27 Jun · 00:30 IST"
       },
-      "status": "LIVE",
+      "status": "PAUSED",
       "live": true,
       "finished": false,
       "minute": null,
@@ -2541,8 +2541,8 @@
       "score": {
         "home": 1,
         "away": 0,
-        "halfHome": null,
-        "halfAway": null,
+        "halfHome": 1,
+        "halfAway": 0,
         "winner": "HOME_TEAM"
       },
       "lineups": null
@@ -2976,18 +2976,18 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 774,
+        "name": "South Africa",
+        "short": "South Africa",
+        "tla": "RSA",
+        "crest": "https://crests.football-data.org/9396.svg"
       },
       "away": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 828,
+        "name": "Canada",
+        "short": "Canada",
+        "tla": "CAN",
+        "crest": "https://crests.football-data.org/canada.svg"
       },
       "score": {
         "home": null,
@@ -3017,18 +3017,18 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 764,
+        "name": "Brazil",
+        "short": "Brazil",
+        "tla": "BRA",
+        "crest": "https://crests.football-data.org/764.svg"
       },
       "away": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 766,
+        "name": "Japan",
+        "short": "Japan",
+        "tla": "JPN",
+        "crest": "https://crests.football-data.org/766.svg"
       },
       "score": {
         "home": null,
@@ -3099,18 +3099,18 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 8601,
+        "name": "Netherlands",
+        "short": "Netherlands",
+        "tla": "NED",
+        "crest": "https://crests.football-data.org/8601.svg"
       },
       "away": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 815,
+        "name": "Morocco",
+        "short": "Morocco",
+        "tla": "MAR",
+        "crest": "https://crests.football-data.org/morocco.svg"
       },
       "score": {
         "home": null,
@@ -3352,11 +3352,11 @@
         "crest": "https://crests.football-data.org/usa.svg"
       },
       "away": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 1060,
+        "name": "Bosnia-Herzegovina",
+        "short": "Bosnia-H.",
+        "tla": "BIH",
+        "crest": "https://crests.football-data.org/bosnia.svg"
       },
       "score": {
         "home": null,
@@ -3468,11 +3468,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 788,
+        "name": "Switzerland",
+        "short": "Switzerland",
+        "tla": "SUI",
+        "crest": "https://crests.football-data.org/788.svg"
       },
       "away": {
         "id": null,
@@ -3509,11 +3509,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 779,
+        "name": "Australia",
+        "short": "Australia",
+        "tla": "AUS",
+        "crest": "https://crests.football-data.org/779.svg"
       },
       "away": {
         "id": null,
