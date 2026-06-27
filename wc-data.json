@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-28T03:30:22.568301+05:30",
-  "updatedLabel": "28 Jun 2026 · 03:30 IST",
+  "updated": "2026-06-28T03:31:53.991132+05:30",
+  "updatedLabel": "28 Jun 2026 · 03:31 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "e51014bbd11c041b317478db601b535c87f7620ef406f5b6e6d3aa5d1a5f1056",
+  "contentHash": "cc2a45482eb20a5688b9aa585dd1e8ea235b44a1516114e51df714c779afadad",
   "count": 104,
   "matches": [
     {
@@ -2475,9 +2475,9 @@
         "time": "00:30",
         "label": "Sat 27 Jun · 00:30 IST"
       },
-      "status": "FINISHED",
+      "status": "TIMED",
       "live": false,
-      "finished": true,
+      "finished": false,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_I",
@@ -2498,11 +2498,11 @@
         "crest": "https://crests.football-data.org/773.svg"
       },
       "score": {
-        "home": 1,
-        "away": 4,
-        "halfHome": 1,
-        "halfAway": 3,
-        "winner": "AWAY_TEAM"
+        "home": null,
+        "away": null,
+        "halfHome": null,
+        "halfAway": null,
+        "winner": null
       },
       "lineups": null
     },
@@ -2516,9 +2516,9 @@
         "time": "00:30",
         "label": "Sat 27 Jun · 00:30 IST"
       },
-      "status": "FINISHED",
+      "status": "TIMED",
       "live": false,
-      "finished": true,
+      "finished": false,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_I",
@@ -2539,11 +2539,11 @@
         "crest": "https://crests.football-data.org/iraq.svg"
       },
       "score": {
-        "home": 5,
-        "away": 0,
-        "halfHome": 1,
-        "halfAway": 0,
-        "winner": "HOME_TEAM"
+        "home": null,
+        "away": null,
+        "halfHome": null,
+        "halfAway": null,
+        "winner": null
       },
       "lineups": null
     },
@@ -2704,10 +2704,10 @@
       },
       "score": {
         "home": 1,
-        "away": 1,
+        "away": 2,
         "halfHome": 1,
         "halfAway": 1,
-        "winner": "DRAW"
+        "winner": "AWAY_TEAM"
       },
       "lineups": null
     },
@@ -3140,11 +3140,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": 1935,
-        "name": "Ivory Coast",
-        "short": "Ivory Coast",
-        "tla": "CIV",
-        "crest": "https://crests.football-data.org/787.svg"
+        "id": null,
+        "name": "TBD",
+        "short": "TBD",
+        "tla": null,
+        "crest": null
       },
       "away": {
         "id": null,
