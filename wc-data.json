@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-27T09:41:01.883999+05:30",
-  "updatedLabel": "27 Jun 2026 · 09:41 IST",
+  "updated": "2026-06-27T09:42:19.060242+05:30",
+  "updatedLabel": "27 Jun 2026 · 09:42 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "ca0146548a5dfe1969a37fd5bf753f95f8539a162e1e8b82f2a80bde58fea64e",
+  "contentHash": "053eb2eab863f3d269ae4cd273dc64009b3dea4405651ae6d829fd8c184514a7",
   "count": 104,
   "matches": [
     {
@@ -2475,9 +2475,9 @@
         "time": "00:30",
         "label": "Sat 27 Jun · 00:30 IST"
       },
-      "status": "FINISHED",
+      "status": "TIMED",
       "live": false,
-      "finished": true,
+      "finished": false,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_I",
@@ -2498,11 +2498,11 @@
         "crest": "https://crests.football-data.org/773.svg"
       },
       "score": {
-        "home": 1,
-        "away": 4,
-        "halfHome": 1,
-        "halfAway": 3,
-        "winner": "AWAY_TEAM"
+        "home": null,
+        "away": null,
+        "halfHome": null,
+        "halfAway": null,
+        "winner": null
       },
       "lineups": null
     },
@@ -2516,9 +2516,9 @@
         "time": "00:30",
         "label": "Sat 27 Jun · 00:30 IST"
       },
-      "status": "FINISHED",
+      "status": "TIMED",
       "live": false,
-      "finished": true,
+      "finished": false,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_I",
@@ -2539,11 +2539,11 @@
         "crest": "https://crests.football-data.org/iraq.svg"
       },
       "score": {
-        "home": 5,
-        "away": 0,
-        "halfHome": 1,
-        "halfAway": 0,
-        "winner": "HOME_TEAM"
+        "home": null,
+        "away": null,
+        "halfHome": null,
+        "halfAway": null,
+        "winner": null
       },
       "lineups": null
     },
