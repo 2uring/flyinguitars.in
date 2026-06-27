@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-27T09:46:10.117021+05:30",
-  "updatedLabel": "27 Jun 2026 · 09:46 IST",
+  "updated": "2026-06-27T09:48:42.149999+05:30",
+  "updatedLabel": "27 Jun 2026 · 09:48 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "0b285a4dac6b8d1c719f242afadb96d9a6f4b2e96988f82a2d406e946fda22e3",
+  "contentHash": "26462579bba7e898675f512ba6aef98ac4593bb0898f56e65d75b7284a87f889",
   "count": 104,
   "matches": [
     {
@@ -2663,7 +2663,7 @@
       },
       "score": {
         "home": 0,
-        "away": 1,
+        "away": 2,
         "halfHome": 0,
         "halfAway": 1,
         "winner": "AWAY_TEAM"
