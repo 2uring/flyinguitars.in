@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-27T09:42:19.060242+05:30",
-  "updatedLabel": "27 Jun 2026 · 09:42 IST",
+  "updated": "2026-06-27T09:43:36.097486+05:30",
+  "updatedLabel": "27 Jun 2026 · 09:43 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "053eb2eab863f3d269ae4cd273dc64009b3dea4405651ae6d829fd8c184514a7",
+  "contentHash": "dedeb0f2118728ac474ccc6e0307716fa005ce8494826e115c50e6c68f86322e",
   "count": 104,
   "matches": [
     {
@@ -2475,9 +2475,9 @@
         "time": "00:30",
         "label": "Sat 27 Jun · 00:30 IST"
       },
-      "status": "TIMED",
+      "status": "FINISHED",
       "live": false,
-      "finished": false,
+      "finished": true,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_I",
@@ -2498,11 +2498,11 @@
         "crest": "https://crests.football-data.org/773.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": null
+        "home": 1,
+        "away": 4,
+        "halfHome": 1,
+        "halfAway": 3,
+        "winner": "AWAY_TEAM"
       },
       "lineups": null
     },
@@ -2516,9 +2516,9 @@
         "time": "00:30",
         "label": "Sat 27 Jun · 00:30 IST"
       },
-      "status": "TIMED",
+      "status": "FINISHED",
       "live": false,
-      "finished": false,
+      "finished": true,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_I",
@@ -2539,11 +2539,11 @@
         "crest": "https://crests.football-data.org/iraq.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": null
+        "home": 5,
+        "away": 0,
+        "halfHome": 1,
+        "halfAway": 0,
+        "winner": "HOME_TEAM"
       },
       "lineups": null
     },
@@ -2639,7 +2639,7 @@
         "time": "08:30",
         "label": "Sat 27 Jun · 08:30 IST"
       },
-      "status": "PAUSED",
+      "status": "LIVE",
       "live": true,
       "finished": false,
       "minute": null,
