@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-27T08:27:24.143475+05:30",
-  "updatedLabel": "27 Jun 2026 · 08:27 IST",
+  "updated": "2026-06-27T09:02:42.333378+05:30",
+  "updatedLabel": "27 Jun 2026 · 09:02 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "0cd04ec9ab5195735600c1bccc77708001ec8803c507e73b0709c6e35bfd9294",
+  "contentHash": "073bdd33224bfb5fcac5feedde06838d5a4c818336dfb8088bedb4100f2c8ca9",
   "count": 104,
   "matches": [
     {
@@ -2639,8 +2639,8 @@
         "time": "08:30",
         "label": "Sat 27 Jun · 08:30 IST"
       },
-      "status": "TIMED",
-      "live": false,
+      "status": "LIVE",
+      "live": true,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -2662,11 +2662,11 @@
         "crest": "https://crests.football-data.org/805.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
+        "home": 0,
+        "away": 0,
         "halfHome": null,
         "halfAway": null,
-        "winner": null
+        "winner": "DRAW"
       },
       "lineups": null
     },
@@ -2680,8 +2680,8 @@
         "time": "08:30",
         "label": "Sat 27 Jun · 08:30 IST"
       },
-      "status": "TIMED",
-      "live": false,
+      "status": "IN_PLAY",
+      "live": true,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -2703,11 +2703,11 @@
         "crest": "https://crests.football-data.org/iran.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
+        "home": 1,
+        "away": 1,
         "halfHome": null,
         "halfAway": null,
-        "winner": null
+        "winner": "DRAW"
       },
       "lineups": null
     },
