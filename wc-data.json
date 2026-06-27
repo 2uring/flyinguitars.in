@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-27T07:08:28.626068+05:30",
-  "updatedLabel": "27 Jun 2026 · 07:08 IST",
+  "updated": "2026-06-27T07:14:00.049068+05:30",
+  "updatedLabel": "27 Jun 2026 · 07:14 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "07407be88f788c82f0f83438363d73232a3632fdecf48c48b5f2fa56f50e5687",
+  "contentHash": "ee60e077b33babd99e231160440bb704bb247b1541ad96db92e9d328adf28f1c",
   "count": 104,
   "matches": [
     {
@@ -2475,9 +2475,9 @@
         "time": "00:30",
         "label": "Sat 27 Jun · 00:30 IST"
       },
-      "status": "TIMED",
+      "status": "FINISHED",
       "live": false,
-      "finished": false,
+      "finished": true,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_I",
@@ -2498,11 +2498,11 @@
         "crest": "https://crests.football-data.org/773.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": null
+        "home": 1,
+        "away": 4,
+        "halfHome": 1,
+        "halfAway": 3,
+        "winner": "AWAY_TEAM"
       },
       "lineups": null
     },
@@ -2516,9 +2516,9 @@
         "time": "00:30",
         "label": "Sat 27 Jun · 00:30 IST"
       },
-      "status": "TIMED",
+      "status": "FINISHED",
       "live": false,
-      "finished": false,
+      "finished": true,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_I",
@@ -2539,11 +2539,11 @@
         "crest": "https://crests.football-data.org/iraq.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": null
+        "home": 5,
+        "away": 0,
+        "halfHome": 1,
+        "halfAway": 0,
+        "winner": "HOME_TEAM"
       },
       "lineups": null
     },
@@ -2557,8 +2557,8 @@
         "time": "05:30",
         "label": "Sat 27 Jun · 05:30 IST"
       },
-      "status": "TIMED",
-      "live": false,
+      "status": "IN_PLAY",
+      "live": true,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -2580,11 +2580,11 @@
         "crest": "https://crests.football-data.org/760.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": null
+        "home": 0,
+        "away": 1,
+        "halfHome": 0,
+        "halfAway": 1,
+        "winner": "AWAY_TEAM"
       },
       "lineups": null
     },
@@ -2598,8 +2598,8 @@
         "time": "05:30",
         "label": "Sat 27 Jun · 05:30 IST"
       },
-      "status": "TIMED",
-      "live": false,
+      "status": "IN_PLAY",
+      "live": true,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -2621,11 +2621,11 @@
         "crest": "https://crests.football-data.org/saudi_arabia.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": null
+        "home": 0,
+        "away": 0,
+        "halfHome": 0,
+        "halfAway": 0,
+        "winner": "DRAW"
       },
       "lineups": null
     },
