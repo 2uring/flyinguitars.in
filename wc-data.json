@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-28T09:31:41.904211+05:30",
-  "updatedLabel": "28 Jun 2026 · 09:31 IST",
+  "updated": "2026-06-28T09:32:51.829790+05:30",
+  "updatedLabel": "28 Jun 2026 · 09:32 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "c5a9f7f1df2ef84310b9a1100aef13e8a6996f0cd93d21b469b4763e1219b23d",
+  "contentHash": "ac511b11a8ce8d5665c3a1aa5d80dc3359621f40617b5468d6192d5561b60fce",
   "count": 104,
   "matches": [
     {
@@ -2885,9 +2885,9 @@
         "time": "07:30",
         "label": "Sun 28 Jun · 07:30 IST"
       },
-      "status": "IN_PLAY",
-      "live": true,
-      "finished": false,
+      "status": "FINISHED",
+      "live": false,
+      "finished": true,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_J",
@@ -2950,10 +2950,10 @@
       },
       "score": {
         "home": 3,
-        "away": 2,
+        "away": 3,
         "halfHome": 1,
         "halfAway": 1,
-        "winner": "HOME_TEAM"
+        "winner": "DRAW"
       },
       "lineups": null
     },
