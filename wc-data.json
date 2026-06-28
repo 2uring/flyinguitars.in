@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-28T11:35:11.961100+05:30",
-  "updatedLabel": "28 Jun 2026 · 11:35 IST",
+  "updated": "2026-06-28T12:05:15.062297+05:30",
+  "updatedLabel": "28 Jun 2026 · 12:05 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "a63906242090cef4b216fd34e657afa87ce2b2a7056ef50be6a28619f7a2ecea",
+  "contentHash": "ff2ffdb136e61e097cf756fd7d282adea5f5808a43e5c3c771bf5a27beab9687",
   "count": 104,
   "matches": [
     {
@@ -2967,7 +2967,7 @@
         "time": "00:30",
         "label": "Mon 29 Jun · 00:30 IST"
       },
-      "status": "2026-06-29 19:00:00Z",
+      "status": "TIMED",
       "live": false,
       "finished": false,
       "minute": null,
@@ -3065,11 +3065,11 @@
         "crest": "https://crests.football-data.org/759.svg"
       },
       "away": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 761,
+        "name": "Paraguay",
+        "short": "Paraguay",
+        "tla": "PAR",
+        "crest": "https://crests.football-data.org/761.svg"
       },
       "score": {
         "home": null,
@@ -3147,11 +3147,11 @@
         "crest": "https://crests.football-data.org/787.svg"
       },
       "away": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 8872,
+        "name": "Norway",
+        "short": "Norway",
+        "tla": "NOR",
+        "crest": "https://crests.football-data.org/813.svg"
       },
       "score": {
         "home": null,
@@ -3181,18 +3181,18 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 773,
+        "name": "France",
+        "short": "France",
+        "tla": "FRA",
+        "crest": "https://crests.football-data.org/773.svg"
       },
       "away": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 792,
+        "name": "Sweden",
+        "short": "Sweden",
+        "tla": "SWE",
+        "crest": "https://crests.football-data.org/792.svg"
       },
       "score": {
         "home": null,
@@ -3229,11 +3229,11 @@
         "crest": "https://crests.football-data.org/769.svg"
       },
       "away": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 791,
+        "name": "Ecuador",
+        "short": "Ecuador",
+        "tla": "ECU",
+        "crest": "https://crests.football-data.org/791.svg"
       },
       "score": {
         "home": null,
@@ -3263,18 +3263,18 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 770,
+        "name": "England",
+        "short": "England",
+        "tla": "ENG",
+        "crest": "https://crests.football-data.org/770.svg"
       },
       "away": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 1934,
+        "name": "Congo DR",
+        "short": "Congo DR",
+        "tla": "COD",
+        "crest": "https://crests.football-data.org/congo_dr.svg"
       },
       "score": {
         "home": null,
@@ -3304,18 +3304,18 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 805,
+        "name": "Belgium",
+        "short": "Belgium",
+        "tla": "BEL",
+        "crest": "https://crests.football-data.org/805.svg"
       },
       "away": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 804,
+        "name": "Senegal",
+        "short": "Senegal",
+        "tla": "SEN",
+        "crest": "https://crests.football-data.org/senegal.svg"
       },
       "score": {
         "home": null,
@@ -3386,18 +3386,18 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 760,
+        "name": "Spain",
+        "short": "Spain",
+        "tla": "ESP",
+        "crest": "https://crests.football-data.org/760.svg"
       },
       "away": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 816,
+        "name": "Austria",
+        "short": "Austria",
+        "tla": "AUT",
+        "crest": "https://crests.football-data.org/816.svg"
       },
       "score": {
         "home": null,
@@ -3427,18 +3427,18 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 765,
+        "name": "Portugal",
+        "short": "Portugal",
+        "tla": "POR",
+        "crest": "https://crests.football-data.org/765.svg"
       },
       "away": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 799,
+        "name": "Croatia",
+        "short": "Croatia",
+        "tla": "CRO",
+        "crest": "https://crests.football-data.org/799.svg"
       },
       "score": {
         "home": null,
@@ -3475,11 +3475,11 @@
         "crest": "https://crests.football-data.org/788.svg"
       },
       "away": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 778,
+        "name": "Algeria",
+        "short": "Algeria",
+        "tla": "ALG",
+        "crest": "https://crests.football-data.org/algeria.svg"
       },
       "score": {
         "home": null,
@@ -3516,11 +3516,11 @@
         "crest": "https://crests.football-data.org/779.svg"
       },
       "away": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 825,
+        "name": "Egypt",
+        "short": "Egypt",
+        "tla": "EGY",
+        "crest": "https://crests.football-data.org/825.svg"
       },
       "score": {
         "home": null,
@@ -3557,11 +3557,11 @@
         "crest": "https://crests.football-data.org/762.png"
       },
       "away": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 1930,
+        "name": "Cape Verde Islands",
+        "short": "Cape Verde",
+        "tla": "CPV",
+        "crest": "https://crests.football-data.org/cape_verde.svg"
       },
       "score": {
         "home": null,
@@ -3591,18 +3591,18 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 818,
+        "name": "Colombia",
+        "short": "Colombia",
+        "tla": "COL",
+        "crest": "https://crests.football-data.org/818.svg"
       },
       "away": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 763,
+        "name": "Ghana",
+        "short": "Ghana",
+        "tla": "GHA",
+        "crest": "https://crests.football-data.org/ghana.svg"
       },
       "score": {
         "home": null,
