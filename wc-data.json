@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-28T12:05:15.062297+05:30",
-  "updatedLabel": "28 Jun 2026 · 12:05 IST",
+  "updated": "2026-06-29T01:03:50.408253+05:30",
+  "updatedLabel": "29 Jun 2026 · 01:03 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "ff2ffdb136e61e097cf756fd7d282adea5f5808a43e5c3c771bf5a27beab9687",
+  "contentHash": "1fd7363dbe7f9ba57d583bd843dc35013256ae84850957d8f04f9010612e59ef",
   "count": 104,
   "matches": [
     {
@@ -2967,8 +2967,8 @@
         "time": "00:30",
         "label": "Mon 29 Jun · 00:30 IST"
       },
-      "status": "TIMED",
-      "live": false,
+      "status": "IN_PLAY",
+      "live": true,
       "finished": false,
       "minute": null,
       "stage": "Last 32",
@@ -2990,11 +2990,11 @@
         "crest": "https://crests.football-data.org/canada.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
+        "home": 0,
+        "away": 0,
         "halfHome": null,
         "halfAway": null,
-        "winner": null
+        "winner": "DRAW"
       },
       "lineups": null
     },
