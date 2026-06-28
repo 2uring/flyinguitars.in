@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-28T06:45:03.132096+05:30",
-  "updatedLabel": "28 Jun 2026 · 06:45 IST",
+  "updated": "2026-06-28T06:50:35.719494+05:30",
+  "updatedLabel": "28 Jun 2026 · 06:50 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "48a7be48892da8f00b223b59de7f4845a47338873041af36315aeab8e4f07e6a",
+  "contentHash": "31a20c442853941268a22d07b274d65bfccf58ab167d946a242ebb990c2e74d9",
   "count": 104,
   "matches": [
     {
@@ -2721,9 +2721,9 @@
         "time": "02:30",
         "label": "Sun 28 Jun · 02:30 IST"
       },
-      "status": "TIMED",
+      "status": "FINISHED",
       "live": false,
-      "finished": false,
+      "finished": true,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_L",
@@ -2744,11 +2744,11 @@
         "crest": "https://crests.football-data.org/770.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": null
+        "home": 0,
+        "away": 2,
+        "halfHome": 0,
+        "halfAway": 0,
+        "winner": "AWAY_TEAM"
       },
       "lineups": null
     },
@@ -2762,9 +2762,9 @@
         "time": "02:30",
         "label": "Sun 28 Jun · 02:30 IST"
       },
-      "status": "TIMED",
+      "status": "FINISHED",
       "live": false,
-      "finished": false,
+      "finished": true,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_L",
@@ -2785,11 +2785,11 @@
         "crest": "https://crests.football-data.org/ghana.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": null
+        "home": 2,
+        "away": 1,
+        "halfHome": 1,
+        "halfAway": 0,
+        "winner": "HOME_TEAM"
       },
       "lineups": null
     },
@@ -2803,8 +2803,8 @@
         "time": "05:00",
         "label": "Sun 28 Jun · 05:00 IST"
       },
-      "status": "TIMED",
-      "live": false,
+      "status": "IN_PLAY",
+      "live": true,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -2826,11 +2826,11 @@
         "crest": "https://crests.football-data.org/765.svg"
       },
       "score": {
-        "home": null,
-        "away": null,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": null
+        "home": 0,
+        "away": 0,
+        "halfHome": 0,
+        "halfAway": 0,
+        "winner": "DRAW"
       },
       "lineups": null
     },
@@ -2844,8 +2844,8 @@
         "time": "05:00",
         "label": "Sun 28 Jun · 05:00 IST"
       },
-      "status": "TIMED",
-      "live": false,
+      "status": "IN_PLAY",
+      "live": true,
       "finished": false,
       "minute": null,
       "stage": "Group Stage",
@@ -2867,11 +2867,11 @@
         "crest": "https://crests.football-data.org/8070.png"
       },
       "score": {
-        "home": null,
-        "away": null,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": null
+        "home": 2,
+        "away": 1,
+        "halfHome": 0,
+        "halfAway": 1,
+        "winner": "HOME_TEAM"
       },
       "lineups": null
     },
