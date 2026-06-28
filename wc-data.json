@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-28T08:35:01.583526+05:30",
-  "updatedLabel": "28 Jun 2026 · 08:35 IST",
+  "updated": "2026-06-28T08:38:49.318770+05:30",
+  "updatedLabel": "28 Jun 2026 · 08:38 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "d2bb3c361f7b25789f71d9229f6885e85bfa4abf042a838d372bd0b2a97e595e",
+  "contentHash": "3844af4e4d0a67c95de57cfdc832350a1d6ba10f2e3bea6331c3fd840dd64655",
   "count": 104,
   "matches": [
     {
@@ -2721,9 +2721,9 @@
         "time": "02:30",
         "label": "Sun 28 Jun · 02:30 IST"
       },
-      "status": "FINISHED",
+      "status": "TIMED",
       "live": false,
-      "finished": true,
+      "finished": false,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_L",
@@ -2744,11 +2744,11 @@
         "crest": "https://crests.football-data.org/770.svg"
       },
       "score": {
-        "home": 0,
-        "away": 2,
-        "halfHome": 0,
-        "halfAway": 0,
-        "winner": "AWAY_TEAM"
+        "home": null,
+        "away": null,
+        "halfHome": null,
+        "halfAway": null,
+        "winner": null
       },
       "lineups": null
     },
@@ -2762,9 +2762,9 @@
         "time": "02:30",
         "label": "Sun 28 Jun · 02:30 IST"
       },
-      "status": "FINISHED",
+      "status": "TIMED",
       "live": false,
-      "finished": true,
+      "finished": false,
       "minute": null,
       "stage": "Group Stage",
       "group": "GROUP_L",
@@ -2785,11 +2785,11 @@
         "crest": "https://crests.football-data.org/ghana.svg"
       },
       "score": {
-        "home": 2,
-        "away": 1,
-        "halfHome": 1,
-        "halfAway": 0,
-        "winner": "HOME_TEAM"
+        "home": null,
+        "away": null,
+        "halfHome": null,
+        "halfAway": null,
+        "winner": null
       },
       "lineups": null
     },
