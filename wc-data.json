@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-28T09:30:24.820574+05:30",
-  "updatedLabel": "28 Jun 2026 · 09:30 IST",
+  "updated": "2026-06-28T09:31:41.904211+05:30",
+  "updatedLabel": "28 Jun 2026 · 09:31 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "c7492024c9a857c8ef2972416e6d30a2de040e462d2768d7839601ee307284f5",
+  "contentHash": "c5a9f7f1df2ef84310b9a1100aef13e8a6996f0cd93d21b469b4763e1219b23d",
   "count": 104,
   "matches": [
     {
@@ -2949,11 +2949,11 @@
         "crest": "https://crests.football-data.org/816.svg"
       },
       "score": {
-        "home": 2,
+        "home": 3,
         "away": 2,
         "halfHome": 1,
         "halfAway": 1,
-        "winner": "DRAW"
+        "winner": "HOME_TEAM"
       },
       "lineups": null
     },
