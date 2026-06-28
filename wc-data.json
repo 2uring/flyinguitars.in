@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-28T05:58:26.881388+05:30",
-  "updatedLabel": "28 Jun 2026 · 05:58 IST",
+  "updated": "2026-06-28T05:59:58.011013+05:30",
+  "updatedLabel": "28 Jun 2026 · 05:59 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "7358458f1a3c47d42c19033a56fd3f5b39acf4a284f8a1b9fb8cfa0a7a3a05fa",
+  "contentHash": "85925d58929ca6cfb4ff74649338f63c5e5ec7791f1304fb55700bb495bbee24",
   "count": 104,
   "matches": [
     {
@@ -2844,7 +2844,7 @@
         "time": "05:00",
         "label": "Sun 28 Jun · 05:00 IST"
       },
-      "status": "LIVE",
+      "status": "PAUSED",
       "live": true,
       "finished": false,
       "minute": null,
@@ -2867,11 +2867,11 @@
         "crest": "https://crests.football-data.org/8070.png"
       },
       "score": {
-        "home": 1,
+        "home": 0,
         "away": 1,
-        "halfHome": null,
-        "halfAway": null,
-        "winner": "DRAW"
+        "halfHome": 0,
+        "halfAway": 1,
+        "winner": "AWAY_TEAM"
       },
       "lineups": null
     },
@@ -2976,18 +2976,18 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": 774,
-        "name": "South Africa",
-        "short": "South Africa",
-        "tla": "RSA",
-        "crest": "https://crests.football-data.org/9396.svg"
+        "id": null,
+        "name": "TBD",
+        "short": "TBD",
+        "tla": null,
+        "crest": null
       },
       "away": {
-        "id": 828,
-        "name": "Canada",
-        "short": "Canada",
-        "tla": "CAN",
-        "crest": "https://crests.football-data.org/canada.svg"
+        "id": null,
+        "name": "TBD",
+        "short": "TBD",
+        "tla": null,
+        "crest": null
       },
       "score": {
         "home": null,
@@ -3017,18 +3017,18 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": 764,
-        "name": "Brazil",
-        "short": "Brazil",
-        "tla": "BRA",
-        "crest": "https://crests.football-data.org/764.svg"
+        "id": null,
+        "name": "TBD",
+        "short": "TBD",
+        "tla": null,
+        "crest": null
       },
       "away": {
-        "id": 766,
-        "name": "Japan",
-        "short": "Japan",
-        "tla": "JPN",
-        "crest": "https://crests.football-data.org/766.svg"
+        "id": null,
+        "name": "TBD",
+        "short": "TBD",
+        "tla": null,
+        "crest": null
       },
       "score": {
         "home": null,
@@ -3058,11 +3058,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": 759,
-        "name": "Germany",
-        "short": "Germany",
-        "tla": "GER",
-        "crest": "https://crests.football-data.org/759.svg"
+        "id": null,
+        "name": "TBD",
+        "short": "TBD",
+        "tla": null,
+        "crest": null
       },
       "away": {
         "id": null,
@@ -3099,18 +3099,18 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": 8601,
-        "name": "Netherlands",
-        "short": "Netherlands",
-        "tla": "NED",
-        "crest": "https://crests.football-data.org/8601.svg"
+        "id": null,
+        "name": "TBD",
+        "short": "TBD",
+        "tla": null,
+        "crest": null
       },
       "away": {
-        "id": 815,
-        "name": "Morocco",
-        "short": "Morocco",
-        "tla": "MAR",
-        "crest": "https://crests.football-data.org/morocco.svg"
+        "id": null,
+        "name": "TBD",
+        "short": "TBD",
+        "tla": null,
+        "crest": null
       },
       "score": {
         "home": null,
@@ -3140,11 +3140,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": 1935,
-        "name": "Ivory Coast",
-        "short": "Ivory Coast",
-        "tla": "CIV",
-        "crest": "https://crests.football-data.org/787.svg"
+        "id": null,
+        "name": "TBD",
+        "short": "TBD",
+        "tla": null,
+        "crest": null
       },
       "away": {
         "id": null,
@@ -3222,11 +3222,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": 769,
-        "name": "Mexico",
-        "short": "Mexico",
-        "tla": "MEX",
-        "crest": "https://crests.football-data.org/769.svg"
+        "id": null,
+        "name": "TBD",
+        "short": "TBD",
+        "tla": null,
+        "crest": null
       },
       "away": {
         "id": null,
@@ -3345,18 +3345,18 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": 771,
-        "name": "United States",
-        "short": "USA",
-        "tla": "USA",
-        "crest": "https://crests.football-data.org/usa.svg"
+        "id": null,
+        "name": "TBD",
+        "short": "TBD",
+        "tla": null,
+        "crest": null
       },
       "away": {
-        "id": 1060,
-        "name": "Bosnia-Herzegovina",
-        "short": "Bosnia-H.",
-        "tla": "BIH",
-        "crest": "https://crests.football-data.org/bosnia.svg"
+        "id": null,
+        "name": "TBD",
+        "short": "TBD",
+        "tla": null,
+        "crest": null
       },
       "score": {
         "home": null,
@@ -3468,11 +3468,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": 788,
-        "name": "Switzerland",
-        "short": "Switzerland",
-        "tla": "SUI",
-        "crest": "https://crests.football-data.org/788.svg"
+        "id": null,
+        "name": "TBD",
+        "short": "TBD",
+        "tla": null,
+        "crest": null
       },
       "away": {
         "id": null,
@@ -3509,11 +3509,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": 779,
-        "name": "Australia",
-        "short": "Australia",
-        "tla": "AUS",
-        "crest": "https://crests.football-data.org/779.svg"
+        "id": null,
+        "name": "TBD",
+        "short": "TBD",
+        "tla": null,
+        "crest": null
       },
       "away": {
         "id": null,
@@ -3550,11 +3550,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": 762,
-        "name": "Argentina",
-        "short": "Argentina",
-        "tla": "ARG",
-        "crest": "https://crests.football-data.org/762.png"
+        "id": null,
+        "name": "TBD",
+        "short": "TBD",
+        "tla": null,
+        "crest": null
       },
       "away": {
         "id": null,
