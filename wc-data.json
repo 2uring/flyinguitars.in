@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-29T03:00:06.682995+05:30",
-  "updatedLabel": "29 Jun 2026 · 03:00 IST",
+  "updated": "2026-06-29T12:00:27.142472+05:30",
+  "updatedLabel": "29 Jun 2026 · 12:00 IST",
   "competition": "FIFA World Cup",
-  "contentHash": "167175be77397f335282a654fe04076540fd3a56cf5e9af939a03a07ce074881",
+  "contentHash": "43288ff23b9bf2bb1d64dd6527bf9269a41b53dbda8b327434040b1b092efa80",
   "count": 104,
   "matches": [
     {
@@ -3632,11 +3632,11 @@
       "matchday": null,
       "venue": null,
       "home": {
-        "id": null,
-        "name": "TBD",
-        "short": "TBD",
-        "tla": null,
-        "crest": null
+        "id": 828,
+        "name": "Canada",
+        "short": "Canada",
+        "tla": "CAN",
+        "crest": "https://crests.football-data.org/canada.svg"
       },
       "away": {
         "id": null,
