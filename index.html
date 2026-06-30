@@ -14,7 +14,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="wc.css">
     <style>
         /* ——— HERO ——— */
         .hero {
@@ -529,7 +528,6 @@
             <li><a href="#music">Music</a></li>
             <li><a href="#photography">Photos</a></li>
             <li><a href="#treks">Treks</a></li>
-            <li><a href="worldcup.html">World Cup</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <button class="nav-toggle" id="navToggle" aria-label="Menu">
@@ -542,7 +540,6 @@
         <a href="#music">Music</a>
         <a href="#photography">Photos</a>
         <a href="#treks">Treks</a>
-        <a href="worldcup.html">World Cup</a>
         <a href="#contact">Contact</a>
     </div>
 
@@ -557,26 +554,6 @@
             <span class="hero-scroll-text">Scroll</span>
             <div class="hero-scroll-line"></div>
         </div>
-    </section>
-
-    <section class="wc-home" id="worldcup">
-        <a class="wc-poster reveal" href="worldcup.html" aria-label="Open the FIFA World Cup hub">
-            <span class="wc-poster-flag" id="wcPosterFlag">World Cup 2026 · Underway</span>
-            <div class="wc-ribbon"></div>
-            <div class="wc-kicker">Ke Nako · It's Time</div>
-            <h2 class="wc-title">FIFA World Cup</h2>
-            <p class="wc-sub">
-                Every match in <strong>IST</strong>, live scores and starting line-ups —
-                a flyinguitars tribute to South Africa 2010.
-            </p>
-            <div class="wc-poster-stats" id="wcPosterStats">
-                <div class="wc-poster-stat"><div class="n" id="wcPosterTotal">—</div><div class="l">Matches</div></div>
-                <div class="wc-poster-stat"><div class="n live" id="wcPosterLive">—</div><div class="l">Live now</div></div>
-                <div class="wc-poster-stat"><div class="n" id="wcPosterDone">—</div><div class="l">Played</div></div>
-            </div>
-            <div class="wc-poster-next" id="wcPosterNext"></div>
-            <span class="wc-poster-cta">Open the World Cup hub <span class="arrow"></span></span>
-        </a>
     </section>
 
     <section class="intro" id="about">
@@ -900,60 +877,5 @@
     })();
     </script>
 
-    <script>
-    /* ——— FIFA World Cup home-page poster (teaser stats only) ——— */
-    (function () {
-        var poster = document.getElementById('wcPosterStats');
-        if (!poster) return;
-        var elTotal = document.getElementById('wcPosterTotal');
-        var elLive = document.getElementById('wcPosterLive');
-        var elDone = document.getElementById('wcPosterDone');
-        var elNext = document.getElementById('wcPosterNext');
-        var elFlag = document.getElementById('wcPosterFlag');
-
-        function fill() {
-            fetch('wc-data.json?t=' + Date.now(), { cache: 'no-store' })
-                .then(function (r) { return r.json(); })
-                .then(function (data) {
-                    var ms = data.matches || [];
-                    var live = ms.filter(function (m) { return m.live; });
-                    var done = ms.filter(function (m) { return m.finished; });
-                    elTotal.textContent = ms.length || '—';
-                    elLive.textContent = live.length;
-                    elDone.textContent = done.length;
-
-                    if (elFlag) {
-                        if (live.length) {
-                            elFlag.classList.add('is-live');
-                            elFlag.textContent = live.length + ' Live Now';
-                        } else {
-                            elFlag.classList.remove('is-live');
-                            elFlag.textContent = 'World Cup 2026 · Underway';
-                        }
-                    }
-
-                    if (live.length) {
-                        var l = live[0];
-                        elNext.innerHTML = 'Live now · <strong>' + l.home.short + ' ' +
-                            (l.score.home == null ? 0 : l.score.home) + '–' +
-                            (l.score.away == null ? 0 : l.score.away) + ' ' + l.away.short + '</strong>' +
-                            (l.minute ? " · " + l.minute + "'" : '');
-                    } else {
-                        var up = ms.filter(function (m) { return !m.live && !m.finished; });
-                        if (up.length) {
-                            var n = up[0];
-                            elNext.innerHTML = 'Next · <strong>' + n.home.short + ' vs ' + n.away.short +
-                                '</strong> · ' + ((n.ist && n.ist.label) || 'TBD');
-                        } else {
-                            elNext.textContent = '';
-                        }
-                    }
-                })
-                .catch(function () {});
-        }
-        fill();
-        setInterval(fill, 60000);
-    })();
-    </script>
 </body>
 </html>
