@@ -7,7 +7,7 @@
     <meta name="description" content="Kashmir Great Lakes trek — seven alpine lakes across 72 km from Sonamarg to Naranag. Done twice. By Faiz Haq.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <style>
         .back-link {
@@ -103,7 +103,7 @@
         }
         .trek-chapter p strong { color: var(--text); font-weight: 400; }
         .trek-chapter blockquote {
-            font-style: italic; font-weight: 300;
+            font-style: normal; font-weight: 400;
             font-size: clamp(1.05rem, 1.6vw, 1.25rem);
             line-height: 1.85; color: var(--text-muted);
             border-left: 2px solid var(--accent-dim);
@@ -287,19 +287,16 @@
 
                 <div class="trek-chapter" data-lat="34.32" data-lng="75.28" data-alt="0.06" data-label="Sonamarg — Meadow of Gold">
                     <p>
-                        Some treks you do once and remember fondly. Then there's
-                        <strong>Kashmir Great Lakes</strong>&thinsp;&mdash;&thinsp;the one that pulls
-                        you back. I've done it twice. Each time felt like a different journey.
-                        Not because the trail changed, but because I did.
+                        <strong>Kashmir Great Lakes</strong>. Sonamarg to Naranag, roughly
+                        seventy-two kilometres, done twice a few years apart.
                     </p>
 
                     <h3>The trail</h3>
                     <p>
-                        It begins at <strong>Sonamarg</strong>, the Meadow of Gold, where the
-                        Sindh river cuts through a wide grassy valley framed by snow-dusted peaks.
-                        From there you climb through pine forests, cross glacial streams, and ascend
-                        into a high-altitude corridor connecting <strong>seven alpine lakes</strong>,
-                        each a different shade of impossible blue.
+                        The trail begins at <strong>Sonamarg</strong>, where the Sindh river
+                        cuts through a wide grassy valley framed by snow-dusted peaks. From there
+                        it climbs through pine forest, glacial streams, and a high-altitude
+                        corridor connecting <strong>seven alpine lakes</strong>.
                     </p>
                 </div>
 
@@ -307,36 +304,25 @@
                     <h3>The lakes</h3>
                     <p>
                         <strong>Vishansar, Kishansar, Gadsar, Satsar, Gangabal, Nundkol.</strong>
-                        The names carry a rhythm. The lakes sit between 3,600 and 4,200 metres,
-                        nestled in valleys where wildflowers blanket the ground in July and August.
-                        On clear days, the reflections are so sharp they make you question which
-                        way is up.
+                        The lakes sit between 3,600 and 4,200 metres, usually held in July and
+                        August by meadows, scree, and remaining snow.
                     </p>
                 </div>
 
                 <div class="trek-chapter" data-lat="34.39" data-lng="75.08" data-alt="0.025" data-label="Gadsar Pass">
-                    <h3>Why twice</h3>
+                    <h3>Second pass</h3>
                     <p>
-                        The first time, I went for the lakes. The second time, I went for everything
-                        in between. The silence of the passes at dawn. The way light shifts over
-                        <strong>Gadsar Pass</strong> in late afternoon. The feeling of sleeping at
-                        4,000 metres and waking to a sky no photograph does justice to.
+                        Second time: same route, more attention to the sections between
+                        lakes and camps.
                     </p>
-                    <blockquote>
-                        The first time you go for the destination. The second time
-                        you go for the journey. Both times, the mountains give you
-                        exactly what you need.
-                    </blockquote>
                 </div>
 
                 <div class="trek-chapter" data-lat="34.38" data-lng="74.98" data-alt="0.04" data-label="Naranag — Journey's end">
                     <h3>The descent</h3>
                     <p>
-                        The trail ends at <strong>Naranag</strong>, a quiet village with an ancient
-                        temple and the calm satisfaction of having walked through one of the most
-                        beautiful landscapes on earth. Seven days. Seventy-two kilometres. Seven
-                        lakes. And a head full of images that no camera fully captures. Though I
-                        tried, both times.
+                        The trail ends at <strong>Naranag</strong>, near the old temple complex.
+                        Seven days, seventy-two kilometres, high passes, and a long descent out
+                        of the alpine zone.
                     </p>
                 </div>
 
@@ -347,7 +333,7 @@
                     <div class="trek-globe-viz" id="globeViz"></div>
                     <div class="globe-info">
                         <span class="globe-label" id="globeLabel">Sonamarg — Meadow of Gold</span>
-                        <span class="globe-hint">Drag to explore</span>
+                        <span class="globe-hint">Drag map</span>
                     </div>
                     <div class="globe-legend">
                         <div class="globe-legend-item">
@@ -418,7 +404,7 @@
             .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
             .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
             .showAtmosphere(true)
-            .atmosphereColor('rgba(200,149,109,0.35)')
+            .atmosphereColor('rgba(120,165,175,0.4)')
             .atmosphereAltitude(0.18)
             .pointsData(allPoints)
             .pointLat('lat').pointLng('lng')
@@ -447,7 +433,7 @@
             .ringRepeatPeriod(2000)
             .pathsData([{
                 coords: routePath,
-                color: ['rgba(200,149,109,1)', 'rgba(212,168,130,1)'],
+                    color: ['rgba(120,165,175,1)', 'rgba(160,195,200,1)'],
                 stroke: 3.5, dash: 0.01, gap: 0.003, animate: 14000
             }])
             .pathPoints('coords')
