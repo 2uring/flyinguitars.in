@@ -313,6 +313,44 @@
             border-radius: 999px;
         }
 
+        .embed-panel {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            border: 1px solid var(--border-strong);
+            border-left: 4px solid var(--accent);
+            background: #050505;
+        }
+        .embed-toolbar {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            align-items: center;
+            padding: 0.9rem 1rem;
+            border-bottom: 1px solid var(--border);
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .embed-toolbar a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .embed-frame {
+            width: 100%;
+            height: min(760px, 80vh);
+            border: 0;
+            display: block;
+            background: #000;
+        }
+        .embed-note {
+            padding: 0.9rem 1rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
         .elsewhere-grid {
             max-width: var(--max-w);
             margin: 0 auto;
@@ -379,6 +417,13 @@
                 display: block;
                 margin-top: 0.45rem;
             }
+            .embed-toolbar {
+                display: block;
+            }
+            .embed-toolbar a {
+                display: inline-block;
+                margin-top: 0.4rem;
+            }
         }
     </style>
 </head>
@@ -391,6 +436,7 @@
             <li><a href="#recordings">Recordings</a></li>
             <li><a href="#photos">Photos</a></li>
             <li><a href="#routes">Routes</a></li>
+            <li><a href="#worldcup">World Cup</a></li>
             <li><a href="#listening">Listening</a></li>
             <li><a href="#links">Links</a></li>
         </ul>
@@ -403,6 +449,7 @@
         <a href="#recordings">Recordings</a>
         <a href="#photos">Photos</a>
         <a href="#routes">Routes</a>
+        <a href="#worldcup">World Cup</a>
         <a href="#listening">Listening</a>
         <a href="#links">Links</a>
     </div>
@@ -611,9 +658,35 @@
             </div>
         </section>
 
+        <section class="section" id="worldcup">
+            <div class="section-head">
+                <div class="section-index">04 / world cup</div>
+                <div>
+                    <h2 class="section-title">FIFA World Cup 2026.</h2>
+                    <p class="section-note">Live match centre from Bing. Times are shown in IST on the source page.</p>
+                </div>
+            </div>
+            <div class="embed-panel">
+                <div class="embed-toolbar">
+                    <span>Bing sports · World Cup coverage</span>
+                    <a href="https://www.bing.com/sportsdetails?q=fifa%20wc&amp;sport=Soccer&amp;scenario=League&amp;TimezoneId=India%20Standard%20Time&amp;IANATimezoneId=Asia/Kolkata&amp;ISOTimezoneKey=IST&amp;league=Soccer_InternationalWorldCup&amp;intent=Generic&amp;seasonyear=2026&amp;segment=sports&amp;isl2=true&amp;fromhere=1065316320&amp;form=ANNAB1&amp;" target="_blank" rel="noopener">Open live page</a>
+                </div>
+                <iframe
+                    class="embed-frame"
+                    title="Bing FIFA World Cup 2026 match centre"
+                    src="https://www.bing.com/sportsdetails?q=fifa%20wc&amp;sport=Soccer&amp;scenario=League&amp;TimezoneId=India%20Standard%20Time&amp;IANATimezoneId=Asia/Kolkata&amp;ISOTimezoneKey=IST&amp;league=Soccer_InternationalWorldCup&amp;intent=Generic&amp;seasonyear=2026&amp;segment=sports&amp;isl2=true&amp;fromhere=1065316320&amp;form=ANNAB1&amp;"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <div class="embed-note">
+                    If the embedded panel does not load, Bing is blocking third-party framing. Use the link above.
+                </div>
+            </div>
+        </section>
+
         <section class="section" id="listening">
             <div class="section-head">
-                <div class="section-index">04 / listening</div>
+                <div class="section-index">05 / listening</div>
                 <div>
                     <h2 class="section-title">Listening.</h2>
                     <p class="section-note">Public Spotify profile and playlists.</p>
@@ -634,7 +707,7 @@
         <section class="section alt" id="links">
             <div class="elsewhere-grid">
                 <div>
-                    <div class="section-index">05 / links</div>
+                    <div class="section-index">06 / links</div>
                     <h2 class="elsewhere-title">Links.</h2>
                 </div>
                 <div class="links-list">
