@@ -319,6 +319,7 @@
             border: 1px solid var(--border-strong);
             border-left: 4px solid var(--accent);
             background: #050505;
+            overflow: hidden;
         }
         .embed-toolbar {
             display: flex;
@@ -337,9 +338,28 @@
             color: var(--accent);
             text-decoration: none;
         }
-        .embed-frame {
+        .embed-viewport {
             width: 100%;
             height: min(760px, 80vh);
+            overflow: auto;
+            background: #000;
+            scrollbar-color: var(--accent) #111;
+            scrollbar-width: thin;
+        }
+        .embed-viewport::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        .embed-viewport::-webkit-scrollbar-track {
+            background: #111;
+        }
+        .embed-viewport::-webkit-scrollbar-thumb {
+            background: var(--accent);
+        }
+        .embed-frame {
+            width: max(100%, 1180px);
+            height: 100%;
+            min-height: 760px;
             border: 0;
             display: block;
             background: #000;
@@ -423,6 +443,13 @@
             .embed-toolbar a {
                 display: inline-block;
                 margin-top: 0.4rem;
+            }
+            .embed-viewport {
+                height: 74vh;
+            }
+            .embed-frame {
+                width: max(100%, 1040px);
+                min-height: 720px;
             }
         }
     </style>
@@ -671,13 +698,15 @@
                     <span>Bing sports · World Cup coverage</span>
                     <a href="https://www.bing.com/sportsdetails?q=fifa%20wc&amp;sport=Soccer&amp;scenario=League&amp;TimezoneId=India%20Standard%20Time&amp;IANATimezoneId=Asia/Kolkata&amp;ISOTimezoneKey=IST&amp;league=Soccer_InternationalWorldCup&amp;intent=Generic&amp;seasonyear=2026&amp;segment=sports&amp;isl2=true&amp;fromhere=1065316320&amp;form=ANNAB1&amp;" target="_blank" rel="noopener">Open live page</a>
                 </div>
-                <iframe
-                    class="embed-frame"
-                    title="Bing FIFA World Cup 2026 match centre"
-                    src="https://www.bing.com/sportsdetails?q=fifa%20wc&amp;sport=Soccer&amp;scenario=League&amp;TimezoneId=India%20Standard%20Time&amp;IANATimezoneId=Asia/Kolkata&amp;ISOTimezoneKey=IST&amp;league=Soccer_InternationalWorldCup&amp;intent=Generic&amp;seasonyear=2026&amp;segment=sports&amp;isl2=true&amp;fromhere=1065316320&amp;form=ANNAB1&amp;"
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+                <div class="embed-viewport" aria-label="Scrollable World Cup match centre">
+                    <iframe
+                        class="embed-frame"
+                        title="Bing FIFA World Cup 2026 match centre"
+                        src="https://www.bing.com/sportsdetails?q=fifa%20wc&amp;sport=Soccer&amp;scenario=League&amp;TimezoneId=India%20Standard%20Time&amp;IANATimezoneId=Asia/Kolkata&amp;ISOTimezoneKey=IST&amp;league=Soccer_InternationalWorldCup&amp;intent=Generic&amp;seasonyear=2026&amp;segment=sports&amp;isl2=true&amp;fromhere=1065316320&amp;form=ANNAB1&amp;"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
                 <div class="embed-note">
                     If the embedded panel does not load, Bing is blocking third-party framing. Use the link above.
                 </div>
